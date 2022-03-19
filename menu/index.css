@@ -1,0 +1,41 @@
+body{
+    font-family: "Comic Sans MS", serif;
+    background: #282C34;
+    color: white;
+    margin: 0;
+}
+body a{
+    color: white;
+    text-decoration: none;
+    border: transparent 1px solid;
+    border-radius: 5px;
+}
+
+#current{
+    background: rgba(0,0,0,0.5);
+}
+.choices a:hover{
+    background: rgba(40,45,205,0.5);
+    transition: 0.5s;
+}
+.nav{
+    text-align: center;
+    background: gray;
+
+}
+.operation{
+    margin-top: 10px;
+    text-align: center;
+}
+input{
+    background: gray;
+    color: white;
+    min-height: 35px;
+}
+.choices{
+    background: gray;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% 20%;
+    padding: 2px;
+}
