@@ -19,7 +19,7 @@
         <form method="post">
             Enter input:
             <input type="number" name="number1" /><br><br>
-            <input  type="submit" name="submit" value="Submit">
+            <input id="button" type="submit" name="submit" value="Submit">
         </form>
         <?php
         if(isset($_POST['submit']))
@@ -34,5 +34,9 @@
         ?>
     </div>
 </div>
+<script>
+    document.getElementById("button").style.backgroundColor="#00fff8";
+    document.getElementById("button").style.color="#000000";
+</script>
 </body>
 </html>
