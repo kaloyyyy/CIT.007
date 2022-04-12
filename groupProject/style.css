@@ -1,63 +1,14 @@
-:root{
-    font-size: 16px;
+:root {
     font-family: 'Ubuntu Mono', monospace;
-    --text-secondary: #324459;
+    font-size:16px;
     --bg-primary: #324459;
     --bg-secondary: #2F62A2;
-    --text-primary:  #fffaf8;
+    --text-primary: #fffaf8;
     --bg-pink: #FF7A90;
-    --bg-lightblue:#4a768d;
+    --bg-lightblue: #4a768d;
 }
-@media only screen and (max-width: 600px){
-    :root{
-        font-size: 14px;
-    }
-    .none-mobile{
-        display: none;
-    }
-    .nav-link{
-        min-width: 10vw;
-        font-size: 1rem;
-        padding: 0.1rem;
-        margin: 0 1vw
-    }
-    .logo-name{
-        font-size: 0.7rem;
-        min-width: 60px;
-        padding: 0;
-    }
-    main{
-        margin: 1% 10%;
-        font-size: 0.5rem;
-    }
-}
-@media only screen and (min-width: 600px){
-    .nav-link{
-        min-width: 8vw;
-        height: fit-content;
-        margin: 0.25rem 1.6vw;
-        font-size: 1.6vw;
-        padding:0.25rem;
-    }
-    .tagline{
-        display:none;
-    }
-    .logo-name{
-        font-size: 1.6vw;
-        min-width: 10vw;
-        padding: 0.12rem 0.25rem;
-    }
-    main{
-        margin: 1% 15vw;
-    }
-}
-@media only screen and (min-width: 850px){
-    .tagline{
-        display: flex;
-        font-size: 0.8vw;
-    }
-}
-body{
+
+body {
     margin: 0;
     padding: 0;
     background: var(--bg-primary);
@@ -65,105 +16,268 @@ body{
     text-decoration: none;
     font-family: 'Ubuntu Mono', monospace;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 0.5rem;
 }
-::-webkit-scrollbar-track{
+
+::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: var(--bg-lightblue);
     border-radius: 8px;
 }
-nav{
-    background:#2F62A2;
+
+nav {
+    background: #2F62A2;
     text-align: center;
 }
 
-.cursive{
-    font-family: Segoe Print, serif;
+.cursive {
+    font-family: Grape Nuts, cursive;
     padding: 0;
 }
-svg{
-    fill: #324459;
+
+.komilogo {
+    min-height: 2rem;
+}
+
+.logodiv {
+    padding: 1px;
+    border: var(--bg-primary) 3px solid;
+    background: var(--bg-pink);
+    border-radius: 100%;
+}
+
+.logodiv svg {
+    position: relative;
+    bottom: -2px;
+}
+
+svg {
+    fill: var(--bg-primary);
     height: 1rem;
     transition: 0.3s;
     transform: rotate(0deg);
 }
-.nav-link:hover svg{
-    fill: var(--bg-pink);
-    transition: 0.6s;
-    transform: rotate(360deg);
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
 }
-.right .nav-link:hover{
-    background: var(--bg-lightblue);
-    transition: 0.3s;
+
+.navComp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.nav-link{
+
+.nav-link a {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nav-link {
     background: var(--bg-pink);
     border-radius: 0.33rem;
     text-align: center;
     transition: 0.3s;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5%;
+
+.nav-link:hover svg {
+    fill: var(--bg-pink);
+    transition: 0.3s;
+    transform: rotate(360deg);
 }
-.navComp{
-    display: flex;
-    justify-content: space-between;
-    align-items:  center;
+
+.nav-link:hover .logodiv {
+    background: var(--bg-lightblue);
+    border-color: var(--bg-pink);
 }
-.nav-link a{
-    padding: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:0.5rem;
+
+.nav-link:hover {
+    background: var(--bg-lightblue);
+    transition: 0.3s;
 }
-.tagline{
+
+.tagline {
     background: transparent;
     max-width: 100px;
     margin-left: 0;
 }
-a:hover{
+
+.tagline:hover {
+    background: transparent;
+}
+
+a:hover {
     text-decoration: none;
     color: var(--text-primary);
 }
-a:visited:hover{
+
+a:visited:hover {
     text-decoration: none;
     color: var(--text-primary);
 }
-a:visited{
+
+a:visited {
     text-decoration: none;
     color: var(--text-primary);
 }
-a{
+
+a {
     text-decoration: none;
     color: var(--text-primary);
     padding: 0;
     margin: 0;
 }
-main{
+
+@media only screen and (max-width: 600px) {
+    :root {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .none-mobile {
+        display: none;
+    }
+
+    .nav-link {
+        min-width: 10vw;
+        font-size: 1rem;
+        padding: 0.1rem;
+        margin: 0 1vw;
+    }
+
+    .logo-name {
+        padding: 0;
+        background: none;
+    }
+    .logo-name:hover {
+        background: none;
+    }
+
+
+    main {
+        margin: 1% 10%;
+        font-size: 0.5rem;
+    }
+
+    .komilogo {
+        height: 3vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+
+    .nav-link {
+        min-width: 8vw;
+        height: fit-content;
+        margin: 0.25rem 1.6vw;
+        font-size: 1.6rem;
+        padding: 0.25rem;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .logo-name {
+        font-size: 2rem;
+        min-width: 10vw;
+        padding: 1px 0.25rem;
+        margin: 2px;
+        background: none;
+    }
+
+    .logo-name:hover {
+        background: none;
+    }
+
+    main {
+        margin: 1% 15vw;
+    }
+
+    .logospan {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 890px) {
+
+
+    .nav-link {
+        min-width: 8vw;
+    }
+
+    .tagline {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    .logo-name {
+        background: var(--bg-pink);
+    }
+
+    .logo-name:hover {
+        background: var(--bg-lightblue);
+    }
+
+    .logospan {
+        display: block;
+    }
+}
+
+
+main {
     display: grid;
     justify-content: center;
 }
-h1{
+
+h1 {
     text-align: justify;
 }
-.wrapper{
+
+.wrapper {
     width: 360px;
 }
-div.btn{
+
+div.btn {
     max-width: 120px;
     padding: 4px;
     margin: 4px;
 }
-div.btn.btn-warning{
+
+div.btn.btn-warning {
     background: rgba(255, 0, 42, 0.70);
     opacity: 50;
 }
-div.btn.btn-danger{
+
+div.btn.btn-danger {
     background: rgba(255, 122, 144, 0.4);
+}
+
+a.register {
+    color: var(--bg-pink);
+    text-decoration: none;
+    background-color: transparent
+}
+
+a.register:hover {
+    color: var(--bg-secondary);
+    text-decoration: underline
 }
