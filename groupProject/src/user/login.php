@@ -1,15 +1,16 @@
 <?php
 // Initialize the session
 session_start();
+chdir(dirname(__DIR__));
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: user_index.php");
+    header("location: /groupProject/src/user/user_index.php");
     exit;
 }
 
 // Include config file
-require_once "config.php";
+require_once __DIR__."/../../config/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -62,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
 
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: /groupProject/public/index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -89,11 +90,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'meta.php'?>
+    <?php include __DIR__ . '/../../config/meta.php'; ?>
     <title>login</title>
 </head>
 <body>
-<?php include 'header.php';?>
+<?php include_once __DIR__ . '/../../public/header.php' ?>
 <main>
     <div class="wrapper">
         <h2>Login</h2>

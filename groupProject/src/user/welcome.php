@@ -12,16 +12,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php include __DIR__ . '/../../config/meta.php'; ?>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <style>
         body{ text-align: center; }
     </style>
 </head>
 <body>
-<?php include 'header.php';?>
+<?php include_once __DIR__ . '/../../public/header.php' ?>
 
 <h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
 <p>

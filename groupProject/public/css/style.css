@@ -1,11 +1,13 @@
 :root {
     font-family: 'Ubuntu Mono', monospace;
-    font-size:16px;
+    font-size: 16px;
     --bg-primary: #324459;
-    --bg-secondary: #2F62A2;
+    --bg-vibrantblue: #2F62A2;
     --text-primary: #fffaf8;
     --bg-pink: #FF7A90;
     --bg-lightblue: #4a768d;
+    --sub-alt-color: #263041;
+    --error-color: #f04040;;
 }
 
 body {
@@ -22,14 +24,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: none;
 }
-
 ::-webkit-scrollbar-thumb {
     background: var(--bg-lightblue);
     border-radius: 8px;
 }
-
 nav {
     background: #2F62A2;
     text-align: center;
@@ -40,18 +40,18 @@ nav {
     padding: 0;
 }
 
-.komilogo {
+.komi-logo {
     min-height: 2rem;
 }
 
-.logodiv {
+.logo-div {
     padding: 1px;
     border: var(--bg-primary) 3px solid;
     background: var(--bg-pink);
     border-radius: 100%;
 }
 
-.logodiv svg {
+.logo-div svg {
     position: relative;
     bottom: -2px;
 }
@@ -96,7 +96,7 @@ svg {
     transform: rotate(360deg);
 }
 
-.nav-link:hover .logodiv {
+.nav-link:hover .logo-div {
     background: var(--bg-lightblue);
     border-color: var(--bg-pink);
 }
@@ -152,16 +152,23 @@ a {
     }
 
     .nav-link {
-        min-width: 10vw;
-        font-size: 1rem;
         padding: 0.1rem;
         margin: 0 1vw;
+        background: none;
+    }
+    .nav-link:hover{
+        background: none;
+    }
+    .right  svg{
+        height: 2rem;
+        fill: var(--sub-alt-color);
     }
 
     .logo-name {
         padding: 0;
         background: none;
     }
+
     .logo-name:hover {
         background: none;
     }
@@ -172,8 +179,8 @@ a {
         font-size: 0.5rem;
     }
 
-    .komilogo {
-        height: 3vw;
+    .komi-logo {
+        height: 2rem;
     }
 }
 
@@ -208,7 +215,7 @@ a {
         margin: 1% 15vw;
     }
 
-    .logospan {
+    .logo-span {
         display: none;
     }
 
@@ -237,14 +244,13 @@ a {
         background: var(--bg-lightblue);
     }
 
-    .logospan {
+    .logo-span {
         display: block;
     }
 }
 
 
 main {
-    display: grid;
     justify-content: center;
 }
 
@@ -256,28 +262,45 @@ h1 {
     width: 360px;
 }
 
-div.btn {
-    max-width: 120px;
-    padding: 4px;
-    margin: 4px;
-}
-
-div.btn.btn-warning {
-    background: rgba(255, 0, 42, 0.70);
-    opacity: 50;
-}
-
-div.btn.btn-danger {
-    background: rgba(255, 122, 144, 0.4);
-}
-
 a.register {
     color: var(--bg-pink);
     text-decoration: none;
-    background-color: transparent
+    background-color: transparent;
 }
 
 a.register:hover {
-    color: var(--bg-secondary);
+    color: var(--bg-vibrantblue);
     text-decoration: underline
+}
+
+.btn:hover a {
+    color: var(--bg-lightblue);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--bg-pink);
+    box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem;
+    height: 360px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    background-size: cover;
+    background: var(--sub-alt-color) no-repeat center;
+}
+
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+}
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }

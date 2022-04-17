@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.user.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nice.svg" afterDir="false" />
+    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="group project update folder structure">
+      <change afterPath="$PROJECT_DIR$/../commissions/familyname_PIN.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../commissions/familyname_card.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../commissions/yes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/chat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/scratch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/image2vector (6)-min.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/nice.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/browse/browse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/browse/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/display/chat.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/reset-password.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/user_index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/welcome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scratch.css" beforeDir="false" afterPath="$PROJECT_DIR$/scratch.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meta.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nice.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +101,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Chatroom" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.20547946" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public" />
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\config" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="groupProject" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -120,8 +151,21 @@
       <workItem from="1649449387338" duration="3535000" />
       <workItem from="1649456910799" duration="3641000" />
       <workItem from="1649563942382" duration="6314000" />
-      <workItem from="1649632178391" duration="16918000" />
+      <workItem from="1649632178391" duration="18077000" />
+      <workItem from="1649766607714" duration="1221000" />
+      <workItem from="1649969601593" duration="7569000" />
+      <workItem from="1650048185488" duration="5916000" />
+      <workItem from="1650109476840" duration="2913000" />
+      <workItem from="1650139318388" duration="16313000" />
     </task>
+    <task id="LOCAL-00001" summary="group project update">
+      <created>1649764637917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649764637917</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +184,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="group project update" />
+    <MESSAGE value="group project update folder structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="group project update folder structure" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

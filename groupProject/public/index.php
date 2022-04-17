@@ -1,11 +1,16 @@
+<?php
+chdir(dirname(__DIR__));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'meta.php' ?>
+    <?php include __DIR__ . '/../config/meta.php'; ?>
     <title>Komi-sion</title>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<div id="page" style="display: none">home</div>
+<?php include 'header.php'; $hostname = getenv('HTTP_HOST');
+echo $hostname;?>
 <main>
     <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim

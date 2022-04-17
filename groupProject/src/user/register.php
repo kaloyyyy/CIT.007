@@ -1,6 +1,7 @@
 <?php
 // Include config file
-require_once "config.php";
+chdir(dirname(__DIR__));
+require_once __DIR__."/../../config/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -95,11 +96,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'meta.php'?>
+    <?php include __DIR__ . '/../../config/meta.php'; ?>
     <title>Sign Up</title>
 </head>
 <body>
-<?php include 'header.php';?>
+<?php include_once __DIR__ . '/../../public/header.php' ?>
 <main>
     <div class="wrapper">
         <h2>Sign Up</h2>
