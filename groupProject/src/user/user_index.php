@@ -17,11 +17,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 <?php include_once __DIR__ . '/../../public/header.php' ?>
-<main><div class = "welcome"><h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1></div>
-    <div class = "btn btn-warning"><a href="reset-password.php">Reset Password</a></div>
-    <div class="btn btn-danger"><a href="logout.php">Sign Out</a></div>
-
-    <?php date_default_timezone_set("Asia/Manila");echo date("l jS \of F Y h:i:s A");?>
+<main>
+    <div class="flex">
+        <div class="wrapper">
+            <div class = "welcome"><h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1></div>
+            <div class = "btn btn-warning"><a href="reset-password.php">Reset Password</a></div>
+            <div class="btn btn-danger"><a href="logout.php">Sign Out</a></div><br>
+            <?php date_default_timezone_set("Asia/Manila");echo date("l jS \of F Y h:i:s A");?>
+        </div>
+    </div>
 </main>
 </body>
 </html>

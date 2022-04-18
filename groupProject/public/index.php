@@ -9,8 +9,7 @@ chdir(dirname(__DIR__));
 </head>
 <body>
 <div id="page" style="display: none">home</div>
-<?php include 'header.php'; $hostname = getenv('HTTP_HOST');
-echo $hostname;?>
+<?php include 'header.php';?>
 <main>
     <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim

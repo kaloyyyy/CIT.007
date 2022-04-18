@@ -5,14 +5,12 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'kal');
 define('DB_PASSWORD', 'austria16');
 define('DB_NAME', 'komision');
-$timezoneId = "Asia/Manila";
-date_default_timezone_set($timezoneId);
+
 /* Attempt to connect to MySQL database */
-try{
-    $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
-    // Set the PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e){
-    die("ERROR: Could not connect. " . $e->getMessage());
+$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($mysqli === false){
+    die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
 ?>

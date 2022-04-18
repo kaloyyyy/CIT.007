@@ -2,45 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="group project update folder structure">
-      <change afterPath="$PROJECT_DIR$/../commissions/familyname_PIN.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../commissions/familyname_card.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../commissions/yes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/chat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/scratch.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/image2vector (6)-min.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/nice.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/browse/browse.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/browse/grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/display/chat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/register.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/reset-password.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/user_index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/user/welcome.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/contact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/credentials.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/rates.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/2d &amp; 3d animation/Animation-Slideshow11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/2d &amp; 3d animation/animation-800x400.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/computer aided design/animation-and-game-design-banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/computer aided design/cad-trends-computer-aided-design-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443136.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443149.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443151.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/essay &amp; caption writing/pexels-pixabay-267491.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/essay &amp; caption writing/pexels-todoran-bogdan-783737.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/module teaching/pexels-julia-m-cameron-4144221.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/module teaching/pexels-julia-m-cameron-4145196.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/photography/pexels-anton-gofman-1391786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/photography/pexels-md-iftekhar-uddin-emon-403495.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-amar-preciado-11025644.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-kyle-loftus-2510422.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-kyle-loftus-2510428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-matheus-bertelli-2608519.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-orlando-allo-8770520.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/browse/newspaper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/browse/pen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/jquerytest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/load-test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meta.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nice.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset-password.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scratch.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image2vector (6)-min.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/nice.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/browse/browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/browse/grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/welcome.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Chatroom" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/hugh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
@@ -106,7 +106,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\hugh" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\browse" />
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\komi-members" />
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\config" />
     </key>
@@ -156,7 +162,10 @@
       <workItem from="1649969601593" duration="7569000" />
       <workItem from="1650048185488" duration="5916000" />
       <workItem from="1650109476840" duration="2913000" />
-      <workItem from="1650139318388" duration="16313000" />
+      <workItem from="1650139318388" duration="24391000" />
+      <workItem from="1650231033187" duration="6388000" />
+      <workItem from="1650284315308" duration="1118000" />
+      <workItem from="1650299680949" duration="8960000" />
     </task>
     <task id="LOCAL-00001" summary="group project update">
       <created>1649764637917</created>
@@ -165,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649764637917</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="group project update folder structure">
+      <created>1650195572994</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650195572994</updated>
+    </task>
+    <task id="LOCAL-00003" summary="group project update folder structure">
+      <created>1650195645600</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650195645601</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
