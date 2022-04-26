@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>quiz.com</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            text-align: center;
+        }
+
+        header {
+            background: red;
+            color: white;
+            font-size: 40px;
+        }
+
+        .button {
+            display: block;
+            background: #c07b01;
+            color: white;
+            text-align: center;
+            width: 300px;
+            margin: 10px auto;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        .question {
+            border: 3px #cccc00 solid;
+        }
+    </style>
+</head>
+<body>
+<header>QUIZ.COM</header>
+<div class="question">
+    <p>Who is the new president of the philippines</p>
+    <div class="ans">
+        <input id="button" type="button" class="button button1" onclick="ans(0)" value="Secretary Mar Roxas">
+        <input id="button" type="button" class="button button1" onclick="ans(1)" value="Mayor Rodrigo Duterte">
+        <input id="button" type="button" class="button button1" onclick="ans(2)" value="Sen. Miriam Defensor Santiago">
+        <input id="button" type="button" class="button button1" onclick="ans(3)" value="Sen. Grace Poe">
+    </div>
+    <script>
+        function ans(x) {
+            var node = document.getElementById('button');
+            if (x === 1) {
+                document.getElementsByTagName("input")[1].style.background = "white";
+                document.getElementsByTagName("input")[1].style.color = "black";
+                document.getElementsByTagName("input")[1].style.transition = "500ms";
+            } else {
+                let i;
+                for (i = 0; i < 4; i++) {
+                    document.getElementsByTagName("input")[i].style.background = "red";
+                    document.getElementsByTagName("input")[i].style.transition = "500ms";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
