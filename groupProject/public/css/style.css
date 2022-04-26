@@ -26,10 +26,12 @@ body {
 ::-webkit-scrollbar-track {
     background: none;
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--bg-lightblue);
     border-radius: 8px;
 }
+
 nav {
     background: #2F62A2;
     text-align: center;
@@ -63,6 +65,14 @@ svg {
     transform: rotate(0deg);
 }
 
+.svg-inline--fa {
+    height: 1.2rem;
+}
+
+.svg path {
+    fill: var(--bg-primary);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -91,14 +101,19 @@ svg {
 }
 
 .nav-link:hover svg {
-    fill: var(--bg-pink);
     transition: 0.3s;
     transform: rotate(360deg);
+}
+
+.nav-link:hover path {
+    fill: var(--bg-pink);
+    transition: 0.3s;
 }
 
 .nav-link:hover .logo-div {
     background: var(--bg-lightblue);
     border-color: var(--bg-pink);
+    transition: 0.3s;
 }
 
 .nav-link:hover {
@@ -156,10 +171,12 @@ a {
         margin: 0 1vw;
         background: none;
     }
-    .nav-link:hover{
+
+    .nav-link:hover {
         background: none;
     }
-    .right  svg{
+
+    .right svg {
         height: 2rem;
         fill: var(--sub-alt-color);
     }
@@ -212,7 +229,7 @@ a {
     }
 
     main {
-        margin: 2% 15vw;
+        margin: 2% 4%;
     }
 
     .logo-span {
@@ -224,7 +241,7 @@ a {
     }
 }
 
-@media only screen and (min-width: 890px) {
+@media only screen and (min-width: 915px) {
 
 
     .nav-link {
@@ -247,6 +264,10 @@ a {
     .logo-span {
         display: block;
     }
+
+    main {
+        margin: 2%  15vw;
+    }
 }
 
 
@@ -264,13 +285,15 @@ h1 {
 .wrapper {
     width: 360px;
 }
-.flex{
+
+.flex {
     display: flex;
     justify-content: space-evenly;
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
 }
+
 a.register {
     color: var(--bg-pink);
     text-decoration: none;
@@ -289,7 +312,7 @@ a.register:hover {
 .card {
     display: flex;
     flex-direction: column;
-    color: var(--bg-pink);
+    color: var(--text-primary);
     box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem;
     height: 360px;
     width: 100%;
@@ -306,26 +329,31 @@ a.register:hover {
     box-shadow: rgba(2, 8, 20, 0.1) 0 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0 0.175em 0.5em;
     transform: translateY(-2px) scale(1.05);
 }
-nav{
+
+nav {
     position: sticky;
     top: 0;
     z-index: 2;
 }
 
-#hugh{
+#hugh {
 }
-ul{
+
+ul {
     padding-left: 20px;
 }
-li{
-    list-style:repeating-conic-gradient(var(--bg-primary),var(--bg-vibrantblue));
+
+li {
+    list-style: repeating-conic-gradient(var(--bg-primary), var(--bg-vibrantblue));
     font-size: 0.9rem;
     margin: 5px;
 }
-h6{
+
+h6 {
     font-size: 1.2rem;
 }
-.svg-group{
+
+.svg-group {
     display: flex;
     justify-content: flex-end;
     gap: 0 10%;
@@ -333,7 +361,8 @@ h6{
     margin-bottom: 5%;
     height: fit-content;
 }
-.div-svg{
+
+.div-svg {
     display: flex;
     align-self: flex-end;
     border: 0px solid;
@@ -343,22 +372,25 @@ h6{
     height: 20px;
     padding: 0 4px 0 4px;
     -webkit-transform: scaleX(-1);
-    transform: scale(-1.5,1.5);
+    transform: scale(-1.5, 1.5);
     transition: 500ms;
     justify-content: space-evenly;
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
 }
-.div-svg:hover{
-    transform: scale(-1.75,1.75);
+
+.div-svg:hover {
+    transform: scale(-1.75, 1.75);
     transition: 500ms;
 }
-.div-svg:hover svg{
+
+.div-svg:hover svg {
     fill: var(--bg-pink);
     transform: rotate(360deg);
 }
-.card{
+
+.card {
     display: flex;
     justify-content: space-between;
 }
