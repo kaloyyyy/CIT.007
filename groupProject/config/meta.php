@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/69c4ef077f.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/groupProject/public/css/scratch.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
 <link rel="stylesheet" href="/groupProject/public/css/style.css"
