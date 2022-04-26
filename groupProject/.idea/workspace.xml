@@ -1,45 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="group project update folder structure">
-      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/contact.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/credentials.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/komi-members/hugh/rates.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/2d &amp; 3d animation/Animation-Slideshow11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/2d &amp; 3d animation/animation-800x400.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/computer aided design/animation-and-game-design-banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/computer aided design/cad-trends-computer-aided-design-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443136.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443149.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/digital art/pexels-polina-tankilevitch-4443151.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/essay &amp; caption writing/pexels-pixabay-267491.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/essay &amp; caption writing/pexels-todoran-bogdan-783737.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/module teaching/pexels-julia-m-cameron-4144221.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/module teaching/pexels-julia-m-cameron-4145196.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/photography/pexels-anton-gofman-1391786.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/photography/pexels-md-iftekhar-uddin-emon-403495.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-amar-preciado-11025644.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-kyle-loftus-2510422.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-kyle-loftus-2510428.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-matheus-bertelli-2608519.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stock/videography/pexels-orlando-allo-8770520.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/browse/newspaper.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/browse/pen.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/jquerytest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/load-test.php" afterDir="false" />
+    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="browse page added">
+      <change afterPath="$PROJECT_DIR$/../commissions/quiz.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../commissions/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/script/chatPopUp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/camera.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/chat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/keyboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/svg/pictures.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/grid.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/image2vector (6)-min.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/nice.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/browse/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/browse/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/browse/grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/pen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/pen.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/reset-password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user_index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/welcome.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +36,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -98,11 +81,13 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
+    <property name="database.data.extractors.current.export.id" value="SQL-Insert-Multirow.sql.groovy" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/hugh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.20547946" />
+    <property name="sql.rename.search.for.storage.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -110,11 +95,11 @@
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\hugh" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\svg" />
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\css" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\browse" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\komi-members" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject" />
-      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public" />
-      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\config" />
     </key>
   </component>
   <component name="RunManager">
@@ -165,7 +150,13 @@
       <workItem from="1650139318388" duration="24391000" />
       <workItem from="1650231033187" duration="6388000" />
       <workItem from="1650284315308" duration="1118000" />
-      <workItem from="1650299680949" duration="8960000" />
+      <workItem from="1650299680949" duration="29973000" />
+      <workItem from="1650406661616" duration="456000" />
+      <workItem from="1650466964970" duration="15000" />
+      <workItem from="1650469835201" duration="8000" />
+      <workItem from="1650773237891" duration="1783000" />
+      <workItem from="1650820943155" duration="29000" />
+      <workItem from="1650943555373" duration="2805000" />
     </task>
     <task id="LOCAL-00001" summary="group project update">
       <created>1649764637917</created>
@@ -188,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650195645601</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="browse page added">
+      <created>1650312613907</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650312613907</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +207,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="group project update" />
     <MESSAGE value="group project update folder structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="group project update folder structure" />
+    <MESSAGE value="browse page added" />
+    <option name="LAST_COMMIT_MESSAGE" value="browse page added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
