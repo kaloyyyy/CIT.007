@@ -3,10 +3,15 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
     exit;
 }
+
+function runMyFunction() {
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,12 +25,46 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <main>
     <div class="flex">
         <div class="wrapper">
-            <div class = "welcome"><h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1></div>
-            <div class = "btn btn-warning"><a href="reset-password.php">Reset Password</a></div>
-            <div class="btn btn-danger"><a href="logout.php">Sign Out</a></div><br>
-            <?php date_default_timezone_set("Asia/Manila");echo date("l jS \of F Y h:i:s A");?>
+            <div class="welcome"><h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></h1></div>
+            <div class="flex user-button">
+                <div class="btn btn-warning"><a href="reset-password.php">Reset Password</a></div>
+                <div class="btn btn-danger"><a href="logout.php">Sign Out</a></div>
+            </div>
+
+            <br>
+            <?php date_default_timezone_set("Asia/Manila"); ?>
         </div>
     </div>
+    <div id="test">
+        <div id="active"><?php $modID = $_GET['mod'];
+            echo $modID ?>
+        </div>
+        <script>
+            let testCount = 0;
+            let modID = $("#active").text();
+            console.log("yes");
+            console.log(modID);
+
+            //chatList.php - list all chats and messages.
+            $("#test").load("chatList.php", {testNewCount: testCount, modID: modID});
+            console.log("log");
+
+        </script>
+    </div>
+
 </main>
 </body>
+<script>
+    //script for polling then calls the chatList.php
+    testCount = 1;
+    (function loop() {
+        setTimeout(function () {
+            // Your logic here
+            testCount = testCount + 1;
+            console.log("log");
+            $("#test").load("chatList.php", {testNewCount: testCount, modID: modID});
+            loop();
+        }, 1500);
+    })();
+</script>
 </html>
