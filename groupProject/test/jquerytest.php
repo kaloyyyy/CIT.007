@@ -22,7 +22,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     testNewCount: testCount
                 });
             });
-        }); 
+        });
     </script>
 </head>
 <body>
@@ -33,19 +33,64 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     $sql = "SELECT * FROM comments LIMIT 2";
     $result = mysqli_query($mysqli, $sql);
     if (mysqli_num_rows($result) > 0) {
-        while($row = mysqli_fetch_assoc($result)){
+        while ($row = mysqli_fetch_assoc($result)) {
             echo "<p>";
-            echo $row['author'];
-            echo "<br>".$row['message']."<br>";
+            echo "from: " . $row['author'];
+            echo "<br>" . $row['message'] . "<br>";
             echo "</p>";
         }
     }
 
+    $modQue = "select * from mods where modID = 1";
+    $modRes = mysqli_query($mysqli, $modQue);
+    $modRow = mysqli_fetch_assoc($modRes);
+    $modUsername = $modRow['modUsername'];
+    $modID = $modRow['modID'];
+
+
+    $userName = htmlspecialchars($_SESSION["username"]);
+    $userQue = "select * from users where userName = '$userName'";
+    $userRes = mysqli_query($mysqli, $userQue);
+    $userRow = mysqli_fetch_assoc($userRes);
+    $userID = $userRow['userID'];
+
+
+    $convoQue = "select * from convo where userID = $userID and modID = $modID";
+    $convoRes = mysqli_query($mysqli, $convoQue);
+    $convoRow = mysqli_fetch_assoc($convoRes);
+    $convoID = $convoRow['convoID'];
+
+    $chatQue = "select * from chat where convID = $convoID";
+    $chatRes = mysqli_query($mysqli, $chatQue);
+    $chatRow = mysqli_fetch_assoc($chatRes);
+
+    if (mysqli_num_rows($chatRes) > 0) {
+        foreach ($chatRes as $chatRow) {
+            if($chatRow['sender'] == 0){
+                echo $userName . "<br>" . $chatRow['chatMessage']."<br>";
+            }else{
+                echo $modUsername . "<br>" . $chatRow['chatMessage']."<br>";
+            }
+        }
+    }
+    echo "hi " . htmlspecialchars($_SESSION["username"]) . "! say hello to " . $modUsername."<br><br>";
     ?>
 
 </div>
 <button>yes</button>
 <main>
 </main>
+<script>
+    let testCount = 2;
+    (function loop(){
+        setTimeout(function() {
+            // Your logic here
+            testCount =testCount + 2;
+            console.log("log");
+            $("#test").load("load-test.php", {testNewCount: testCount});
+            loop();
+        }, 1500);
+    })();
+</script>
 </body>
 </html>
