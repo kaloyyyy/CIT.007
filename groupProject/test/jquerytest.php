@@ -18,7 +18,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             var testCount = 2;
             $("button").click(function () {
                 testCount += 2;
-                $("#test").load("load-test.php", {
+                $("#chat-display").load("load-test.php", {
                     testNewCount: testCount
                 });
             });
@@ -27,7 +27,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 <body>
 <?php include __DIR__ . '/../public/header.php'; ?>
-<div id="test">
+<div id="chat-display">
     <?php
 
     $sql = "SELECT * FROM comments LIMIT 2";
@@ -87,7 +87,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             // Your logic here
             testCount =testCount + 2;
             console.log("log");
-            $("#test").load("load-test.php", {testNewCount: testCount});
+            $("#chat-display").load("load-test.php", {testNewCount: testCount});
             loop();
         }, 1500);
     })();
