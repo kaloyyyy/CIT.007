@@ -26,11 +26,11 @@
     }
     echo "</ul>";
     $modID = $_POST['modID'];
-    $modQue = "select * from mods where modID = $modID";
-    $modRes = mysqli_query($mysqli, $modQue);
-    $modRow = mysqli_fetch_assoc($modRes);
-    $modUsername = $modRow['modUsername'];
     if (is_numeric($modID) == true) {
+        $modQue = "select * from mods where modID = $modID";
+        $modRes = mysqli_query($mysqli, $modQue);
+        $modRow = mysqli_fetch_assoc($modRes);
+        $modUsername = $modRow['modUsername'];
         $convoQue = "select * from convo where userID = $userID and modID = $modID";
         $convoRes = mysqli_query($mysqli, $convoQue);
         $convoRow = mysqli_fetch_assoc($convoRes);
