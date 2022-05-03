@@ -2,40 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="browse page added">
-      <change afterPath="$PROJECT_DIR$/../commissions/quiz.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../commissions/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/script/chatPopUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/camera.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/chat.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/keyboard.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/svg/pictures.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convo-query/chat-query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convo-query/convo-query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convo-query/mod-query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/convo-query/user-query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/chatList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user/mod-login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/grid.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/chatPopUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/chatPopUp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/browse/browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/browse/pen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/svg/pen.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/reset-password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/chat.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/user/user_index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/jquerytest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/jquerytest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/load-test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/load-test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/komisionModel.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/komisionModel.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/komisionModel.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/komisionModel.mwb.bak" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" notifyAboutMissingVendor="false">
+    <pharConfigPath>$PROJECT_DIR$/src/chat/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="composer.json" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -82,10 +85,12 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="database.data.extractors.current.export.id" value="SQL-Insert-Multirow.sql.groovy" />
+    <property name="javascript.nodejs.core.library.configured.version" value="16.14.2" />
+    <property name="javascript.nodejs.core.library.typings.version" value="16.11.33" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/hugh" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
     <property name="settings.editor.splitter.proportion" value="0.20547946" />
     <property name="sql.rename.search.for.storage.occurrences" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -95,20 +100,26 @@
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\hugh" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\chat" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\svg" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\css" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\browse" />
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\komi-members" />
-      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Database Script.chat.sql">
+    <configuration name="chat.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/socketio-chat-mysql-master/chat/chat.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="groupProject" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.chat.sql" />
         <item itemvalue="PHPUnit.groupProject" />
       </list>
     </recent_temporary>
@@ -156,7 +167,12 @@
       <workItem from="1650469835201" duration="8000" />
       <workItem from="1650773237891" duration="1783000" />
       <workItem from="1650820943155" duration="29000" />
-      <workItem from="1650943555373" duration="2805000" />
+      <workItem from="1650943555373" duration="4672000" />
+      <workItem from="1651078257058" duration="8374000" />
+      <workItem from="1651472278757" duration="15589000" />
+      <workItem from="1651519905669" duration="8881000" />
+      <workItem from="1651528941180" duration="7813000" />
+      <workItem from="1651536890521" duration="4903000" />
     </task>
     <task id="LOCAL-00001" summary="group project update">
       <created>1649764637917</created>
@@ -186,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650312613907</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="browse page added">
+      <created>1650952758960</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650952758960</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
