@@ -370,7 +370,7 @@ h6 {
     background: var(--bg-lightblue);
     width: 25px;
     height: 20px;
-    padding: 0 4px 0 4px;
+    padding: 5px;
     -webkit-transform: scaleX(-1);
     transform: scale(-1.5, 1.5);
     transition: 500ms;
@@ -393,4 +393,51 @@ h6 {
 .card {
     display: flex;
     justify-content: space-between;
+}
+.card-svg path{
+    fill: var(--bg-primary);
+    box-sizing: border-box;
+}
+.div-svg:hover path{
+    fill: var(--bg-pink);
+    box-sizing: border-box;
+}
+.card-svg{
+    height: 1rem;
+}
+.username-chat{
+    color: var(--bg-pink);
+    font-size: 1rem;
+    margin: 0;
+}
+.modUsername-chat{
+    color: var(--bg-lightblue);
+    font-size: 1rem;
+    margin:0;
+}
+.user-convo{
+    display: flex;
+}
+.user-button{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+#test{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+.chat-box{
+    background: var(--sub-alt-color);
+    width: 21rem;
+    padding: 4px;
+    border-radius: 4px;
+    min-height: 24rem;
+}
+.current-chat{
+    background: rgba(129, 208, 255, 0.38);
 }
