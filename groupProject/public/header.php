@@ -28,24 +28,34 @@
                     <span class="navMargin none-mobile">about</span></a></div>
             <div class="nav-link"><a href="/groupProject/src/user/login.php">
                     <i class="fa-solid fa-user svg"></i>
-                    <span class="navMargin none-mobile">user</span></a></div>
+                    <span class="navMargin none-mobile">
+                        <?php
+
+                        // Check if the user is logged in, if not then redirect him to login page
+                        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                            echo htmlspecialchars($_SESSION["username"]);
+                        } else {
+                            echo "user";
+                        }
+                        ?>
+                    </span></a></div>
         </div>
     </div>
 </nav>
 <style>
     @keyframes color-change {
-        0%{
-            background-image: linear-gradient(180deg, rgb(255, 122, 144), rgb(255, 70, 70));
+        0% {
+            background-image: linear-gradient(180deg, rgb(250, 184, 196), rgb(250, 184, 196));
             background-size: 200% 200%;
             background-position: 0% 0%;
         }
-        50%{
-            background-image: linear-gradient(180deg, rgb(255, 122, 144), rgb(255, 70, 70));
+        50% {
+            background-image: linear-gradient(180deg, rgb(250, 184, 196), rgb(250, 184, 196));
             background-position: 100% 100%;
             background-size: 200% 200%;
         }
-        100%{
-            background-image: linear-gradient(180deg, rgb(255, 122, 144), rgb(255, 70, 70));
+        100% {
+            background-image: linear-gradient(180deg, rgb(250, 184, 196), rgb(250, 184, 196));
             background-position: 0% 0%;
             background-size: 200% 200%;
         }
@@ -55,8 +65,12 @@
 <script>
     var node = document.getElementById('page');
     var text = node.innerHTML;
-    document.getElementById(text).onmouseover = function() {mouseOver()};
-    document.getElementById(text).onmouseout = function() {mouseOut()};
+    document.getElementById(text).onmouseover = function () {
+        mouseOver()
+    };
+    document.getElementById(text).onmouseout = function () {
+        mouseOut()
+    };
     if (text === "home") {
         bordercurr();
     } else if (text === "menu") {
@@ -70,8 +84,9 @@
     }
 
     function bordercurr() {
-        document.getElementById(text).style.animation = "color-change 5s infinite";
+        document.getElementById(text).style.animation = "color-change 2s infinite";
     }
+
     function mouseOver() {
         document.getElementById(text).style.animation = "";
     }
