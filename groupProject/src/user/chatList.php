@@ -1,30 +1,8 @@
-<div class="user-convo">
+<div class="user-convo" xmlns="http://www.w3.org/1999/html">
     <?php
     session_start();
     $testNewCount = $_POST['testNewCount'];
-    $convoNow = require __DIR__ . '/../convo-query/user-query.php';
-    $convoQue = "select * from convo where userID = $userID";
-    $convoRes = mysqli_query($mysqli, $convoQue);
-    $convoRow = mysqli_fetch_assoc($convoRes);
-    echo "<ul>";
-    foreach ($convoRes as $convoRow) {
-        $convoID = $convoRow['convoID'];
-        echo "<li>";
-        $modID = $convoRow['modID'];
-        $modQue = "select * from mods where modID = $modID";
-        $modRes = mysqli_query($mysqli, $modQue);
-        $modRow = mysqli_fetch_assoc($modRes);
-        $modUsername = $modRow['modUsername'];
-        $modID = $modRow['modID'];
-
-        if($modID == $_POST['modID']){
-            echo "<a href='/groupProject/src/user/user_index.php?mod=$modID' class='current-chat'>" . $modUsername . "</a><br>";
-        }else{
-            echo "<a href='/groupProject/src/user/user_index.php?mod=$modID'>" . $modUsername . "</a><br>";
-        }
-        echo "</li>";
-    }
-    echo "</ul>";
+    $userNow = require __DIR__ . '/../convo-query/user-query.php';
     $modID = $_POST['modID'];
     if (is_numeric($modID) == true) {
         $modQue = "select * from mods where modID = $modID";
@@ -53,12 +31,12 @@
                     } else {
                         if ($chatRow['sender'] == 0) {
                             echo "</li>";
-                            echo "<li>";
-                            echo "-----------" . $chatRow['created_at'] . "-----------";
+                            echo "<li class = 'no-style'>";
+                            echo "----------" . $chatRow['created_at'] . "----------";
                             echo "<h6 class='username-chat'>" . $userName . "</h6>" . $chatRow['chatMessage'] . "<br>";
                         } else {
-                            echo "<li>";
-                            echo "-----------" . $chatRow['created_at'] . "-----------";
+                            echo "<li class = 'no-style'>";
+                            echo "----------" . $chatRow['created_at'] . "----------";
                             echo "<h6 class='modUsername-chat'>" . $modUsername . "</h6>" . $chatRow['chatMessage'] . "<br>";
                         }
                     }
@@ -69,10 +47,11 @@
             $newConvo = "INSERT INTO convo (`convoID`, `userID`, `modID`) VALUES (NULL, $userID, $modID)";
             $mysqli->query($newConvo);
         }
-    }else{
-        echo "<div class='chat-box'>click a moderator to star chat";
+    } else {
+        echo "<div class='chat-box'>click a moderator to start chat";
     }
-    echo "</div></ul>";
-    echo $testNewCount;
     ?>
+    </ul>
+
+</div>
 </div>
