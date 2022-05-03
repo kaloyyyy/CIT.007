@@ -1,4 +1,7 @@
-<?php chdir(dirname(__DIR__)); ?>
+<?php chdir(dirname(__DIR__));
+// Initialize the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
     <section class="basic-grid">
         <div class="card writing">
             <div class="portfolio" id="hugh">
-                <h6 class="user-name">Hugh#0211</h6>
+                <h6 class="user-name">Luna#0211</h6>
                 <h6 class="comm-type portfolio">Academic Writing</h6>
                 <h6 class="comm-rate portfolio">starts at 50 php</h6>
                 <h6 class="credentials portfolio">Credentials:
@@ -29,10 +32,12 @@
             </div>
             <div class="svg-group">
                 <div class="div-svg">
-                    <?php include __DIR__ . "/../../public/svg/pictures.svg" ?>
+                    <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                        <?php include __DIR__ . "/../../public/svg/chat.svg" ?>
+                    <a href="../user/user_index.php?mod=2">
+                        <i class="fa-solid fa-comment-dots card-svg"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -54,10 +59,12 @@
             </div>
             <div class="svg-group">
                 <div class="div-svg">
-                    <?php include __DIR__ . "/../../public/svg/pictures.svg" ?>
+                    <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                    <?php include __DIR__ . "/../../public/svg/chat.svg" ?>
+                    <a href="../user/user_index.php?mod=1">
+                        <i class="fa-solid fa-comment-dots card-svg"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -73,10 +80,12 @@
             </div>
             <div class="svg-group">
                 <div class="div-svg">
-                    <?php include __DIR__ . "/../../public/svg/pictures.svg" ?>
+                    <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                    <?php include __DIR__ . "/../../public/svg/chat.svg" ?>
+                    <a href="../user/user_index.php?mod=3">
+                        <i class="fa-solid fa-comment-dots card-svg"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -88,18 +97,6 @@
         <div class="card">9</div>
     </section>
 </main>
-<button class="open-button" onclick="openForm()">Chat</button>
-<div class="chat-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-        <h1>Chat</h1>
 
-        <label for="msg"><b>Message</b></label>
-        <textarea placeholder="Type message.." name="msg" required></textarea>
-
-        <button type="submit" class="btn">Send</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    </form>
-</div>
-<script src="../../public/script/chatPopUp.js"></script>
 </body>
 </html>
