@@ -424,20 +424,62 @@ h6 {
     justify-content: center;
     justify-items: center;
 }
-#test{
+.chat-display{
     display: flex;
-    align-items: center;
-    align-content: center;
     justify-content: center;
     justify-items: center;
 }
 .chat-box{
     background: var(--sub-alt-color);
     width: 21rem;
-    padding: 4px;
-    border-radius: 4px;
+    padding: 0;
+    border-radius: 8px;
     min-height: 24rem;
 }
 .current-chat{
     background: rgba(129, 208, 255, 0.38);
+}
+.chat-input{
+    background: var(--sub-alt-color);
+    height: 1.5rem;
+    width: 90%;
+    border: none;
+    border-radius: 8px;
+    margin: 2px 0;
+    padding: 10px;
+    color: var(--text-primary);
+}
+input:focus{
+    outline: none;
+}
+.send-section{
+    background: var(--bg-vibrantblue);
+    height: fit-content;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.no-style li{
+    list-style: none;
+}
+.button-send-chat-send-chat{
+    background: none;
+}
+.chat-form{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    justify-items: start;
+}
+
+.div-send-chat{
+    background: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+button:focus {
+    border: none;
 }
