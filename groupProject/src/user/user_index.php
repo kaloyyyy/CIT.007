@@ -76,12 +76,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         console.log("yes");
         console.log(chatID);
         //chatList.php - list all chats and messages.
-        $("#convo-refresh").load("convoList.php", {
+        $("#convo-refresh").load("/groupProject/src/convo-query/convoList.php", {
             testNewCount: testCount,
 
             chatID: chatID
         });
-        $("#chat-refresh").load("chatList.php", {
+        $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
             testNewCount: testCount,
             chatID: chatID,
         });
@@ -93,11 +93,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             }
         });
     </script>
-
 </main>
 </body>
 <script>
-
     //script for polling then calls the chatList.php
     testCount = 1;
     (function loop() {
@@ -105,8 +103,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             // Your logic here
             testCount = testCount + 1;
             console.log("log");
-            $("#convo-refresh").load("convoList.php", {testNewCount: testCount, chatID: chatID});
-            $("#chat-refresh").load("chatList.php", {testNewCount: testCount, chatID: chatID});
+            $("#convo-refresh").load("/groupProject/src/convo-query/convoList.php", {testNewCount: testCount, chatID: chatID});
+            $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {testNewCount: testCount, chatID: chatID});
             loop();
         }, 1500);
     })();
