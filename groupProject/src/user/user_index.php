@@ -1,7 +1,6 @@
 <?php
 // Initialize the session
 session_start();
-
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -31,67 +30,68 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </div>
     </div>
     <div class="chat-display">
-        <ul>
-            <?php
-            $userID = require __DIR__ . '/../convo-query/user-query.php';
-            $convoQue = "select * from convo where userID = $userID";
-            $convoRes = mysqli_query($mysqli, $convoQue);
-            $convoRow = mysqli_fetch_assoc($convoRes);
-            foreach ($convoRes as $convoRow) {
-                $convoID = $convoRow['convoID'];
-                echo "<li>";
-                $modID = $convoRow['modID'];
-                $modQue = "select * from mods where modID = $modID";
-                $modRes = mysqli_query($mysqli, $modQue);
-                $modRow = mysqli_fetch_assoc($modRes);
-                $modUsername = $modRow['modUsername'];
-                if (isset($_GET['mod'])) {
-                    $modID = $modRow['modID'];
-                    if ($modID == $_GET['mod']) {
-                        echo "<a href='/groupProject/src/user/user_index.php?mod=$modID' class='current-chat'>" . $modUsername . "</a><br>";
-                    } else {
-                        echo "<a href='/groupProject/src/user/user_index.php?mod=$modID'>" . $modUsername . "</a><br>";
-                    }
-                } else {
-                    echo "<a href='/groupProject/src/user/user_index.php?mod=$modID'>" . $modUsername . "</a><br>";
-                }
-                echo "</li>";
-            }
-            echo "</ul>";
-            ?>
-            <div class="chat-box">
+        <ul id="convo-refresh">
+
+        </ul>
+        <div class="chat-bg">
+            <div class="chat-bx">
                 <div id="chat-refresh">
-                    <div id="active"><?php $modID = $_GET['mod'];
-                        echo $modID ?>
+                    <div id="active"><?php $chatID = $_GET['chatID'];
+                        echo $chatID ?>
                     </div>
                 </div>
                 <div class="send-section">
                     <div class=" chat-form">
-                        <input type="text" name="chat" class="chat-input" id="chat-message">
+                        <input type="text" name="chat" class="chat-input" id="chat-message" onkeypress="chatEnter()">
                         <button name="send" id="chat-send" onclick="chatClick()"
                                 class="button-send-chat fa-solid fa-circle-chevron-right send-chat">
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div id="trychat">
 
     </div>
     <script>
         let testCount = 0;
-        let modID = $("#active").text();
+        let chatID = $("#active").text();
+
+        function chatEnter() {
+            if (event.keyCode === 13 && event.shiftKey) {
+
+            } else if (event.keyCode === 13) {
+                chatClick();
+            }
+        }
+
         function chatClick() {
             let chat = $('#chat-message').val();
             console.log(chat);
-            $('#trychat').load("/groupProject/src/convo-query/chat-insert.php", {chat: chat, modID: modID});
+            $('#trychat').load("/groupProject/src/convo-query/chat-insert.php", {chat: chat, chatID: chatID});
             $('#chat-message').val("");
+            $('#chat-refresh').scrollIntoView(false);
         }
 
         console.log("yes");
-        console.log(modID);
+        console.log(chatID);
         //chatList.php - list all chats and messages.
-        $("#chat-refresh").load("chatList.php", {testNewCount: testCount, modID: modID});
+        $("#convo-refresh").load("convoList.php", {
+            testNewCount: testCount,
+
+            chatID: chatID
+        });
+        $("#chat-refresh").load("chatList.php", {
+            testNewCount: testCount,
+            chatID: chatID,
+        });
         console.log("log");
+
+        $("#chat-message").keyup(function (event) {
+            if (event.keyCode === 13) {
+                chatClick();
+            }
+        });
     </script>
 
 </main>
@@ -105,7 +105,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             // Your logic here
             testCount = testCount + 1;
             console.log("log");
-            $("#chat-refresh").load("chatList.php", {testNewCount: testCount, modID: modID});
+            $("#convo-refresh").load("convoList.php", {testNewCount: testCount, chatID: chatID});
+            $("#chat-refresh").load("chatList.php", {testNewCount: testCount, chatID: chatID});
             loop();
         }, 1500);
     })();
