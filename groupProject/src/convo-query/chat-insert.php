@@ -1,18 +1,18 @@
 <?php
+require_once __DIR__ . "/../../config/config.php";
 $chatMessage = $_POST['chat'];
 session_start();
-if($_SESSION['mod']==true){
-    $userID = $_POST['userID'];
-    require __DIR__ . '/../convo-query/mod-query.php';
+if($_SESSION['mod']){
     $sentBy = 1;
 }else{
-    $modID = $_POST['modID'];
-    require __DIR__ . '/../convo-query/user-query.php';
     $sentBy = 0;
 }
-
-$convoQue = "select * from convo where userID = $userID and modID = $modID";
-$convoRes = mysqli_query($mysqli, $convoQue);
+$currID = $_SESSION['id'];
+$theirCol = $_SESSION['idFind'];
+$myCol = $_SESSION['myCol'];
+$theirID = $_POST['chatID'];
+$convoQue = "select * from convo where $myCol = $currID and $theirCol = $theirID";
+$convoRes = $mysqli->query($convoQue);
 $convoRow = mysqli_fetch_assoc($convoRes);
 $convoID = $convoRow['convoID'];
 
