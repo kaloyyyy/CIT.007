@@ -1,9 +1,9 @@
 <?php
 // Include config file
 require_once __DIR__ . "/../../config/config.php";
-$modID = $_GET['mod'];
-$modQue = "select * from mods where modID = $modID";
-$modRes = mysqli_query($mysqli, $modQue);
+$modUsername = htmlspecialchars($_SESSION["username"]);
+$modQue = "select * from mods where modUsername = '$modUsername'";
+$modRes = $mysqli->query($modQue);
 $modRow = mysqli_fetch_assoc($modRes);
 $modUsername = $modRow['modUsername'];
 $modID = $modRow['modID'];
