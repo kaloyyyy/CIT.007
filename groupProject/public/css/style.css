@@ -266,7 +266,7 @@ a {
     }
 
     main {
-        margin: 2%  15vw;
+        margin: 2% 15vw;
     }
 }
 
@@ -394,52 +394,73 @@ h6 {
     display: flex;
     justify-content: space-between;
 }
-.card-svg path{
+
+.card-svg path {
     fill: var(--bg-primary);
     box-sizing: border-box;
 }
-.div-svg:hover path{
+
+.div-svg:hover path {
     fill: var(--bg-pink);
     box-sizing: border-box;
 }
-.card-svg{
+
+.card-svg {
     height: 1rem;
 }
-.username-chat{
+
+.username-chat {
     color: var(--bg-pink);
     font-size: 1rem;
     margin: 0;
 }
-.modUsername-chat{
+
+.modUsername-chat {
     color: var(--bg-lightblue);
     font-size: 1rem;
-    margin:0;
+    margin: 0;
 }
-.user-convo{
+
+.user-convo {
     display: flex;
 }
-.user-button{
+
+.user-button {
     align-items: center;
     align-content: center;
     justify-content: center;
     justify-items: center;
 }
-.chat-display{
+
+.chat-display {
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-.chat-box{
+
+.chat-box {
+    display: block;
     background: var(--sub-alt-color);
     width: 21rem;
     padding: 0;
     border-radius: 8px;
-    min-height: 24rem;
+    height: 24rem;
 }
-.current-chat{
-    background: rgba(129, 208, 255, 0.38);
+
+.chat-bx {
+    background: var(--sub-alt-color);
 }
-.chat-input{
+
+#chat-refresh {
+    overflow-y: scroll;
+    background: var(--sub-alt-color);
+}
+
+#current-chat {
+    background: rgba(129, 208, 255, 0.6);
+}
+
+.chat-input {
     background: var(--sub-alt-color);
     height: 1.5rem;
     width: 90%;
@@ -449,22 +470,28 @@ h6 {
     padding: 10px;
     color: var(--text-primary);
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
-.send-section{
+
+.send-section {
+    margin-top: 1rem;
     background: var(--bg-vibrantblue);
     height: fit-content;
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
 }
-.no-style li{
+
+.no-style li {
     list-style: none;
 }
-.button-send-chat-send-chat{
+
+.button-send-chat-send-chat {
     background: none;
 }
-.chat-form{
+
+.chat-form {
     display: flex;
     align-items: center;
     align-content: center;
@@ -472,14 +499,16 @@ input:focus{
     justify-items: start;
 }
 
-.div-send-chat{
+.div-send-chat {
     background: none;
 }
+
 button {
     border: none;
     background-color: transparent;
     outline: none;
 }
+
 button:focus {
     border: none;
 }
