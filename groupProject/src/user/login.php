@@ -13,8 +13,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 require_once __DIR__ . "/../../config/config.php";
 
 // Define variables and initialize with empty values
-$username = $password = "";
+$username = $password = $modKey ="";
 $username_err = $password_err = $login_err = "";
+$modKey_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,11 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-
+    // Check if modKey is empty
+        $modKey = trim($_POST["modKey"]);
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
-        $sql = "SELECT userID, username, password FROM users WHERE username = ?";
+        if ($modKey == 'IamMod'){
+            $sql = "SELECT modID, username, password FROM mods WHERE username = ?";
+        }else{
+            $sql = "SELECT userID, username, password FROM users WHERE username = ?";
+        }
+
 
         if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -61,7 +68,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["mod"] = false;
+                            if ($modKey == 'IamMod'){
+                                $_SESSION["mod"] = true;
+                                $_SESSION["tableAccount"] = 'users';
+                                $_SESSION["idFind"] = 'userID';
+                                $_SESSION["myTable"] = 'mods';
+                                $_SESSION["myCol"] = 'modID';
+                            }else{
+                                $_SESSION["mod"] = false;
+                                $_SESSION["tableAccount"] = 'mods';
+                                $_SESSION["idFind"] = 'modID';
+                                $_SESSION["myTable"] = 'users';
+                                $_SESSION["myCol"] = 'userID';
+                            }
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
@@ -123,6 +142,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" name="password"
                            class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
+                <div class="form-group">
+                    <label>moderator-key</label>
+                    <input type="text" name="modKey" value="you may leave this blank"
+                           class="form-control <?php echo (!empty($modKey_err)) ? 'is-invalid' : ''; ?>">
+                    <span class="invalid-feedback"><?php echo $modKey_err; ?></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Login">

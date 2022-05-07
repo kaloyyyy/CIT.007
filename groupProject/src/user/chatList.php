@@ -3,34 +3,18 @@
     require_once __DIR__ . '/../../config/config.php';
     session_start();
     $testNewCount = $_POST['testNewCount'];
-    $userNow = $_SESSION['id'];
+    $currID = $_SESSION['id'];
+    $tableFind = $_SESSION['tableAccount'];
+    $idFind = $_SESSION['idFind'];
     $userName = $_SESSION['username'];
-    $currID = $_POST['chatID'];
-    /**
-     * @param mixed $chatRow
-     * @param mixed $userName
-     * @param mixed $modUsername
-     * @return void
-     */
-    function printChat(mixed $chatRow, mixed $userName, mixed $modUsername): void {
-        if ($chatRow['sender'] == 0) {
-            echo "</li>";
-            echo "<li class = 'no-style'>";
-            echo "----------" . $chatRow['created_at'] . "----------";
-            echo "<h6 class='username-chat'>" . $userName . "</h6>" . $chatRow['chatMessage'] . "<br>";
-        } else {
-            echo "<li class = 'no-style'>";
-            echo "----------" . $chatRow['created_at'] . "----------";
-            echo "<h6 class='modUsername-chat'>" . $modUsername . "</h6>" . $chatRow['chatMessage'] . "<br>";
-        }
-    }
+    $currentChat = $_POST['chatID'];
 
-    if (is_numeric($currID)) {
-        $modQue = "select * from mods where modID = $currID";
-        $modRes = $mysqli->query($modQue);
-        $modRow = mysqli_fetch_assoc($modRes);
-        $modUsername = $modRow['modUsername'];
-        $convoQue = "select * from convo where userID = $userNow and modID = $currID";
+    if (is_numeric($currentChat)) {
+        $connectQue = "select * from $tableFind where $idFind = $currentChat";
+        $connectRes = $mysqli->query($connectQue);
+        $connectRow = mysqli_fetch_assoc($connectRes);
+        $username = $connectRow['username'];
+        $convoQue = "select * from convo where userID = $currID and modID = $currentChat";
         $convoRes = mysqli_query($mysqli, $convoQue);
         $convoRow = mysqli_fetch_assoc($convoRes);
 
@@ -46,7 +30,16 @@
                     if ($chatRow['sender'] == $previousSender) {
                         echo $chatRow['chatMessage'] . "<br>";
                     } else {
-                        printChat($chatRow, $userName, $modUsername);
+                        if ($chatRow['sender'] == 0) {
+                            echo "</li>";
+                            echo "<li class = 'no-style'>";
+                            echo "----------" . $chatRow['created_at'] . "----------";
+                            echo "<h6 class='username-chat'>" . $userName . "</h6>" . $chatRow['chatMessage'] . "<br>";
+                        } else {
+                            echo "<li class = 'no-style'>";
+                            echo "----------" . $chatRow['created_at'] . "----------";
+                            echo "<h6 class='modUsername-chat'>" . $username . "</h6>" . $chatRow['chatMessage'] . "<br>";
+                        }
                     }
                     $previousSender = $chatRow['sender'];
                 }
