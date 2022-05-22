@@ -2,18 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="browse page added">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/niklab.ff2uwQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_18_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.user.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Austria_Batoy_Dilag_Final.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/meta.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_chat.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_comm.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_convo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_mods.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/scratch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/camera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/chat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/keyboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/komi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/pen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/pictures.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/newspaper.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/chat-insert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/chatList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/comm-insert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/commList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/convoList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/jquerytest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/load-test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/components/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/Proflie.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoLink.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,26 +126,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "last_opened_file_path": "C:/Users/kaloy/Documents/GitHub/CIT.007/groupProject/db",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "sql.rename.search.for.storage.occurrences": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloy/Documents/GitHub/CIT.007/groupProject/db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src" />
@@ -102,7 +160,7 @@
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\mod" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.chat.sql">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="chat.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/src/socketio-chat-mysql-master/chat/chat.sql" />
       <script-mode>FILE</script-mode>
@@ -112,16 +170,50 @@
       <TestRunner directory="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="run" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Database Script.chat.sql" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.run" />
+      <item itemvalue="npm.start" />
       <item itemvalue="PHPUnit.groupProject" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.run" />
+        <item itemvalue="npm.start" />
         <item itemvalue="PHPUnit.groupProject" />
         <item itemvalue="Database Script.chat.sql" />
-        <item itemvalue="Database Script.chat.sql" />
-        <item itemvalue="PHPUnit.groupProject" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +274,13 @@
       <workItem from="1652995045967" duration="2558000" />
       <workItem from="1653053990736" duration="174000" />
       <workItem from="1653211014930" duration="238000" />
+      <workItem from="1659377735153" duration="1837000" />
+      <workItem from="1659397618455" duration="472000" />
+      <workItem from="1659399144911" duration="10143000" />
+      <workItem from="1659466824710" duration="6926000" />
+      <workItem from="1659580937820" duration="1092000" />
+      <workItem from="1660002868557" duration="3273000" />
+      <workItem from="1660094821306" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="group project update">
       <created>1649764637917</created>
