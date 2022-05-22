@@ -130,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="reset" class="btn btn-secondary ml-2" value="Reset">
                 </div>
                 <p>Already have an account? <a href="login.php" class="register">Login here</a>.</p>
-                <p>want to be a mod? contact us now</p>
+                <p>want to be a komi-mod? contact us now</p>
             </form>
         </div>
     </div>
