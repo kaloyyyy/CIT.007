@@ -13,3 +13,4 @@
 <link rel="stylesheet" href="/groupProject/public/css/style.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="icon" type="image/x-icon" href="/groupProject/public/svg/komi.svg">
