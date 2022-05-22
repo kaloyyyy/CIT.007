@@ -2,55 +2,77 @@
     <?php
     require_once __DIR__ . '/../../config/config.php';
     session_start();
+    /*
+    I am a mod
+    $_SESSION["mod"] = true;
+    $_SESSION["tableAccount"] = 'users';
+    $_SESSION["idFind"] = 'userID';
+    $_SESSION["myTable"] = 'mods';
+    $_SESSION["myCol"] = 'modID';
+    */
     $testNewCount = $_POST['testNewCount'];
     $currID = $_SESSION['id'];
+    $myTable = $_SESSION['myTable'];
+    $myCol = $_SESSION['myCol'];
     $tableFind = $_SESSION['tableAccount'];
     $idFind = $_SESSION['idFind'];
-    $userName = $_SESSION['username'];
+    $userNameNow = $_SESSION['username'];
     $currentChat = $_POST['chatID'];
+
+    function timedChat(mixed $chatRow, mixed $clientUser, mixed $modUser): void {
+        echo "</li>";
+        echo "<li class = 'no-style'>";
+        echo "<center><span class='timestamp'>─────────────" . $chatRow['created_at'] . "─────────────</span></center>";
+        if ($chatRow['sender'] == 0) {
+            echo "<h6 class='username-chat name-chat'>" . $clientUser . "</h6>" . $chatRow['message'] . "<br>";
+        } else {
+            echo "<h6 class='modUsername-chat name-chat'>" . $modUser . "</h6>" . $chatRow['message'] . "<br>";
+        }
+    }
 
     if (is_numeric($currentChat)) {
         $connectQue = "select * from $tableFind where $idFind = $currentChat";
         $connectRes = $mysqli->query($connectQue);
         $connectRow = mysqli_fetch_assoc($connectRes);
-        $username = $connectRow['username'];
-        $convoQue = "select * from convo where userID = $currID and modID = $currentChat";
-        $convoRes = mysqli_query($mysqli, $convoQue);
+        $connectName = $connectRow['username'];
+        if ($_SESSION['mod']) {
+            $clientUser = $connectName;
+            $modUser = $userNameNow . "  (you)";
+        } else {
+            $modUser = $connectName;
+            $clientUser = $userNameNow . "  (you)";
+        }
+        $convoQue = "select * from convo where $myCol = $currID and $idFind = $currentChat";
+        $convoRes = $mysqli->query($convoQue);
         $convoRow = mysqli_fetch_assoc($convoRes);
-
         if (mysqli_num_rows($convoRes) > 0) {
             $convoID = $convoRow['convoID'];
             $chatQue = "select * from chat where convID = $convoID";
             $chatRes = mysqli_query($mysqli, $chatQue);
             $chatRow = mysqli_fetch_assoc($chatRes);
             $previousSender = null;
-            echo "<div class='chat-box'><ul>";
+            echo "<div class='chat-box-block'><ul>";
             if (mysqli_num_rows($chatRes) > 0) {
+                $consecutiveChat = 0;
                 foreach ($chatRes as $chatRow) {
-                    if ($chatRow['sender'] == $previousSender) {
-                        echo $chatRow['chatMessage'] . "<br>";
+                    if ($consecutiveChat == 5) {
+                        $consecutiveChat = 0;
+                        timedChat($chatRow, $clientUser, $modUser);
+                    } else if ($chatRow['sender'] == $previousSender) {
+                        echo $chatRow['message'] . "<br>";
+                        $consecutiveChat = $consecutiveChat + 1;
                     } else {
-                        if ($chatRow['sender'] == 0) {
-                            echo "</li>";
-                            echo "<li class = 'no-style'>";
-                            echo "----------" . $chatRow['created_at'] . "----------";
-                            echo "<h6 class='username-chat'>" . $userName . "</h6>" . $chatRow['chatMessage'] . "<br>";
-                        } else {
-                            echo "<li class = 'no-style'>";
-                            echo "----------" . $chatRow['created_at'] . "----------";
-                            echo "<h6 class='modUsername-chat'>" . $username . "</h6>" . $chatRow['chatMessage'] . "<br>";
-                        }
+                        $consecutiveChat = 0;
+                        timedChat($chatRow, $clientUser, $modUser);
                     }
                     $previousSender = $chatRow['sender'];
                 }
             }
-        } else {
-            $newConvo = "INSERT INTO convo (`convoID`, `userID`, `modID`) VALUES (NULL, $userID, $modID)";
-            $mysqli->query($newConvo);
         }
     } else {
-        echo "<div class='chat-box'>click a moderator to start chat</div>";
+        echo "<div class='chat-box'>select a conversation</div>";
     }
+    $mysqli->close();
     ?>
     </ul>
 </div>
