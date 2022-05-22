@@ -16,6 +16,6 @@ $convoRes = $mysqli->query($convoQue);
 $convoRow = mysqli_fetch_assoc($convoRes);
 $convoID = $convoRow['convoID'];
 
-$chatInsert = "INSERT INTO komision.chat (created_at, sender, chatMessage, convID)
+$chatInsert = "INSERT INTO komision.chat (created_at, sender, message, convID)
 VALUES (DEFAULT, $sentBy, '$chatMessage', '$convoID');";
 $mysqli->query($chatInsert);
