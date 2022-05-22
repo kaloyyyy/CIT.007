@@ -1,6 +1,9 @@
 <?php
 // Initialize the session
 session_start();
+
+chdir(dirname(__DIR__));
+
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -26,7 +29,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
 
             <br>
-            <?php date_default_timezone_set("Asia/Manila"); ?>
         </div>
     </div>
     <div class="chat-display">
@@ -49,64 +51,134 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </div>
             </div>
         </div>
-    </div>
-    <div id="trychat">
+        <div class='div-commission'>
+            <div <?php if (!$_SESSION['mod']) {
+                echo "class ='comm-fit' id = 'commissions'";
+            } else {
+                echo "class ='comm-limit' id = 'commissions'";
+            } ?>>
 
+            </div>
+            <?php
+            if ($_SESSION['mod']) {
+                if (isset($_GET["chatID"])) {
+                    $currentChat = htmlspecialchars($_GET["chatID"]);
+                    require_once __DIR__ . "/../../config/config.php";
+                    $connectQue = "select * from users where userID = $currentChat";
+                    $connectRes = $mysqli->query($connectQue);
+                    $connectRow = mysqli_fetch_assoc($connectRes);
+                    $connectName = $connectRow['username'];
+
+                    echo "<div id='addComm'>
+                            new commission for <span class='pink' >$connectName</span><br>
+                            enter description <br>
+                            <textarea type='text' name='description' id='commDesc' cols='40' rows='5'></textarea> <br>
+                            enter price <br>
+                            <input type='number' name='price' id='commPrice'><br>
+                            <div id='sendComm'  onclick='commClick()'>
+                            submit
+                            <button name='commSend' id='comm-send' class='button-send-chat fa-solid fa-circle-chevron-right send-comm'>
+                            </div>
+                        </div>";
+                    $mysqli->close();
+                } else {
+                    echo "<div id='addComm' class='flex'>
+                         <div>select a client to add commissions</div>
+                         ";
+                    echo " </div > ";
+                }
+            }
+            ?>
+        </div>
+
+    </div>
+
+    <div id="trychat">
     </div>
     <script>
         let testCount = 0;
         let chatID = $("#active").text();
-
-        function chatEnter() {
-            if (event.keyCode === 13 && event.shiftKey) {
-
-            } else if (event.keyCode === 13) {
-                chatClick();
-            }
-        }
-
-        function chatClick() {
-            let chat = $('#chat-message').val();
-            console.log(chat);
-            $('#trychat').load("/groupProject/src/convo-query/chat-insert.php", {chat: chat, chatID: chatID});
-            $('#chat-message').val("");
-            $('#chat-refresh').scrollIntoView(false);
-        }
-
-        console.log("yes");
-        console.log(chatID);
-        //chatList.php - list all chats and messages.
         $("#convo-refresh").load("/groupProject/src/convo-query/convoList.php", {
             testNewCount: testCount,
-
             chatID: chatID
         });
-        $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
-            testNewCount: testCount,
-            chatID: chatID,
-        });
-        console.log("log");
+        $("#commissions").load("/groupProject/src/convo-query/commList.php");
 
-        $("#chat-message").keyup(function (event) {
-            if (event.keyCode === 13) {
-                chatClick();
-            }
-        });
+        function loadText() {
+            $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
+                testNewCount: testCount,
+                chatID: chatID
+            }).scrollTop(10000000);
+        }
+
+
     </script>
 </main>
 </body>
 <script>
-    //script for polling then calls the chatList.php
     testCount = 1;
+
+    $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
+        testNewCount: testCount,
+        chatID: chatID
+    });
+    $("#chat-message").keypress(function (event) {
+        if (event.keyCode === 13) {
+            if ($("#chat-message").val === '') {
+
+            } else {
+                chatClick();
+            }
+        }
+    });
+
+    function chatClick() {
+        let chat = $('#chat-message').val();
+        if (chat.trim().length !== 0) {
+            console.log(chat);
+            $('#trychat').load("/groupProject/src/convo-query/chat-insert.php", {chat: chat, chatID: chatID});
+            $('#chat-message').val("");
+            loadText();
+            setTimeout(loadText, 300);
+        }
+    }
+
+    function commClick() {
+        let commDesc = $('#commDesc').val();
+        let price = $('#commPrice').val();
+        console.log("commclick");
+        $('#trychat').load("/groupProject/src/convo-query/comm-insert.php",{ commDesc: commDesc, price: price, chatID: chatID});
+        $('#commDesc').val("");
+        $('#commPrice').val("");
+        $("#commissions").load("/groupProject/src/convo-query/commList.php");
+        loadText();
+        setTimeout(loadText, 300);
+    }
+
+    function loadText() {
+        $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
+            testNewCount: testCount,
+            chatID: chatID
+        }).scrollTop(10000000);
+    }
+
+    setTimeout(loadText, 300);
+
     (function loop() {
         setTimeout(function () {
-            // Your logic here
             testCount = testCount + 1;
             console.log("log");
-            $("#convo-refresh").load("/groupProject/src/convo-query/convoList.php", {testNewCount: testCount, chatID: chatID});
-            $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {testNewCount: testCount, chatID: chatID});
+            $("#convo-refresh").load("/groupProject/src/convo-query/convoList.php", {
+                testNewCount: testCount,
+                chatID: chatID
+            });
+            $("#chat-refresh").load("/groupProject/src/convo-query/chatList.php", {
+                testNewCount: testCount,
+                chatID: chatID
+            });
+            $("#commissions").load("/groupProject/src/convo-query/commList.php");
             loop();
-        }, 1500);
+        }, 1000);
     })();
 </script>
 </html>
