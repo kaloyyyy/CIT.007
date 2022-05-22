@@ -14,26 +14,13 @@
     </style>
 </head>
 <body>
+
 <?php
-function generate() {
-    $rng = (rand(0, 3));
-    if ($rng == 0) {
-        $input = (rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9) . rand(0, 9));
-    } else if ($rng == 1) {
-        $input = (rand(0, 9999) . '-' . rand(0, 9999) . '-' . rand(0, 9999) . '-' . rand(0, 9999));
-    } else if ($rng == 2) {
-        $input = (rand(0, 9999) . ' - ' . rand(0, 9999) . ' - ' . rand(0, 9999) . ' - ' . rand(0, 9999));
-    } else {
-        $input = (rand(0, 9999) . ' ' . rand(0, 9999) . ' ' . rand(0, 9999) . ' ' . rand(0, 9999));
-    }
-    return $input;
-}
 
 function form($input) {
     echo "credit card: ";
     echo "<form method='post'>
                 <input type ='text' name='number' value='$input'>
-                <input id='button' type='submit' name='generate' value='generate'>
                 <input id='button' type='submit' name='verify' value='verify'>
             </form>";
 }
