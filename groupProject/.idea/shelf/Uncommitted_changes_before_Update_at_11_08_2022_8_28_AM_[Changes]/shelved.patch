@@ -1,0 +1,1137 @@
+Index: client/src/index.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body {\r\n  margin: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\r\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\r\n    sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\r\n    monospace;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/src/index.css b/client/src/index.css
+--- a/client/src/index.css	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/src/index.css	(date 1660097241892)
+@@ -1,13 +1,696 @@
++:root {
++  font-family: 'Ubuntu Mono', monospace;
++  font-size: 16px;
++  --bg-primary: #324459;
++  --bg-vibrantblue: #2F62A2;
++  --text-primary: #fffaf8;
++  --bg-pink: #FF7A90;
++  --bg-lightblue: #4a768d;
++  --sub-alt-color: #263041;
++  --error-color: #f04040;;
++}
++
+ body {
+   margin: 0;
+-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+-    sans-serif;
+-  -webkit-font-smoothing: antialiased;
+-  -moz-osx-font-smoothing: grayscale;
++  padding: 0;
++  background: var(--bg-primary);
++  color: var(--text-primary);
++  text-decoration: none;
++  font-family: 'Ubuntu Mono', monospace;
+ }
++
++::-webkit-scrollbar {
++  width: 0.5rem;
++}
++
++::-webkit-scrollbar-track {
++  background: none;
++}
++
++::-webkit-scrollbar-thumb {
++  background: var(--bg-lightblue);
++  border-radius: 8px;
++}
++
++nav {
++  background: #2F62A2;
++  text-align: center;
++}
++
++.cursive {
++  font-family: Grape Nuts, cursive;
++  padding: 0;
++}
++
++.komi-logo {
++  min-height: 2rem;
++}
++
++.logo-div {
++  padding: 1px;
++  border: var(--bg-primary) 3px solid;
++  background: var(--bg-pink);
++  border-radius: 100%;
++}
++
++.logo-div svg {
++  position: relative;
++  bottom: -2px;
++}
++
++svg {
++  fill: var(--bg-primary);
++  height: 1rem;
++  transition: 0.3s;
++  transform: rotate(0deg);
++}
++
++.svg-inline--fa {
++  height: 1.2rem;
++}
++
++.svg path {
++  fill: var(--bg-primary);
++}
++
++.navbar {
++  display: flex;
++  justify-content: space-between;
++  padding: 0 5%;
++}
++
++.navComp {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++}
++
++.nav-link a {
++  padding: 0;
++  display: flex;
++  align-items: center;
++  justify-content: center;
++  gap: 0.5rem;
++}
++
++.nav-link {
++  background: var(--bg-pink);
++  border-radius: 0.33rem;
++  text-align: center;
++  transition: 0.3s;
++}
++
++.nav-link:hover svg {
++  transition: 0.3s;
++  transform: rotate(360deg);
++}
++
++.nav-link:hover path {
++  fill: var(--bg-pink);
++  transition: 0.3s;
++}
++
++.nav-link:hover .logo-div {
++  background: var(--bg-lightblue);
++  border-color: var(--bg-pink);
++  transition: 0.3s;
++}
++
++.nav-link:hover {
++  background: var(--bg-lightblue);
++  transition: 0.3s;
++}
++
++.tagline {
++  background: transparent;
++  max-width: 100px;
++  margin-left: 0;
++}
++
++.tagline:hover {
++  background: transparent;
++}
++
++a:hover {
++  text-decoration: none;
++  color: var(--text-primary);
++}
++
++a:visited:hover {
++  text-decoration: none;
++  color: var(--text-primary);
++}
++
++a:visited {
++  text-decoration: none;
++  color: var(--text-primary);
++}
++
++a {
++  text-decoration: none;
++  color: var(--text-primary);
++  padding: 0;
++  margin: 0;
++}
++
++@media only screen and (max-width: 600px) {
++  :root {
++    font-size: 12px;
++  }
++
++  h1 {
++    font-size: 1rem;
++  }
++
++  .none-mobile {
++    display: none;
++  }
++
++  .nav-link {
++    padding: 0.1rem;
++    margin: 0 1vw;
++    background: none;
++  }
++
++  .nav-link:hover {
++    background: none;
++  }
++
++  .right svg {
++    height: 2rem;
++    fill: var(--sub-alt-color);
++  }
++
++  .logo-name {
++    padding: 0;
++    background: none;
++  }
+ 
+-code {
+-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+-    monospace;
+-}
++  .logo-name:hover {
++    background: none;
++  }
++
++
++  main {
++    margin: 2% 10%;
++    font-size: 0.5rem;
++  }
++
++  .komi-logo {
++    height: 2rem;
++  }
++}
++
++@media only screen and (min-width: 600px) {
++
++
++  .nav-link {
++    min-width: 8vw;
++    height: fit-content;
++    margin: 0.25rem 1.6vw;
++    font-size: 1.6rem;
++    padding: 0.25rem;
++  }
++
++  .tagline {
++    display: none;
++  }
++
++  .logo-name {
++    font-size: 2rem;
++    min-width: 10vw;
++    padding: 1px 0.25rem;
++    margin: 2px;
++    background: none;
++  }
++
++  .logo-name:hover {
++    background: none;
++  }
++
++  main {
++    margin: 2% 4%;
++  }
++
++  .logo-span {
++    display: none;
++  }
++
++  h1 {
++    font-size: 1rem;
++  }
++}
++
++@media only screen and (min-width: 1020px) {
++
++
++  .nav-link {
++    min-width: 8vw;
++  }
++
++  .tagline {
++    display: flex;
++    font-size: 1rem;
++  }
++
++  .logo-name {
++    background: var(--bg-pink);
++  }
++
++  .logo-name:hover {
++    background: var(--bg-lightblue);
++  }
++
++  .logo-span {
++    display: block;
++  }
++
++  main {
++    margin: 2% 15vw;
++  }
++}
++
++
++main {
++  justify-content: space-evenly;
++  justify-items: center;
++  align-content: space-evenly;
++  align-items: center;
++}
++
++h1 {
++  text-align: justify;
++}
++
++.wrapper {
++  width: 360px;
++}
++
++.flex {
++  display: flex;
++  justify-content: space-evenly;
++  justify-items: center;
++  align-content: space-evenly;
++  align-items: center;
++}
++
++a.register {
++  color: var(--bg-pink);
++  text-decoration: none;
++  background-color: transparent;
++}
++
++a.register:hover {
++  color: var(--bg-vibrantblue);
++  text-decoration: underline
++}
++
++.btn:hover a {
++  color: var(--bg-lightblue);
++}
++
++.card {
++  display: flex;
++  flex-direction: column;
++  color: var(--text-primary);
++  box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem;
++  height: 360px;
++  width: 100%;
++  max-width: 250px;
++  border-radius: 4px;
++  transition: all 500ms;
++  padding: 10px;
++  overflow: hidden;
++  background-size: cover;
++  background: var(--sub-alt-color) no-repeat center;
++}
++
++.card:hover {
++  box-shadow: rgba(2, 8, 20, 0.1) 0 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0 0.175em 0.5em;
++  transform: translateY(-2px) scale(1.05);
++}
++
++nav {
++  position: sticky;
++  top: 0;
++  z-index: 2;
++}
++
++#hugh {
++}
++
++ul {
++  padding-left: 20px;
++}
++
++.credentials li {
++  list-style: repeating-conic-gradient(var(--bg-primary), var(--bg-vibrantblue));
++  font-size: 0.9rem;
++  margin: 5px;
++}
++
++h6 {
++  font-size: 1.2rem;
++}
++
++.svg-group {
++  display: flex;
++  justify-content: flex-end;
++  gap: 0 10%;
++  margin-right: 5%;
++  margin-bottom: 5%;
++  height: fit-content;
++}
++
++.div-svg {
++  display: flex;
++  align-self: flex-end;
++  border: 0px solid;
++  border-radius: 50%;
++  background: var(--bg-lightblue);
++  width: 25px;
++  height: 20px;
++  padding: 5px;
++  -webkit-transform: scaleX(-1);
++  transform: scale(-1.5, 1.5);
++  transition: 500ms;
++  justify-content: space-evenly;
++  justify-items: center;
++  align-content: space-evenly;
++  align-items: center;
++}
++
++.div-svg:hover {
++  transform: scale(-1.75, 1.75);
++  transition: 500ms;
++}
++
++.div-svg:hover svg {
++  fill: var(--bg-pink);
++  transform: rotate(360deg);
++}
++
++.card {
++  display: flex;
++  justify-content: space-between;
++}
++
++.card-svg path {
++  fill: var(--bg-primary);
++  box-sizing: border-box;
++}
++
++.div-svg:hover path {
++  fill: var(--bg-pink);
++  box-sizing: border-box;
++}
++
++.card-svg {
++  height: 1rem;
++}
++
++.username-chat {
++  color: var(--bg-pink);
++  font-size: 1rem;
++  margin: 0;
++}
++.div-commission a{
++  color: var(--bg-pink);
++  transition: 200ms;
++}
++.div-commission a:hover{
++  color: var(--text-primary);
++  transition: 200ms;
++}
++.modUsername-chat {
++  color: var(--bg-lightblue);
++  font-size: 1rem;
++  margin: 0;
++}
++.pink{
++  color: var(--bg-pink);
++}
++.user-convo {
++  display: flex;
++}
++
++.user-button {
++  align-items: center;
++  align-content: center;
++  justify-content: center;
++  justify-items: center;
++}
++
++.chat-display {
++  display: flex;
++  justify-content: center;
++  justify-items: center;
++  min-height: 24rem;
++}
++
++.chat-box {
++  display: flex;
++  background: var(--sub-alt-color);
++  width: 21rem;
++  padding: 0;
++  height: 25rem;
++  border-top-right-radius: 4px;
++  align-items: center;
++  align-content: center;
++  justify-content: center;
++  justify-items: center;
++}
++.chat-box-block li{
++  list-style: none;
++  font-size: 0.9rem;
++}
++.name-chat{
++  font-size: 0.9rem;
++}
++.chat-box-block {
++  display: block;
++  background: var(--sub-alt-color);
++  width: 21rem;
++  padding: 0;
++  height: 25rem;
++  border-top-right-radius: 4px;
++}
++.chat-box-block ul{
++  padding-left: 10px;
++}
++.chat-bx {
++  background: var(--sub-alt-color);
++  border-top-right-radius: 4px;
++  border-top: 2px var(--bg-vibrantblue) solid;
++}
++
++#chat-refresh {
++  overflow-y: scroll;
++  background: var(--sub-alt-color);
++  border-top-right-radius: 4px;
++}
++
++#chat-refresh::-webkit-scrollbar {
++  width: 0.25rem;
++}
++
++.user-convo {
++  display: flex;
++  align-items: center;
++  align-content: center;
++  justify-content: center;
++  justify-items: center;
++}
++
++#current-chat {
++  background: rgba(129, 208, 255, 0.6);
++}
++
++.chat-input {
++  background: var(--sub-alt-color);
++  height: 1.5rem;
++  width: 90%;
++  border: none;
++  border-radius: 8px;
++  margin: 2px 0;
++  padding: 10px;
++  color: var(--text-primary);
++}
++
++input:focus {
++  outline: none;
++}
++textarea:focus{
++  outline: none;
++}
++.send-section {
++  margin-top: 1rem;
++  background: var(--bg-vibrantblue);
++  border-bottom-left-radius: 4px;
++  border-bottom-right-radius: 4px;
++}
++
++.no-style li {
++  list-style: none;
++}
++
++.button-send-chat-send-chat {
++  background: none;
++}
++
++.chat-form {
++  display: flex;
++  align-items: center;
++  align-content: center;
++  justify-content: space-evenly;
++  justify-items: start;
++  border-bottom-right-radius: 4px;
++  border-bottom-left-radius: 4px;
++  height: 32px;
++}
++
++.div-send-chat {
++  background: none;
++}
++
++button {
++  border: none;
++  background-color: transparent;
++  outline: none;
++}
++
++button:focus {
++  border: none;
++}
++
++#addComm {
++  background: var(--bg-primary);
++  border-radius: 4px;
++  margin: 12px 4px 4px;
++  padding: 4px;
++  width: 19.5rem;
++  min-height: 9rem;
++}
++#commDesc {
++  padding: 4px;
++  height: 5rem;
++  width: 20em;
++  overflow-y: scroll;
++  resize:none;
++  border:none;
++  border-radius: 4px;
++  background: var(--sub-alt-color);
++  color: var(--text-primary);
++  font-size: 0.9rem;
++}
++#commDesc::-webkit-scrollbar{
++  width: 0.25rem;
++}
++
++#commPrice{
++  width: 150px;
++  background: var(--sub-alt-color);
++  color: var(--text-primary);
++  padding: 4px;
++  font-size: 0.9rem;
++  outline: none;
++  border:none;
++  height: 2rem;
++}
++.send-chat path {
++  fill: var(--bg-pink);
++  transition: 250ms;
++}
++.send-chat:hover path {
++  fill: var(--sub-alt-color);
++  transition: 250ms;
++}
++.send-comm path {
++  fill: var(--bg-pink);
++  transition: 250ms;
++}
++#sendComm:hover .send-comm path {
++  fill: var(--sub-alt-color);
++  transition: 250ms;
++}
++.send-comm {
++  margin: 4px;
++}
++#sendComm{
++  background: var(--bg-vibrantblue);
++  margin-top: 4px;
++  padding: 0 8px;
++  width: fit-content;
++  border-radius: 8px;
++  display: flex;
++  justify-content: center;
++  justify-items: center;
++  align-content: center;
++  align-items: center;
++  transition: 250ms;
++}
++#sendComm:hover{
++  background: var(--bg-pink);
++  transition: 250ms;
++}
++.commList {
++  background: var(--bg-primary);
++  margin: 4px;
++  border-radius: 4px;
++  padding: 4px;
++  width: 19.5rem;
++  font-size: 0.9rem;
++}
++
++.div-commission {
++  width: 21rem;
++  background: var(--sub-alt-color);
++  margin-left: 16px;
++  border-radius: 4px;
++  padding: 4px;
++}
++
++#convo-refresh {
++  min-width: fit-content;
++  width: 6rem;
++  border-top: 2px var(--bg-vibrantblue) solid;
++  border-left: 2px var(--bg-vibrantblue) solid;
++  border-bottom: 2px var(--bg-vibrantblue) solid;
++  padding: 0;
++  overflow-y: scroll;
++  border-bottom-left-radius: 4px;
++  border-top-left-radius: 4px;
++  margin-bottom: 16px;
++}
++
++#convo-refresh::-webkit-scrollbar {
++  width: 0.2rem;
++}
++
++#convo-refresh li {
++  list-style: none;
++  margin: 4px 4px 4px 1px;
++}
++
++#commissions  {
++  overflow-y: scroll;
++  border-radius: 4px;
++}
++.comm-fit{
++  max-height: 27rem;
++}
++.comm-limit  {
++  height: 14rem;
++  padding: 0;
++}
++.no-style li{
++  list-style: none;
++}
++#commissions::-webkit-scrollbar {
++  width: 0.25rem;
++}
++.timestamp{
++  color: #5a6268;
++  text-align: center;
++  font-size: 0.8rem;
++}
+\ No newline at end of file
+Index: client/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\nimport \"./App.css\";\r\nclass App extends Component {\r\n  render() {\r\n    return (\r\n        <div className=\"App\">\r\n          <h1>arosintsriotenarstneirstyu;lqwfpioerasnt</h1>\r\n        </div>\r\n    );\r\n  }\r\n}\r\nexport default App;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/src/App.js b/client/src/App.js
+--- a/client/src/App.js	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/src/App.js	(date 1660097261229)
+@@ -1,10 +1,11 @@
+ import React, { Component } from "react";
+ import "./App.css";
++import Navbar from "./components/layout/Navbar";
+ class App extends Component {
+   render() {
+     return (
+         <div className="App">
+-          <h1>arosintsriotenarstneirstyu;lqwfpioerasnt</h1>
++          <Navbar/>
+         </div>
+     );
+   }
+Index: client/public/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <link rel=\"icon\" href=\"%PUBLIC_URL%/favicon.ico\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    <meta name=\"theme-color\" content=\"#000000\" />\r\n    <meta\r\n      name=\"description\"\r\n      content=\"Web site created using create-react-app\"\r\n    />\r\n    <link rel=\"apple-touch-icon\" href=\"%PUBLIC_URL%/logo192.png\" />\r\n    <!--\r\n      manifest.json provides metadata used when your web app is installed on a\r\n      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/\r\n    -->\r\n    <link rel=\"manifest\" href=\"%PUBLIC_URL%/manifest.json\" />\r\n    <!--\r\n      Notice the use of %PUBLIC_URL% in the tags above.\r\n      It will be replaced with the URL of the `public` folder during the build.\r\n      Only files inside the `public` folder can be referenced from the HTML.\r\n\r\n      Unlike \"/favicon.ico\" or \"favicon.ico\", \"%PUBLIC_URL%/favicon.ico\" will\r\n      work correctly both with client-side routing and a non-root public URL.\r\n      Learn how to configure a non-root public URL by running `npm run build`.\r\n    -->\r\n    <title>React App</title>\r\n  </head>\r\n  <body>\r\n    <noscript>You need to enable JavaScript to run this app.</noscript>\r\n    <div id=\"root\"></div>\r\n    <!--\r\n      This HTML file is a template.\r\n      If you open it directly in the browser, you will see an empty page.\r\n\r\n      You can add webfonts, meta tags, or analytics to this file.\r\n      The build step will place the bundled scripts into the <body> tag.\r\n\r\n      To begin the development, run `npm start` or `yarn start`.\r\n      To create a production bundle, use `npm run build` or `yarn build`.\r\n    -->\r\n  </body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/public/index.html b/client/public/index.html
+--- a/client/public/index.html	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/public/index.html	(date 1660098820957)
+@@ -5,10 +5,13 @@
+     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <meta name="theme-color" content="#000000" />
++    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
++    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+     <meta
+       name="description"
+       content="Web site created using create-react-app"
+     />
++    <link rel="stylesheet" href="style.css">
+     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+     <!--
+       manifest.json provides metadata used when your web app is installed on a
+Index: client/package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"client\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@testing-library/jest-dom\": \"^5.16.5\",\r\n    \"@testing-library/react\": \"^13.3.0\",\r\n    \"@testing-library/user-event\": \"^13.5.0\",\r\n    \"axios\": \"^0.27.2\",\r\n    \"classnames\": \"^2.3.1\",\r\n    \"cra-template\": \"1.2.0\",\r\n    \"jwt-decode\": \"^3.1.2\",\r\n    \"react\": \"^18.2.0\",\r\n    \"react-dom\": \"^18.2.0\",\r\n    \"react-redux\": \"^8.0.2\",\r\n    \"react-router-dom\": \"^6.3.0\",\r\n    \"react-scripts\": \"5.0.1\",\r\n    \"redux\": \"^4.2.0\",\r\n    \"redux-thunk\": \"^2.4.1\",\r\n    \"web-vitals\": \"^2.1.4\"\r\n  },\r\n  \"scripts\": {\r\n    \"start\": \"react-scripts start\",\r\n    \"build\": \"react-scripts build\",\r\n    \"test\": \"react-scripts test\",\r\n    \"eject\": \"react-scripts eject\"\r\n  },\r\n  \"proxy\": \"http://localhost:5000\",\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/package.json b/client/package.json
+--- a/client/package.json	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/package.json	(date 1660099140637)
+@@ -3,10 +3,15 @@
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
++    "@fortawesome/fontawesome-svg-core": "^6.1.2",
++    "@fortawesome/free-regular-svg-icons": "^6.1.2",
++    "@fortawesome/free-solid-svg-icons": "^6.1.2",
++    "@fortawesome/react-fontawesome": "^0.2.0",
+     "@testing-library/jest-dom": "^5.16.5",
+     "@testing-library/react": "^13.3.0",
+     "@testing-library/user-event": "^13.5.0",
+     "axios": "^0.27.2",
++    "babel-plugin-macros": "^3.1.0",
+     "classnames": "^2.3.1",
+     "cra-template": "1.2.0",
+     "jwt-decode": "^3.1.2",
+Index: client/src/components/layout/Navbar.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/src/components/layout/Navbar.js b/client/src/components/layout/Navbar.js
+--- a/client/src/components/layout/Navbar.js	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/src/components/layout/Navbar.js	(date 1660103078388)
+@@ -1,0 +1,51 @@
++import React, {Component} from "react";
++import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
++import {faHouse, faInfoCircle, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
++import {
++    BrowserRouter as Router,
++    Switch,
++    Route,
++    Link
++} from "react-router-dom";
++
++class Navbar extends Component {
++    render() {
++        return (<Router>
++                <nav className="container">
++                    <div className="navbar">
++                        <div className="navComp cursive">
++                            <div className="nav-link logo-name">
++                                <Link to="/">
++                                    <div className="logo-div">
++
++                                    </div>
++                                    <div className="logo-span">
++                                        <span className="navMargin none-mobile">Komi-sion</span>
++                                    </div>
++                                </Link></div>
++                            <div className="nav-link tagline">
++                                <span className="navMargin tagline none-mobile">komisions for the kommunity</span></div>
++                        </div>
++                        <div className="navComp right">
++                            <div className="nav-link" id="home"><Link to="/">
++                                <FontAwesomeIcon icon={faHouse} className="svg"/>
++                                <span className="navMargin none-mobile">home</span></Link></div>
++                            <div className="nav-link"><Link to="/browse">
++                                <FontAwesomeIcon icon={faMagnifyingGlass} className="svg"/>
++                                <span className="navMargin none-mobile">browse</span></Link></div>
++                            <div className="nav-link"><Link to="/about">
++                                <FontAwesomeIcon icon={faInfoCircle} className="svg"/>
++                                <span className="navMargin none-mobile">about</span></Link></div>
++                            <div className="nav-link"><Link to="/user">
++                                <FontAwesomeIcon icon={faUser} className="svg"/>
++                                <span className="navMargin none-mobile">
++                            user</span></Link></div>
++                        </div>
++                    </div>
++                </nav>
++            </Router>
++        );
++    }
++}
++
++export default Navbar;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"73c29ff8-e244-4443-99aa-f0cefa174a1f\" name=\"Changes\" comment=\"browse page added\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]/shelved.patch\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]1/shelved.patch\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_18_AM_[Changes]/shelved.patch\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/README.md\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/package-lock.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/package.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/favicon.ico\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/index.html\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/logo192.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/logo512.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/manifest.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/public/robots.txt\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/App.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/App.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/App.test.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/index.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/reportWebVitals.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/client/src/setupTests.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/config/passport.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/models/User.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/package-lock.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/routes/api/users.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/server.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/validation/login.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/validation/register.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/discord.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/discord.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/groupProject.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/groupProject.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.user.ini\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Austria_Batoy_Dilag_Final.rar\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/config/config.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/config/meta.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/komision_chat.sql\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/komision_comm.sql\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/komision_convo.sql\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/komision_mods.sql\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/komision_users.sql\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/my-app/.gitignore\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/client/.gitignore\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/grid.css\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/scratch.css\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/css/style.css\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/header.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/index.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/camera.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/chat.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/keyboard.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/komi.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/pen.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/svg/pictures.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/browse/browse.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/browse/newspaper.svg\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/convo-query/chat-insert.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/convo-query/chatList.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/convo-query/comm-insert.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/convo-query/commList.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/convo-query/convoList.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/user/login.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/user/logout.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/user/register.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/user/reset-password.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/user/user_index.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/test/jquerytest.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/test/load-test.php\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/titest/src/components/Navbar.js\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/titest/src/pages/About.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/client/src/components/layout/Landing.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/titest/src/pages/Home.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/client/src/components/layout/Navbar.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/titest/src/pages/Proflie.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/config/keys.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/videoLink.txt\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" notifyAboutMissingVendor=\"false\">\r\n    <pharConfigPath>$PROJECT_DIR$/src/chat/composer.json</pharConfigPath>\r\n    <execution>\r\n      <phar pharPath=\"$PROJECT_DIR$/composer_2.phar\" />\r\n    </execution>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"CSS File\" />\r\n        <option value=\"composer.json\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"nodeJS\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpDebugGeneral\" listening_started=\"true\" />\r\n  <component name=\"PhpWorkspaceProjectConfiguration\" interpreter_name=\"XAMPP\" />\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"273H6wA4ToqXSkIeGkyzAKvkmjx\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,\r\n    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,\r\n    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloy/Documents/GitHub/CIT.007/groupProject/db&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\src\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\public\\img\\hugh\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\db\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\src\\convo-query\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\src\" />\r\n      <recent name=\"C:\\Users\\kaloy\\Documents\\GitHub\\CIT.007\\groupProject\\src\\mod\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"npm.dev\">\r\n    <configuration name=\"chat.sql\" type=\"DatabaseScript\" editBeforeRun=\"true\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <script-file value=\"$PROJECT_DIR$/src/socketio-chat-mysql-master/chat/chat.sql\" />\r\n      <script-mode>FILE</script-mode>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"groupProject\" type=\"PHPUnitRunConfigurationType\" factoryName=\"PHPUnit\" temporary=\"true\">\r\n      <TestRunner directory=\"$PROJECT_DIR$\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"dev\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"dev\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"run\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"run\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"start\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Database Script.chat.sql\" />\r\n      <item itemvalue=\"npm.dev\" />\r\n      <item itemvalue=\"npm.run\" />\r\n      <item itemvalue=\"npm.start\" />\r\n      <item itemvalue=\"PHPUnit.groupProject\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"npm.dev\" />\r\n        <item itemvalue=\"npm.run\" />\r\n        <item itemvalue=\"npm.start\" />\r\n        <item itemvalue=\"PHPUnit.groupProject\" />\r\n        <item itemvalue=\"Database Script.chat.sql\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"73c29ff8-e244-4443-99aa-f0cefa174a1f\" name=\"Changes\" comment=\"\" />\r\n      <created>1648541678910</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1648541678910</updated>\r\n      <workItem from=\"1648541680369\" duration=\"4198000\" />\r\n      <workItem from=\"1648549888212\" duration=\"450000\" />\r\n      <workItem from=\"1648551039547\" duration=\"1053000\" />\r\n      <workItem from=\"1648553042589\" duration=\"5431000\" />\r\n      <workItem from=\"1648721063297\" duration=\"10062000\" />\r\n      <workItem from=\"1648817159058\" duration=\"11851000\" />\r\n      <workItem from=\"1648841689286\" duration=\"12952000\" />\r\n      <workItem from=\"1648926674071\" duration=\"5992000\" />\r\n      <workItem from=\"1648991211300\" duration=\"117000\" />\r\n      <workItem from=\"1649008670452\" duration=\"2141000\" />\r\n      <workItem from=\"1649068163935\" duration=\"7589000\" />\r\n      <workItem from=\"1649097348439\" duration=\"70000\" />\r\n      <workItem from=\"1649101588505\" duration=\"6495000\" />\r\n      <workItem from=\"1649225565922\" duration=\"1845000\" />\r\n      <workItem from=\"1649237271293\" duration=\"595000\" />\r\n      <workItem from=\"1649337462797\" duration=\"3110000\" />\r\n      <workItem from=\"1649417955748\" duration=\"583000\" />\r\n      <workItem from=\"1649446249891\" duration=\"214000\" />\r\n      <workItem from=\"1649449387338\" duration=\"3535000\" />\r\n      <workItem from=\"1649456910799\" duration=\"3641000\" />\r\n      <workItem from=\"1649563942382\" duration=\"6314000\" />\r\n      <workItem from=\"1649632178391\" duration=\"18077000\" />\r\n      <workItem from=\"1649766607714\" duration=\"1221000\" />\r\n      <workItem from=\"1649969601593\" duration=\"7569000\" />\r\n      <workItem from=\"1650048185488\" duration=\"5916000\" />\r\n      <workItem from=\"1650109476840\" duration=\"2913000\" />\r\n      <workItem from=\"1650139318388\" duration=\"24391000\" />\r\n      <workItem from=\"1650231033187\" duration=\"6388000\" />\r\n      <workItem from=\"1650284315308\" duration=\"1118000\" />\r\n      <workItem from=\"1650299680949\" duration=\"29973000\" />\r\n      <workItem from=\"1650406661616\" duration=\"456000\" />\r\n      <workItem from=\"1650466964970\" duration=\"15000\" />\r\n      <workItem from=\"1650469835201\" duration=\"8000\" />\r\n      <workItem from=\"1650773237891\" duration=\"1783000\" />\r\n      <workItem from=\"1650820943155\" duration=\"29000\" />\r\n      <workItem from=\"1650943555373\" duration=\"4672000\" />\r\n      <workItem from=\"1651078257058\" duration=\"8374000\" />\r\n      <workItem from=\"1651472278757\" duration=\"15589000\" />\r\n      <workItem from=\"1651519905669\" duration=\"8881000\" />\r\n      <workItem from=\"1651528941180\" duration=\"7813000\" />\r\n      <workItem from=\"1651536890521\" duration=\"18062000\" />\r\n      <workItem from=\"1652513486059\" duration=\"351000\" />\r\n      <workItem from=\"1652514821174\" duration=\"17876000\" />\r\n      <workItem from=\"1652776308866\" duration=\"6068000\" />\r\n      <workItem from=\"1652865565621\" duration=\"19549000\" />\r\n      <workItem from=\"1652942297478\" duration=\"8305000\" />\r\n      <workItem from=\"1652995045967\" duration=\"2558000\" />\r\n      <workItem from=\"1653053990736\" duration=\"174000\" />\r\n      <workItem from=\"1653211014930\" duration=\"238000\" />\r\n      <workItem from=\"1659377735153\" duration=\"1837000\" />\r\n      <workItem from=\"1659397618455\" duration=\"472000\" />\r\n      <workItem from=\"1659399144911\" duration=\"10143000\" />\r\n      <workItem from=\"1659466824710\" duration=\"6926000\" />\r\n      <workItem from=\"1659580937820\" duration=\"1092000\" />\r\n      <workItem from=\"1660002868557\" duration=\"3273000\" />\r\n      <workItem from=\"1660094821306\" duration=\"1325000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"group project update\">\r\n      <created>1649764637917</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1649764637917</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"group project update folder structure\">\r\n      <created>1650195572994</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1650195572994</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"group project update folder structure\">\r\n      <created>1650195645600</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1650195645601</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"browse page added\">\r\n      <created>1650312613907</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1650312613907</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"browse page added\">\r\n      <created>1650952758960</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1650952758960</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"group project update\" />\r\n    <MESSAGE value=\"group project update folder structure\" />\r\n    <MESSAGE value=\"browse page added\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"browse page added\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/.idea/workspace.xml	(date 1660177686251)
+@@ -1,77 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="browse page added">
+-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]/shelved.patch" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_17_AM_[Changes]1/shelved.patch" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_05_2022_1_18_AM_[Changes]/shelved.patch" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/logo192.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/logo512.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/App.test.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/reportWebVitals.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/client/src/setupTests.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/validation/login.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/validation/register.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/groupProject.iml" afterDir="false" />
++    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="create Landing.js">
++      <change afterPath="$PROJECT_DIR$/client/public/style.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.user.ini" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Austria_Batoy_Dilag_Final.rar" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/config/meta.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/komision_chat.sql" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/komision_comm.sql" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/komision_convo.sql" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/komision_mods.sql" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/komision_users.sql" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/grid.css" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/scratch.css" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/camera.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/chat.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/keyboard.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/komi.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/pen.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/svg/pictures.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/browse/newspaper.svg" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/convo-query/chat-insert.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/convo-query/chatList.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/convo-query/comm-insert.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/convo-query/commList.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/convo-query/convoList.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/user/logout.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/test/jquerytest.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/test/load-test.php" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/titest/src/components/Navbar.js" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/titest/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Landing.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/titest/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/titest/src/pages/Proflie.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/keys.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/videoLink.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Navbar.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -101,6 +39,7 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="GitSEFilterConfiguration">
+     <file-type-list>
+@@ -153,11 +92,11 @@
+       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\public\img\hugh" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\client\public" />
+       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\db" />
+       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\convo-query" />
+       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject" />
+       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src" />
+-      <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src\mod" />
+     </key>
+   </component>
+   <component name="RunManager" selected="npm.dev">
+@@ -280,7 +219,8 @@
+       <workItem from="1659466824710" duration="6926000" />
+       <workItem from="1659580937820" duration="1092000" />
+       <workItem from="1660002868557" duration="3273000" />
+-      <workItem from="1660094821306" duration="1325000" />
++      <workItem from="1660094821306" duration="6503000" />
++      <workItem from="1660177383104" duration="300000" />
+     </task>
+     <task id="LOCAL-00001" summary="group project update">
+       <created>1649764637917</created>
+@@ -317,7 +257,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1650952758960</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="create Landing.js">
++      <created>1660177666004</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1660177666004</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -339,7 +286,8 @@
+     <MESSAGE value="group project update" />
+     <MESSAGE value="group project update folder structure" />
+     <MESSAGE value="browse page added" />
+-    <option name="LAST_COMMIT_MESSAGE" value="browse page added" />
++    <MESSAGE value="create Landing.js" />
++    <option name="LAST_COMMIT_MESSAGE" value="create Landing.js" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
+Index: client/package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/package-lock.json b/client/package-lock.json
+--- a/client/package-lock.json	(revision 9db46e28a625ed19fe8812b8a42514fc44d009f3)
++++ b/client/package-lock.json	(date 1660099140627)
+@@ -8,10 +8,15 @@
+       "name": "client",
+       "version": "0.1.0",
+       "dependencies": {
++        "@fortawesome/fontawesome-svg-core": "^6.1.2",
++        "@fortawesome/free-regular-svg-icons": "^6.1.2",
++        "@fortawesome/free-solid-svg-icons": "^6.1.2",
++        "@fortawesome/react-fontawesome": "^0.2.0",
+         "@testing-library/jest-dom": "^5.16.5",
+         "@testing-library/react": "^13.3.0",
+         "@testing-library/user-event": "^13.5.0",
+         "axios": "^0.27.2",
++        "babel-plugin-macros": "^3.1.0",
+         "classnames": "^2.3.1",
+         "cra-template": "1.2.0",
+         "jwt-decode": "^3.1.2",
+@@ -2186,6 +2191,63 @@
+         "url": "https://github.com/sponsors/sindresorhus"
+       }
+     },
++    "node_modules/@fortawesome/fontawesome-common-types": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.2.tgz",
++      "integrity": "sha512-wBaAPGz1Awxg05e0PBRkDRuTsy4B3dpBm+zreTTyd9TH4uUM27cAL4xWyWR0rLJCrRwzVsQ4hF3FvM6rqydKPA==",
++      "hasInstallScript": true,
++      "engines": {
++        "node": ">=6"
++      }
++    },
++    "node_modules/@fortawesome/fontawesome-svg-core": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.1.2.tgz",
++      "integrity": "sha512-853G/Htp0BOdXnPoeCPTjFrVwyrJHpe8MhjB/DYE9XjwhnNDfuBCd3aKc2YUYbEfHEcBws4UAA0kA9dymZKGjA==",
++      "hasInstallScript": true,
++      "dependencies": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      },
++      "engines": {
++        "node": ">=6"
++      }
++    },
++    "node_modules/@fortawesome/free-regular-svg-icons": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.1.2.tgz",
++      "integrity": "sha512-xR4hA+tAwsaTHGfb+25H1gVU/aJ0Rzu+xIUfnyrhaL13yNQ7TWiI2RvzniAaB+VGHDU2a+Pk96Ve+pkN3/+TTQ==",
++      "hasInstallScript": true,
++      "dependencies": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      },
++      "engines": {
++        "node": ">=6"
++      }
++    },
++    "node_modules/@fortawesome/free-solid-svg-icons": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.2.tgz",
++      "integrity": "sha512-lTgZz+cMpzjkHmCwOG3E1ilUZrnINYdqMmrkv30EC3XbRsGlbIOL8H9LaNp5SV4g0pNJDfQ4EdTWWaMvdwyLiQ==",
++      "hasInstallScript": true,
++      "dependencies": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      },
++      "engines": {
++        "node": ">=6"
++      }
++    },
++    "node_modules/@fortawesome/react-fontawesome": {
++      "version": "0.2.0",
++      "resolved": "https://registry.npmjs.org/@fortawesome/react-fontawesome/-/react-fontawesome-0.2.0.tgz",
++      "integrity": "sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==",
++      "dependencies": {
++        "prop-types": "^15.8.1"
++      },
++      "peerDependencies": {
++        "@fortawesome/fontawesome-svg-core": "~1 || ~6",
++        "react": ">=16.3"
++      }
++    },
+     "node_modules/@humanwhocodes/config-array": {
+       "version": "0.10.4",
+       "resolved": "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.10.4.tgz",
+@@ -18282,6 +18344,43 @@
+         }
+       }
+     },
++    "@fortawesome/fontawesome-common-types": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.2.tgz",
++      "integrity": "sha512-wBaAPGz1Awxg05e0PBRkDRuTsy4B3dpBm+zreTTyd9TH4uUM27cAL4xWyWR0rLJCrRwzVsQ4hF3FvM6rqydKPA=="
++    },
++    "@fortawesome/fontawesome-svg-core": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.1.2.tgz",
++      "integrity": "sha512-853G/Htp0BOdXnPoeCPTjFrVwyrJHpe8MhjB/DYE9XjwhnNDfuBCd3aKc2YUYbEfHEcBws4UAA0kA9dymZKGjA==",
++      "requires": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      }
++    },
++    "@fortawesome/free-regular-svg-icons": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.1.2.tgz",
++      "integrity": "sha512-xR4hA+tAwsaTHGfb+25H1gVU/aJ0Rzu+xIUfnyrhaL13yNQ7TWiI2RvzniAaB+VGHDU2a+Pk96Ve+pkN3/+TTQ==",
++      "requires": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      }
++    },
++    "@fortawesome/free-solid-svg-icons": {
++      "version": "6.1.2",
++      "resolved": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.2.tgz",
++      "integrity": "sha512-lTgZz+cMpzjkHmCwOG3E1ilUZrnINYdqMmrkv30EC3XbRsGlbIOL8H9LaNp5SV4g0pNJDfQ4EdTWWaMvdwyLiQ==",
++      "requires": {
++        "@fortawesome/fontawesome-common-types": "6.1.2"
++      }
++    },
++    "@fortawesome/react-fontawesome": {
++      "version": "0.2.0",
++      "resolved": "https://registry.npmjs.org/@fortawesome/react-fontawesome/-/react-fontawesome-0.2.0.tgz",
++      "integrity": "sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==",
++      "requires": {
++        "prop-types": "^15.8.1"
++      }
++    },
+     "@humanwhocodes/config-array": {
+       "version": "0.10.4",
+       "resolved": "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.10.4.tgz",
+diff --git a/client/public/style.css b/client/public/style.css
+new file mode 100644
