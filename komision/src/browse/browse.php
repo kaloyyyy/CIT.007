@@ -34,7 +34,7 @@ session_start();
                     <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                    <a href="../user/user_index.php?chatID=2">
+                    <a href="../user/index.php?chatID=2">
                         <i class="fa-solid fa-comment-dots card-svg"></i>
                     </a>
                 </div>
@@ -61,7 +61,7 @@ session_start();
                     <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                    <a href="../user/user_index.php?chatID=1">
+                    <a href="../user/index.php?chatID=1">
                         <i class="fa-solid fa-comment-dots card-svg"></i>
                     </a>
                 </div>
@@ -82,7 +82,7 @@ session_start();
                     <i class="fa-solid fa-images card-svg"></i>
                 </div>
                 <div class="div-svg">
-                    <a href="../user/user_index.php?chatID=3">
+                    <a href="../user/index.php?chatID=3">
                         <i class="fa-solid fa-comment-dots card-svg"></i>
                     </a>
                 </div>
