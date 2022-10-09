@@ -5,7 +5,7 @@ chdir(dirname(__DIR__));
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: /komision/src/user/user_index.php");
+    header("location: /komision/src/user/index.php");
     exit;
 }
 
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
 
-            $sql = "SELECT userID, username, password, type FROM users WHERE username = ?";
+            $sql = "SELECT userID, username, password, userType FROM users WHERE username = ?";
 
         if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["accType"] = $accType;
 
                             // Redirect user to welcome page
-                            header("location: /komision/src/user/user_index.php");
+                            header("location: /komision/src/user/index.php");
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";

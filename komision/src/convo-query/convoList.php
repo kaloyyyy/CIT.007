@@ -18,7 +18,6 @@ if (is_numeric($currentChat)){
     VALUES (NULL, '$userID', '$modID');";
         $mysqli->query($convoInsert);
     }
-
 }
 $convoQue = "select * from convo where userID = $currID";
 $convoRes = $mysqli->query($convoQue);
@@ -33,12 +32,12 @@ foreach ($convoRes as $convoRow) {
     $connectRow = mysqli_fetch_assoc($connectRes);
     $connectUsername = $connectRow['username'];
     if ($connectID == $currentChat) {
-        echo "<a href='/komision/src/user/user_index.php?chatID=$connectID'  >";
+        echo "<a href='/komision/src/user/index.php?chatID=$connectID'  >";
         echo "<li id='current-chat'>";
         echo $connectUsername . "</li></a>";
 
     } else {
-        echo "<a href='/komision/src/user/user_index.php?chatID=$connectID'  >";
+        echo "<a href='/komision/src/user/index.php?chatID=$connectID'  >";
         echo "<li>";
         echo $connectUsername . "</li></a>";
     }

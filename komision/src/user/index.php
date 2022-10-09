@@ -52,43 +52,43 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
         </div>
         <div class='div-commission'>
-            <div <?php if (!$_SESSION['mod']) {
+            <div <?php /*if (!$_SESSION['mod']) {
                 echo "class ='comm-fit' id = 'commissions'";
             } else {
                 echo "class ='comm-limit' id = 'commissions'";
-            } ?>>
+            }*/ ?>>
 
             </div>
             <?php
-            if ($_SESSION['mod']) {
-                if (isset($_GET["chatID"])) {
-                    $currentChat = htmlspecialchars($_GET["chatID"]);
-                    require_once __DIR__ . "/../../config/config.php";
-                    $connectQue = "select * from users where userID = $currentChat";
-                    $connectRes = $mysqli->query($connectQue);
-                    $connectRow = mysqli_fetch_assoc($connectRes);
-                    $connectName = $connectRow['username'];
+            /*            if ($_SESSION['mod']) {
+                            if (isset($_GET["chatID"])) {
+                                $currentChat = htmlspecialchars($_GET["chatID"]);
+                                require_once __DIR__ . "/../../config/config.php";
+                                $connectQue = "select * from users where userID = $currentChat";
+                                $connectRes = $mysqli->query($connectQue);
+                                $connectRow = mysqli_fetch_assoc($connectRes);
+                                $connectName = $connectRow['username'];
 
-                    echo "<div id='addComm'>
-                            new commission for <span class='pink' >$connectName</span><br>
-                            enter description <br>
-                            <textarea type='text' name='description' id='commDesc' cols='40' rows='5'></textarea> <br>
-                            enter price <br>
-                            <input type='number' name='price' id='commPrice'><br>
-                            <div id='sendComm'  onclick='commClick()'>
-                            submit
-                            <button name='commSend' id='comm-send' class='button-send-chat fa-solid fa-circle-chevron-right send-comm'>
-                            </div>
-                        </div>";
-                    $mysqli->close();
-                } else {
-                    echo "<div id='addComm' class='flex'>
-                        <div>select a client to add commissions
-                        </div>";
-                    echo " </div > ";
-                }
-            }
-            ?>
+                                echo "<div id='addComm'>
+                                        new commission for <span class='pink' >$connectName</span><br>
+                                        enter description <br>
+                                        <textarea type='text' name='description' id='commDesc' cols='40' rows='5'></textarea> <br>
+                                        enter price <br>
+                                        <input type='number' name='price' id='commPrice'><br>
+                                        <div id='sendComm'  onclick='commClick()'>
+                                        submit
+                                        <button name='commSend' id='comm-send' class='button-send-chat fa-solid fa-circle-chevron-right send-comm'>
+                                        </div>
+                                    </div>";
+                                $mysqli->close();
+                            } else {
+                                echo "<div id='addComm' class='flex'>
+                                    <div>select a client to add commissions
+                                    </div>";
+                                echo " </div > ";
+                            }
+                        }
+                        */ ?>
         </div>
 
     </div>
@@ -98,16 +98,16 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <script>
         let testCount = 0;
         let chatID = $("#active").text();
-        $("#convo-refresh").load("/komision/src/convo-query/convoList.php", {
+        $("#convo-refresh").load("/komision/src/convo/convo-list.php", {
             testNewCount: testCount,
-            chatID: chatID
+            chatID      : chatID
         });
         $("#commissions").load("/komision/src/convo-query/commList.php");
 
         function loadText() {
             $("#chat-refresh").load("/komision/src/convo-query/chatList.php", {
                 testNewCount: testCount,
-                chatID: chatID
+                chatID      : chatID
             }).scrollTop(10000000);
         }
 
@@ -120,7 +120,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     $("#chat-refresh").load("/komision/src/convo-query/chatList.php", {
         testNewCount: testCount,
-        chatID: chatID
+        chatID      : chatID
     });
     $("#chat-message").keypress(function (event) {
         if (event.keyCode === 13) {
@@ -147,7 +147,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         let commDesc = $('#commDesc').val();
         let price = $('#commPrice').val();
         console.log("commclick");
-        $('#trychat').load("/komision/src/convo-query/comm-insert.php",{ commDesc: commDesc, price: price, chatID: chatID});
+        $('#trychat').load("/komision/src/convo-query/comm-insert.php", {commDesc: commDesc, price: price, chatID: chatID});
         $('#commDesc').val("");
         $('#commPrice').val("");
         $("#commissions").load("/komision/src/convo-query/commList.php");
@@ -158,7 +158,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     function loadText() {
         $("#chat-refresh").load("/komision/src/convo-query/chatList.php", {
             testNewCount: testCount,
-            chatID: chatID
+            chatID      : chatID
         }).scrollTop(10000000);
     }
 
@@ -170,11 +170,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             console.log("log");
             $("#convo-refresh").load("/komision/src/convo-query/convoList.php", {
                 testNewCount: testCount,
-                chatID: chatID
+                chatID      : chatID
             });
             $("#chat-refresh").load("/komision/src/convo-query/chatList.php", {
                 testNewCount: testCount,
-                chatID: chatID
+                chatID      : chatID
             });
             $("#commissions").load("/komision/src/convo-query/commList.php");
             loop();
