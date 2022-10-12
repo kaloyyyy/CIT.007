@@ -1,9 +1,6 @@
 <?php
 // Initialize the session
-if(!isset($_SESSION))
-{
-    session_start();
-}
+session_start();
 chdir(dirname(__DIR__));
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
@@ -85,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["accType"] = $accType;
 
                             // Redirect user to welcome page
-                            header("location: /komision/index.php");
+                            header("location: /komision/src/user/index.php");
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -112,9 +109,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php include __DIR__ . '/../../config/meta.php'; ?>
     <title>login</title>
 </head>
 <body>
+<?php include_once __DIR__ . '/../../public/header.php' ?>
 <main>
     <div class="flex">
         <div class="wrapper">
