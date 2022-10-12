@@ -10,7 +10,12 @@
     --light-main-color: #007acc;;
 
 }
-
+a:visited{
+    color:white;
+}
+a:active{
+    color: white;
+}
 .darktheme{
     background: var(--dark-bg-color);
     color: white;
@@ -19,11 +24,20 @@
 .nav-link{
     color:white;
     font-size: 20px;
-    padding: 15px 5px;
+    padding: 10px 10px;
+    margin: 15px 5px;
+    width: fit-content;
+
+}
+.nav-link:hover{
+    border: 1px white none;
+    background: rgba(255, 255, 255, 0.3);
+    color:var(--dark-main-color);
 }
 .komi-logo{
     height: 25px;
     fill: white;
+    margin-left: 5px;
 }
 
 .komi-header {
@@ -33,12 +47,34 @@
     padding: 15px 20px;
     backdrop-filter: blur(8px);
 }
-.komi-sidebar{
-    left: 20vw;
-}
 
 .post-border {
     border-color: rgba(79, 177, 213, 0.5) !important;
 
 }
+.komit{
+    width: auto;
+    background: var(--dark-main-color);
+}
+.komit:hover {
+    filter: brightness(85%);
+    color: white;
+    background: var(--dark-main-color);
+}
 
+#user{
+    background: rgba(255, 255, 255, 0.3);
+    padding: 5px 10px;
+}
+.modal-title{
+    color: white;
+}
+.modal-content{
+    background: var(--dark-bg-color);
+}
+.login{
+    color: white;
+}
+.login:hover{
+    color:var(--dark-main-color)!important;
+}

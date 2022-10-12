@@ -7,17 +7,16 @@ chdir(dirname(__DIR__));
     <?php include __DIR__ . '/../config/meta.php'; ?>
     <title>Komi-sion</title>
 </head>
-<body  class="mx-xxl-5 darktheme ">
+<body class=" darktheme ">
 
 
-<div class="">
-    <div class="flex container">
-        <div class="">
-            <?php include 'sidebar.php';?>
+<div class="container">
+    <div class="flex row">
+        <div class="col-3">
+            <?php include 'sidebar.php'; ?>
         </div>
-
-        <div class="container col-md-6 border-start post-border border-end p-0 position-relative">
-            <?php include 'header.php';?>
+        <div class="container col-6 border-start post-border border-end p-0">
+            <?php include 'header.php'; ?>
             <?php
             $sample = "<div class='col border-top post-border border-bottom px-3 py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -37,11 +36,15 @@ chdir(dirname(__DIR__));
                 aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
                 qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
                 qui dolorem eum fugiat quo voluptas nulla pariatur?</div>";
-            echo $sample.$sample.$sample.$sample;
+            echo $sample . $sample . $sample . $sample;
             ?>
         </div>
+        <div class="col-2 position-sticky">
+            <div class=" mb-4 position-fixed "><a class="nav-link col-1 rounded-pill" id="user" href="#">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i><span class="ms-3 d-none d-xxl-inline-block">Login to Komi-sion</span></a>
+            </div>
+        </div>
     </div>
-
 </div>
 </body>
 </html>
