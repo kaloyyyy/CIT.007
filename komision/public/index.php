@@ -7,16 +7,15 @@ chdir(dirname(__DIR__));
     <?php include __DIR__ . '/../config/meta.php'; ?>
     <title>Komi-sion</title>
 </head>
-<body class="mx-xxl-5 darktheme ">
+<body class=" darktheme ">
 
 
-<div class="">
-    <div class="flex container">
-        <div class="">
+<div class="container">
+    <div class="flex row">
+        <div class="col-3">
             <?php include 'sidebar.php'; ?>
         </div>
-
-        <div class="container col-md-6 border-start post-border border-end p-0 position-relative">
+        <div class="container col-6 border-start post-border border-end p-0">
             <?php include 'header.php'; ?>
             <?php
             $sample = "<div class='col border-top post-border border-bottom px-3 py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -46,7 +45,6 @@ chdir(dirname(__DIR__));
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>
