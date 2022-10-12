@@ -1,5 +1,5 @@
-<header class=" container flex me-5 pe-5 py-2 flex-column nav col-3 h-100 justify-content-between align-items-end position-fixed">
-    <div class="mx-5">
+<header class="container-fluid flex komi-sidebar flex-column nav col-1  h-100 justify-content-between align-items-start position-fixed">
+    <div class="justify-content-start mt-4">
         <div class="logo">
             <svg class="komi-logo" xmlns="http://www.w3.org/2000/svg" viewBox="20 0 360 270">
                 <path style="opacity:1"
@@ -7,27 +7,28 @@
                       fill-rule="evenodd"/>
             </svg>
         </div>
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                 <a class="nav-link" href="#"><i class="fa-solid fa-house svg"></i><span class="ms-3">home</span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="#">Explore</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Notifications</a>
-            </li>
-
-            <li class="nav-item ">
-                <a class="nav-link" href="#">Messages</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link">Profile</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link">Post</a>
-            </li>
-        </ul>
+        <div class="nav nav-pills align-content-start">
+            <a class="nav-link col-12" href="#">
+                <div class="nav-item">
+                    <i class="fa-solid fa-house svg"></i><span class="ms-3">Home</span>
+                </div>
+            </a>
+            <a class="nav-link col-12" href="#">
+                <div class="nav-item">
+                    <i class="fa-regular fa-rectangle-list"></i><span class="ms-3">Categories</span>
+                </div>
+            </a>
+            <a class="nav-link w-100" href="#">
+                <div class="nav-item">
+                    <i class="fa-regular fa-comment-dots"></i><span class="ms-3">Message</span>
+                </div>
+            </a>
+            <a class="nav-link w-100" href="#">
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i></i><span class="ms-3">User</span>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="mx-5" id="user">user</div>
+    <div class="mb-4" id="user">user</div>
 </header>
