@@ -1,14 +1,10 @@
 <?php
 // Initialize the session
-if(!isset($_SESSION))
-{
-    session_start();
-}
 chdir(dirname(__DIR__));
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: /komision/src/user/index.php");
+    header("location: /komision/index.php");
     exit;
 }
 
@@ -16,7 +12,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 require_once __DIR__ . "/../../config/config.php";
 
 // Define variables and initialize with empty values
-$username = $password = $modKey ="";
+$username = $password = $modKey = "";
 $username_err = $password_err = $login_err = "";
 $modKey_err = "";
 
@@ -37,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = trim($_POST["password"]);
     }
     // Check if modKey is empty
-        //$modKey = trim($_POST["modKey"]);
+    //$modKey = trim($_POST["modKey"]);
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
 
-            $sql = "SELECT userID, username, password, userType FROM users WHERE username = ?";
+        $sql = "SELECT userID, username, password, userType FROM users WHERE username = ?";
 
         if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -63,29 +59,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($stmt->fetch()) {
                         if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
-                            session_start();
+
 
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-/*                            if ($modKey == 'IamMod'){
-                                $_SESSION["mod"] = true;
-                                $_SESSION["tableAccount"] = 'users';
-                                $_SESSION["idFind"] = 'userID';
-                                $_SESSION["myTable"] = 'mods';
-                                $_SESSION["myCol"] = 'modID';
-                            }else{
-                                $_SESSION["mod"] = false;
-                                $_SESSION["tableAccount"] = 'users';
-                                $_SESSION["idFind"] = 'userID_2';
-                                $_SESSION["myTable"] = 'users';
-                                $_SESSION["myCol"] = 'userID';
-                            }*/
+                            /*                            if ($modKey == 'IamMod'){
+                                                            $_SESSION["mod"] = true;
+                                                            $_SESSION["tableAccount"] = 'users';
+                                                            $_SESSION["idFind"] = 'userID';
+                                                            $_SESSION["myTable"] = 'mods';
+                                                            $_SESSION["myCol"] = 'modID';
+                                                        }else{
+                                                            $_SESSION["mod"] = false;
+                                                            $_SESSION["tableAccount"] = 'users';
+                                                            $_SESSION["idFind"] = 'userID_2';
+                                                            $_SESSION["myTable"] = 'users';
+                                                            $_SESSION["myCol"] = 'userID';
+                                                        }*/
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
                             $_SESSION["accType"] = $accType;
 
                             // Redirect user to welcome page
-                            header("location: /komision/index.php");
+                            echo "<script> window.location.reload();</script>";
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -109,46 +105,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>login</title>
-</head>
-<body>
-<main>
-    <div class="flex">
-        <div class="wrapper">
-            <h2>Login</h2>
-            <p>Please fill in your credentials to login.</p>
+<div class="modal fade" id="login-model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="flex">
+                    <div class="wrapper">
+                        <p>Please fill in your credentials to login.</p>
 
-            <?php
-            if (!empty($login_err)) {
-                echo '<div class="alert alert-danger">' . $login_err . '</div>';
-            }
-            ?>
+                        <?php
+                        if (!empty($login_err)) {
+                            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+                        }
+                        ?>
 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username"
-                           class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                           value="<?php echo $username; ?>">
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" name="username"
+                                       class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                                       value="<?php echo $username; ?>">
+                                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" name="password"
+                                       class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                            </div>
+                            <div class="form-group my-1">
+                                <input type="submit" class="btn btn-primary" value="Login">
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="password"
-                           class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login">
-                </div>
-                <p>Don't have an account? <a href="register.php" class="register">Sign up now</a>.</p>
-            </form>
+            </div>
+
+            <div class="modal-footer">
+                Don't have an account?<button type="button" class="btn"  data-toggle='modal' data-target='#register-model'><a href="">Sign up
+                        now</a></button>
+            </div>
         </div>
     </div>
-</main>
-
-</body>
-</html>
+</div>

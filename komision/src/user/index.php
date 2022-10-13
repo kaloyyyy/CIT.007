@@ -1,6 +1,6 @@
 <?php
 // Initialize the session
-session_start();
+
 
 chdir(dirname(__DIR__));
 
