@@ -1,30 +1,27 @@
-<?php
-chdir(dirname(__DIR__));
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php include __DIR__ . '/../config/meta.php'; ?>
-    <title>Komi-sion</title>
-</head>
 <body class=" darktheme ">
+<div class="container ">
+    <div class="">
+        <div class="row justify-content-center">
+            <div class="col-2 d-flex justify-content-end ">
+                <?php include 'sidebar.php';
 
+                ?>
+            </div>
+            <div class=" col-7 border-start post-border border-end p-0">
+                <?php
+                if (isset($_GET['page'])) {
+                    $currentPage = $_GET['page'];
+                }
 
-<div class="container">
-    <div class="flex row">
-        <div class="col-3">
-            <?php include 'sidebar.php'; ?>
-        </div>
-        <div class="container col-6 border-start post-border border-end p-0">
-            <?php include 'header.php'; ?>
-            <?php
-            $sample = "<div class='col border-top post-border border-bottom px-3 py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                ?>
+                <?php
+                $sample = "<div class=' border-top post-border border-bottom px-3 py-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                 sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <div class='col border-top border-bottom post-border px-3 py-2'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                <div class=' border-top border-bottom post-border px-3 py-2'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
                 ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
@@ -36,15 +33,46 @@ chdir(dirname(__DIR__));
                 aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
                 qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
                 qui dolorem eum fugiat quo voluptas nulla pariatur?</div>";
-            echo $sample . $sample . $sample . $sample;
-            ?>
-        </div>
-        <div class="col-2 position-sticky">
-            <div class=" mb-4 position-fixed "><a class="nav-link col-1 rounded-pill" id="user" href="#">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i><span class="ms-3 d-none d-xxl-inline-block">Login to Komi-sion</span></a>
+
+                if (isset($_GET['page'])) {
+                    if ($_GET['page'] == 'Messages') {
+                        require __DIR__ . "/../src/chats/chats.php";
+                    } else if ($_GET['page'] == 'Listings') {
+                        require __DIR__ . "/../src/post-request/post-display.php";
+                    } else {
+                        include 'header.php';
+                        echo $sample . $sample . $sample . $sample;
+                    }
+                } else {
+                    include 'header.php';
+                    echo "<div class=' border-top post-border border-bottom px-3 py-2'>
+                            dito kervs
+                         </div>";
+                    echo $sample . $sample;
+                }
+
+                ?>
             </div>
+            <?php
+            if (isset($_SESSION['id'])) {
+                $username = $_SESSION['username'];
+                echo "
+                <div class='col-2 m-3 '>
+                    <div class=' mb-4  position-fixed '><a class=' col-1 rounded-pill' id='user' href='#' data-toggle='modal' data-target='#logged-model'>
+                        <i class='fa-regular fa-user'></i><span class='d-none ms-3 d-xxl-inline-block'>$username</span></a>
+                    </div>
+                </div>";
+            } else {
+                echo "<div class='col-2 m-3 '>
+                    <div class=' mb-4  position-fixed '><a class=' col-1 rounded-pill' id='user' href='#' data-toggle='modal' data-target='#login-model'>
+                        <i class='fa-solid fa-arrow-right-to-bracket'></i><span class=' d-none ms-3 d-xxl-inline-block'> Log-in or Sign-up</span></a>
+                    </div>
+                </div>";
+            }
+            ?>
+
+
         </div>
     </div>
 </div>
 </body>
-</html>
