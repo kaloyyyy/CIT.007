@@ -1,7 +1,7 @@
 :root {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 16px;
-    --font-size:16px;
+    --font-size: 16px;
 
     --dark-bg-color: #161821;
     --dark-main-color: #55c6f0;
@@ -10,31 +10,65 @@
     --light-main-color: #007acc;;
 
 }
-a:visited{
-    color:white;
+
+::-webkit-scrollbar {
+    width: 0.5rem;
 }
-a:active{
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-main-color);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-corner {
+    background: #3D3D3D;
+}
+a{
+    text-decoration: none;
     color: white;
 }
-.darktheme{
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:active {
+    color: white;
+}
+
+.darktheme {
     background: var(--dark-bg-color);
     color: white;
 }
 
-.nav-link{
-    color:white;
+i {
+    height: 20px;
+}
+
+.nav-link {
+    color: white;
     font-size: 20px;
     padding: 10px 10px;
     margin: 15px 5px;
     width: fit-content;
-
+    min-width: 50px;
+    text-align: center;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     border: 1px white none;
     background: rgba(255, 255, 255, 0.3);
-    color:var(--dark-main-color);
+    color: var(--dark-main-color);
+    fill:white;
 }
-.komi-logo{
+.nav-link:focus{
+    color:white;
+}
+
+.komi-logo {
     height: 25px;
     fill: white;
     margin-left: 5px;
@@ -52,29 +86,68 @@ a:active{
     border-color: rgba(79, 177, 213, 0.5) !important;
 
 }
-.komit{
+
+.komit {
     width: auto;
     background: var(--dark-main-color);
 }
+
 .komit:hover {
     filter: brightness(85%);
     color: white;
     background: var(--dark-main-color);
 }
 
-#user{
+#user {
     background: rgba(255, 255, 255, 0.3);
     padding: 5px 10px;
+    color: var(--dark-main-color);
 }
-.modal-title{
+
+.modal-title {
     color: white;
 }
-.modal-content{
+
+.modal-content {
     background: var(--dark-bg-color);
 }
-.login{
+
+.login {
     color: white;
 }
-.login:hover{
-    color:var(--dark-main-color)!important;
+
+.login:hover {
+    color: var(--dark-main-color) !important;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+div.usernames{
+    color: var(--dark-main-color)!important;
+}
+
+#message-list{
+    overflow-y: scroll;
+    height: 85vh;
+    overflow-x: clip;
+
+}
+#message-list::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+#message-list::-webkit-scrollbar-track {
+    background: none;
+}
+
+#message-list::-webkit-scrollbar-thumb {
+    background: var(--dark-main-color);
+    border-radius: 4px;
+}
+#message-list::-webkit-scrollbar-corner {
+    background: transparent;
 }
