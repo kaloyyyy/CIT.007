@@ -15,10 +15,10 @@ $chatsResult = $mysqli->query($chatsQuery);
 $chatsRow = mysqli_fetch_assoc($chatsResult);
 ?>
 
-<div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-3">
-            <div class="flex-row align-content-between navbar komi-header">
+<div class="container-fluid p-0 w-auto ">
+    <div class="row d-flex  g-0 align-items-center justify-content-evenly" >
+        <div class="col-4" style="height: 100vh">
+            <div class="flex-row align-content-between  komi-header" style="text-align: center ; height: 5vh">
                 <h5>
                     <?php
                     if (isset($currentPage)) {
@@ -47,8 +47,8 @@ $chatsRow = mysqli_fetch_assoc($chatsResult);
             }
             ?>
         </div>
-        <div class="col-8 overflow-scroll message-list " id="message-list">
-            <div class="flex-row align-content-between navbar komi-header">
+        <div class="col-8 message-list p-0 border-start post-border " id="message-list" style="height: 100vh">
+            <div class="flex-row align-content-between navbar komi-header" style="height: 5vh">
                 <h5>
                     <?php
                     if (isset($activeUsernameChat)) {
