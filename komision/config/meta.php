@@ -13,6 +13,6 @@
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
 <link rel="stylesheet" href="/komision/public/css/style.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/komision/public/js/jquery-3.6.1.js"></script>
 <link rel="icon" type="image/x-icon" href="/komision/public/svg/komi.svg">
 <script src="/komision/public/js/bootstrap.js"></script>
