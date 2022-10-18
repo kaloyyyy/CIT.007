@@ -121,7 +121,7 @@
    $(document).ready(function(){
     
   $('#toggle') .one ("click", function(){
-    $('#lowbox').toggle ('');
+    $('#lowbox').toggle ('normal');
     
   });
 });
