@@ -4,10 +4,9 @@
         <div class="row justify-content-center">
             <div class="col-2 d-flex justify-content-end ">
                 <?php include 'sidebar.php';
-
                 ?>
             </div>
-            <div class=" col-7 border-start post-border border-end p-0">
+            <div class=" col-7 border-start post-border border-end  p-0 m-0">
                 <?php
                 if (isset($_GET['page'])) {
                     $currentPage = $_GET['page'];
@@ -33,18 +32,19 @@
                 aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
                 qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
                 qui dolorem eum fugiat quo voluptas nulla pariatur?</div>";
-
+                include 'header.php';
                 if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'Messages') {
+                        echo "<div>";
                         require __DIR__ . "/../src/chats/chats.php";
+                        echo "</div>";
                     } else if ($_GET['page'] == 'Listings') {
                         require __DIR__ . "/../src/post-request/post-display.php";
                     } else {
-                        include 'header.php';
+
                         echo $sample . $sample . $sample . $sample;
                     }
                 } else {
-                    include 'header.php';
                     echo "<div class=' border-top post-border border-bottom px-3 py-2'>
                             dito kervs
                          </div>";
