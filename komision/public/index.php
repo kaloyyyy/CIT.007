@@ -46,16 +46,18 @@
                 } else {
                     include 'header.php';
                     echo "<div class=' border-top post-border border-bottom px-3 py-2'>
-                            <div class='container d-flex justify-content-center' >
+                            <div class='container d-flex justify-content-center'>
                             <div class='flex-row' xmlns=\"www.w3.org/1999/html\">
                             <div class='my-2 justify-content-center align-items-center'>
                         Requirement info:<br>
-                         <textarea class='form-control' aria-label='With textarea' style='width:
-                        300px; height: 90px; text-overflow: clip; resize: none'; placeholder='Whats on your mind, User?' onclick='editClick(id)'
-                                  onfocusout='resetClick(id,'Whats on your mind, User?')'></textarea>
+                         <textarea class='form-control' id='toggle' aria-label='With textarea' style='width:
+                        300px; height: 90px; text-overflow: clip; resize: none'; placeholder='Whats on your mind, User?' 
+                        onfocus='$('#lowbox').show();'
+                        onfocus='editClick(id)' onfocusout='resetClick(id,'Whats on your mind, User?')'></textarea>
 
                         </div>
 
+                        <div id='lowbox' style='display:none'>
                           <div class='my-2'>
                         Price:<br>
                         <input class='inputRequest' type='number'
@@ -72,6 +74,7 @@
                                                               placeholder='time'
                                                               style='width: 120px'>
                         </div>
+                    </div>
                     </div>
                     <div class=' border-top post-border px-3 py-3'>
                      <div class='my-2 text-right'>
@@ -112,4 +115,16 @@
         </div>
     </div>
 </div>
+
+
+<script>
+   $(document).ready(function(){
+    
+  $('#toggle') .one ("click", function(){
+    $('#lowbox').toggle ('');
+    
+  });
+});
+    
+</script>
 </body>
