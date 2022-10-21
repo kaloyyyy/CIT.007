@@ -151,6 +151,17 @@ div.usernames{
 #message-list::-webkit-scrollbar-corner {
     background: transparent;
 }
+<<<<<<< Updated upstream
 
 
 
+=======
+#inputRequest {
+    display: none;
+}
+
+.ftoggle{
+    display: none;
+
+}
+>>>>>>> Stashed changes
