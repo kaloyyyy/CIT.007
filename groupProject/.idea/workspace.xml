@@ -1,19 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="browse page added">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/niklab.ff2uwQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d1cc1fe9-3889-4ee5-af2f-848cc4f781ff/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd6b9b42-ee8b-4348-a84d-ac1ac653daff/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+    <list default="true" id="73c29ff8-e244-4443-99aa-f0cefa174a1f" name="Changes" comment="style.css">
+      <change afterPath="$PROJECT_DIR$/../komision/.user.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/Austria_Batoy_Dilag_Final.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/config/meta.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/db/komision_chat.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/db/komision_comm.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/db/komision_convo.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/db/komision_mods.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/db/komision_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/komision.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/scratch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/camera.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/chat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/keyboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/komi.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/pen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/public/svg/pictures.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/browse/browse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/browse/newspaper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/convo-query/chat-insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/convo-query/chatList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/convo-query/comm-insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/convo-query/commList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/convo-query/convoList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/user/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/user/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/user/register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/user/reset-password.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/src/user/user_index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/test/jquerytest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/test/load-test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../komision/videoLink.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/92cc06b5-b55d-43b4-ad11-3e50f8a99973/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/92cc06b5-b55d-43b4-ad11-3e50f8a99973/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/92cc06b5-b55d-43b4-ad11-3e50f8a99973/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/groupProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]1/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]1/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]1/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_07_2022_7_12_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.user.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Austria_Batoy_Dilag_Final.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/meta.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_chat.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_comm.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_convo.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_mods.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/komision_users.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/scratch.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/camera.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/chat.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/keyboard.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/komi.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/pen.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/svg/pictures.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/browse.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/browse/newspaper.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/chat-insert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/chatList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/comm-insert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/commList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/convo-query/convoList.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/logout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/reset-password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/user_index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/jquerytest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/load-test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/components/Navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/About.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/Home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/titest/src/pages/Proflie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoLink.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,26 +195,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "last_opened_file_path": "C:/Users/kaloy/Documents/GitHub/CIT.007/groupProject/db",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "sql.rename.search.for.storage.occurrences": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kaloy/Documents/GitHub/CIT.007/groupProject/db&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web.server&quot;,
+    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kaloy\Documents\GitHub\CIT.007\groupProject\src" />
@@ -120,8 +255,9 @@
       <list>
         <item itemvalue="PHPUnit.groupProject" />
         <item itemvalue="Database Script.chat.sql" />
-        <item itemvalue="Database Script.chat.sql" />
         <item itemvalue="PHPUnit.groupProject" />
+        <item itemvalue="Database Script.chat.sql" />
+        <item itemvalue="Database Script.chat.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +318,10 @@
       <workItem from="1652995045967" duration="2558000" />
       <workItem from="1653053990736" duration="174000" />
       <workItem from="1653211014930" duration="238000" />
+      <workItem from="1662003946054" duration="1204000" />
+      <workItem from="1662312157766" duration="26000" />
+      <workItem from="1664726041549" duration="3648000" />
+      <workItem from="1664734852952" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="group project update">
       <created>1649764637917</created>
