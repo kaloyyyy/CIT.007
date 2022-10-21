@@ -6,7 +6,7 @@
                 <?php include 'sidebar.php';
                 ?>
             </div>
-            <div class=" col-7 border-start post-border border-end  p-0 m-0">
+            <div class=" col-7  post-border border-left border-right  p-0 m-0">
                 <?php
                 if (isset($_GET['page'])) {
                     $currentPage = $_GET['page'];
@@ -20,7 +20,7 @@
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                 voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                 sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                <div class=' border-top border-bottom post-border px-3 py-2'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                <div class=' border-top border-bottom post-border  px-3 py-2'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                 doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
                 veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
                 ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
@@ -35,7 +35,7 @@
                 include 'header.php';
                 if (isset($_GET['page'])) {
                     if ($_GET['page'] == 'Messages') {
-                        echo "<div>";
+                        echo "<div >";
                         require __DIR__ . "/../src/chats/chats.php";
                         echo "</div>";
                     } else if ($_GET['page'] == 'Listings') {
@@ -45,48 +45,6 @@
                         echo $sample . $sample . $sample . $sample;
                     }
                 } else {
-                    echo "<div class=' border-top post-border border-bottom px-3 py-2'>
-                            <div class='container d-flex justify-content-center'>
-                            <div class='flex-row' xmlns=\"www.w3.org/1999/html\">
-                            <div class='my-2 justify-content-center align-items-center'>
-                        Requirement info:<br>
-                         <textarea class='form-control' id='toggle' aria-label='With textarea' style='width:
-                        300px; height: 90px; text-overflow: clip; resize: none'; placeholder='Whats on your mind, User?' 
-                        onfocus='$('#lowbox').show();'
-                        onfocus='editClick(id)' onfocusout='resetClick(id,'Whats on your mind, User?')'></textarea>
-
-                        </div>
-
-                        <div id='lowbox' style='display:none'>
-                          <div class='my-2'>
-                        Price:<br>
-                        <input class='inputRequest' type='number'
-                               id='reqPrice' style='width: 300px;height: 30px; color: black; resize: none' onclick='editClick(id)''
-                               onfocusout='resetClick(id,'what\'s your budget?')'
-                               placeholder='What is your budget?'>
-                    </div>
-
-                     <div class='my-2'>
-                        Date & Time of Deadline:<br>
-                        <div class='flex justify-content-start' style='width: 300px '>
-                            <input type='text' onfocus='(this.type='date')' onfocusout='(this.type ='text')' id='deadline' placeholder='due date'
-                                   style='width:180px'><input type='text' onfocus='(this.type='time')' onfocusout='(this.type ='text')' id='timeDl'
-                                                              placeholder='time'
-                                                              style='width: 120px'>
-                        </div>
-                    </div>
-                    </div>
-                    <div class=' border-top post-border px-3 py-3'>
-                     <div class='my-2 text-right'>
-                        <button type='button' class = 'btn btn-light' on click='submitReq()'>
-                            Post
-                        </button>
-                    </div>
-                    </div>
-                    </div>
-
-
-                     </div>";
 
                     echo $sample . $sample;
                 }
@@ -94,21 +52,38 @@
                 ?>
             </div>
             <?php
+            function userTab($icon, $username, $target): void
+            {
+                echo "
+                <div class= 'col-2 m-2'>
+                    <div class='position-fixed'>
+                        <a class='d-flex rounded-pill align-content-center justify-content-center ' id='user' href='#' data-toggle='modal' data-target='$target' style=''>
+                            <div class='d-flex align-content-center justify-content-center'>
+                                <div class='rounded-pill bg-light text-center' style='width: 2em'>$icon</div>
+                                <span class='d-none ms-3 d-xl-inline-block p-1 text-center'>$username</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                ";
+            }
+
             if (isset($_SESSION['id'])) {
                 $username = $_SESSION['username'];
-                echo "
-                <div class='col-2 m-3 '>
-                    <div class=' mb-4  position-fixed '><a class=' col-1 rounded-pill' id='user' href='#' data-toggle='modal' data-target='#logged-model'>
-                        <i class='fa-regular fa-user'></i><span class='d-none ms-3 d-xxl-inline-block'>$username</span></a>
-                    </div>
-                </div>";
+                $id = $_SESSION['id'];
+                $file = '/komision/src/uploads/'.$id.'.jpg';
+                $file2 = '/komision/src/uploads/'.$id.'.png';
+                if(!file_exists($file)) {
+                }
+                $alt = "<i class='fa-solid fa-arrow-right-to-bracket'></i>";
+                $icon = "<img src = $file alt='' class='rounded-pill'  style='height: 2em'>";
+                $target = '#logged-model';
             } else {
-                echo "<div class='col-2 m-3 '>
-                    <div class=' mb-4  position-fixed '><a class=' col-1 rounded-pill' id='user' href='#' data-toggle='modal' data-target='#login-model'>
-                        <i class='fa-solid fa-arrow-right-to-bracket'></i><span class=' d-none ms-3 d-xxl-inline-block'> Log-in or Sign-up</span></a>
-                    </div>
-                </div>";
+                $username = "Login or Signup";
+                $icon = "<i class='fa-solid fa-arrow-right-to-bracket py-2'></i>";
+                $target = '#login-model';
             }
+            userTab($icon, $username, $target);
             ?>
 
 
@@ -118,13 +93,13 @@
 
 
 <script>
-   $(document).ready(function(){
-    
-  $('#toggle') .one ("click", function(){
-    $('#lowbox').toggle ('normal');
-    
-  });
-});
-    
+    $(document).ready(function () {
+
+        $('#toggle').on("click", function () {
+            $('#lowbox').toggle('normal');
+
+        });
+    });
+
 </script>
 </body>

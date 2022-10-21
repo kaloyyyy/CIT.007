@@ -9,8 +9,8 @@
     --light-bg-color: #e8e9ec;
     --light-main-color: #007acc;;
     overflow-x: hidden;
-}
 
+}
 ::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -34,7 +34,9 @@ a:visited {
     color: white;
     text-decoration: none;
 }
-
+a:hover{
+    text-decoration: none;
+}
 a:active {
     color: white;
 }
@@ -71,14 +73,28 @@ i {
 .komi-logo {
     height: 25px;
     fill: white;
-    margin-left: 5px;
-}
 
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo{
+    width: fit-content;
+    padding: 10px 0px;
+}
+.logo:hover{
+    border: 1px white none;
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--dark-main-color);
+    fill:var(--dark-main-color);
+}
+.logo:hover svg{
+    fill:var(--dark-main-color);
+}
 .komi-header {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 15px 20px;
+    padding: 10px 10px;
     backdrop-filter: blur(8px);
 }
 

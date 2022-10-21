@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -19,6 +19,39 @@
 
                         <br>
                     </div>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="image" accept="image/*" id="imageButton"/>
+                        <input type="submit" value="Upload Image" name="submit" onclick="uploadImg()">
+                    </form>
+                    <div id="results">
+
+                    </div>
+                    <script>
+                        function uploadImg(){
+                            // Making the image file object
+                            var file = $('#imageButton').prop("files")[0];
+                            // For Multiple Files:
+                            // var file = $('#imageButton').prop("files");
+                            // Making the form object
+                            var form = new FormData();
+                            // Adding the image to the form
+                            form.append("image", file);
+                            // form.append("image[]", file) // for multiple files
+                            // The AJAX call
+                            $.ajax({
+                                url: "/komision/src/uploads/upload.php",
+                                type: "POST",
+                                data:  form,
+                                contentType: false,
+                                processData:false,
+                                success: function(result){
+                                    console.log(result);
+                                }
+                            });
+
+                        }
+                    </script>
                 </div>
             </div>
         </div>
