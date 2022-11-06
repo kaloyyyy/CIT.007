@@ -1,7 +1,7 @@
 <?php
 // Include config file
-chdir(dirname(__DIR__));
 require_once __DIR__ . "/../../config/config.php";
+require_once __DIR__ . "/../../config/meta.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -81,7 +81,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Redirect to login page
-                header("location: login.php");
+
+                $sql = "SELECT userID,username,password,userType FROM users WHERE username = ?";
+
+                if ($stmt = $mysqli->prepare($sql)) {
+                    // Bind variables to the prepared statement as parameters
+                    $stmt->bind_param("s", $param_username);
+
+                    // Set parameters
+                    $param_username = $username;
+
+                    // Attempt to execute the prepared statement
+                    if ($stmt->execute()) {
+                        // Store result
+                        $stmt->store_result();
+
+                        // Check if username exists, if yes then verify password
+                        if ($stmt->num_rows == 1) {
+                            // Bind result variables
+                            $stmt->bind_result($id, $username, $hashed_password, $userType);
+                            if ($stmt->fetch()) {
+                                if (password_verify($password, $hashed_password)) {
+                                    // Password is correct, so start a new session
+                                    session_start();
+
+                                    // Store data in session variables
+                                    $_SESSION["loggedin"] = true;
+                                    $_SESSION["id"] = $id;
+                                    $_SESSION["username"] = $username;
+                                    $_SESSION['userType'] = $userType;
+                                    // Redirect user to welcome page
+                                    header("location: /soda/index.php");
+                                } else {
+                                    // Password is not valid, display a generic error message
+                                    $login_err = "Invalid username or password.";
+                                }
+                            }
+                        } else {
+                            // Username doesn't exist, display a generic error message
+                            $login_err = "Invalid username or password.";
+                        }
+                    } else {
+                        echo "Oops! Something went wrong. Please try again later.";
+                    }
+
+                    // Close statement
+                    $stmt->close();
+                }
+
+                header("location: /soda/src/users/login.php");
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -94,51 +142,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Close connection
     $mysqli->close();
 }
+require_once __DIR__ . '/../../components/waves.php';
 ?>
 
-<div class="modal fade" id="register-model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        .wrapper {
+            width: 420px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="d-flex justify-content-center align-items-center h-100">
+    <div class="wrapper">
+        <h2>SODA</h2>
+        <p>System for online doctor appointment</p>
+        Schedule meetups with your doctor quick, easy and accessible!
+    </div>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username"
+                       class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                       value="<?php echo $username; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
-            <div class="modal-body">
-                <div class="flex">
-                    <div class="wrapper">
-                        <h2>Sign Up</h2>
-                        <p>Please fill this form to create an account.</p>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                            <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                                       value="<?php echo $username; ?>">
-                                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                                       value="<?php echo $password; ?>">
-                                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                            </div>
-                            <div class="form-group">
-                                <label>re-enter Password</label>
-                                <input type="password" name="confirm_password"
-                                       class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
-                                       value="<?php echo $confirm_password; ?>">
-                                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Submit">
-                                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-                            </div>
-                            <p>Already have an account? <a href="src/users/login.php" class="register">Login here</a>.</p>
-                        </form>
-                    </div>
-                </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password"
+                       class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                       value="<?php echo $password; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
-        </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password"
+                       class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+                       value="<?php echo $confirm_password; ?>">
+                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+            </div>
+            <p>Already have an account? <a href="login.php" class="rounded-pill bg-primary text-white px-2">Login
+                    here</a>
+            </p>
+        </form>
     </div>
 </div>
+
+</body>
+</html>
