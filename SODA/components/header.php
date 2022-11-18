@@ -1,55 +1,40 @@
 <?php
+$username = htmlspecialchars($_SESSION["username"]);
 
 ?>
 <div class="nav w-100 justify-content-center sticky-top p-2">
-    <a class='nav-link  rounded-pill px-2 mx-2 border' href='/soda/?page=home'>
-        <div class='nav-item'>
-            <i class='fa-solid fa-user svg mx-1'></i>
-            <span class='mx-1 d-none d-xl-inline-block'><?php echo htmlspecialchars($_SESSION["username"]); ?></span>
-        </div>
-    </a>
+
 
     <?php
-    $userEcho = "<a class='nav-link rounded-pill px-2 mx-2 border' href='/soda/?page=viewApp'>
+
+    function navTab($icon, $title, $pageLink): string
+    {
+        return "<a class='nav-link  rounded-pill px-2 mx-2 border' href='/?page=$pageLink'>
                     <div class='nav-item'>
-                        <i class='fa-solid fa-magnifying-glass svg'></i>
-                        <span class='mx-2 d-none d-xl-inline-block'>View my Appointments</span>
-                    </div>
-                </a>
-                <a class='nav-link  rounded-pill px-2 mx-2 border' href='/soda/?page=addApp'>
-                    <div class='nav-item'>
-                        <i class='fa-solid fa-plus-square svg mx-1'></i><span
-                                class='mx-1 d-none d-xl-inline-block'>Add an Appointment</span>
-                    </div>
-                </a>
-                <a class='nav-link rounded-pill px-2 mx-2 border' href='/soda/?page=updateApp'>
-                    <div class='nav-item'>
-                        <i class='fa-solid fa-upload svg mx-1'></i>
-                        <span class='mx-1 d-none d-xl-inline-block'>Update an Appointment</span>
+                        <i class='fa-solid fa-$icon svg mx-1'></i>
+                        <span class='ml-0 mr-1 d-none d-xl-inline-block'>$title</span>
                     </div>
                 </a>";
-    $toEcho = " <a class='nav-link rounded-pill px-2 mx-2 border' href='/soda/?page=patients'>
+    }
+
+    $patients = "<a class='nav-link rounded-pill px-2 mx-2 border' href='/?page=patients'>
                     <div class='nav-item'>
-                    <i class='fa-solid fa-upload svg mx-1'></i>
+                    <i class='fa-solid  svg mx-1'></i>
                     <span class='mx-1 d-none d-xl-inline-block'>SODA Patients</span>
                     </div>
-                </a>
-                <a class='nav-link rounded-pill px-2 mx-2 border' href='/soda/?page=appoints'>
-                    <div class='nav-item'>
-                    <i class='fa-solid fa-upload svg mx-1'></i>
-                    <span class='mx-1 d-none d-xl-inline-block'>Appointments</span>
-                    </div>
                 </a>";
-    if (isset($_SESSION) && $_SESSION['userType'] > 0) {
-        echo $toEcho;
-    }else{
-        echo $userEcho;
+    $user = navTab("user", $username, "home");
+    $doctor = navTab("user-doctor", $username, "home");
+    $admin = navTab("user-secret", $username, "home");
+    $addApp = navTab("file-circle-plus", "Add an Appointment", "addApp");
+    $updateApp = navTab("pen-to-square", "Update an Appointment", "updateApp");
+    $viewApp = navTab("calendar-days", "View Appointments", "viewApp");
+
+    if (isset($_SESSION) && $_SESSION['userType'] == 0) {
+        echo $user . $addApp . $updateApp . $viewApp;
+    } else if (isset($_SESSION) && $_SESSION['userType'] == 1) {
+        echo $doctor . $viewApp . $updateApp;
     }
+    echo navTab("arrow-alt-circle-right", "Logout", 'logout');
     ?>
-    <a class='nav-link  rounded-pill px-2 mx-2 border' href='/soda/?page=logout'>
-        <div class='nav-item'>
-            <i class='fa-solid fa-arrow-alt-circle-right svg mx-1'></i>
-            <span class='mx-1 d-none d-xl-inline-block'>logout</span>
-        </div>
-    </a>
 </div>
