@@ -15,7 +15,8 @@ require_once('config/meta.php');
 </head>
 <body>
 <div class='d-flex flex-column justify-content-center align-items-center'>
-    <div class="border-bottom" style="width: 690px">
+    <div class="border-bottom border-top" style="width: 690px">
+        <h3>Select your Doctor</h3>
         <div id="doctorList" class="w-100 d-flex">
 
         </div>
@@ -49,7 +50,8 @@ require_once('config/meta.php');
 
 </body>
 <script>
-    $('#doctorList').load('/soda/src/look/doctors.php')
+
+    $('#doctorList').load('/src/look/doctors.php')
 
     function addDocID(d_id) {
         $("#doc_id").val(d_id);
@@ -69,7 +71,7 @@ require_once('config/meta.php');
         let desc = $('#desc').val();
         console.log(time);
 
-        $('#addAppoint').load('/soda/src/addApp/add.php', {
+        $('#addAppoint').load('/src/addApp/add.php', {
             d_id: d_id,
             date: date,
             time: time,
