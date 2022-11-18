@@ -11,6 +11,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to login page
-header("location: /soda/index.php?page=user");
+header("location: index.php?page=user");
 exit;
 ?>

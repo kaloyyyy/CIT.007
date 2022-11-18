@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, userType) VALUES (?, ?, 0)";
 
         if ($stmt = $mysqli->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $_SESSION["username"] = $username;
                                     $_SESSION['userType'] = $userType;
                                     // Redirect user to welcome page
-                                    header("location: /soda/index.php");
+                                    header("location: /?page=home");
                                 } else {
                                     // Password is not valid, display a generic error message
                                     $login_err = "Invalid username or password.";
@@ -129,7 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $stmt->close();
                 }
 
-                header("location: /soda/src/users/login.php");
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
