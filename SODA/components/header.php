@@ -29,11 +29,14 @@ $username = htmlspecialchars($_SESSION["username"]);
     $addApp = navTab("file-circle-plus", "Add an Appointment", "addApp");
     $updateApp = navTab("pen-to-square", "Update an Appointment", "updateApp");
     $viewApp = navTab("calendar-days", "View Appointments", "viewApp");
+    $addProfile = (navTab('user-plus',"Add Patient Profile","addProfile"));
 
     if (isset($_SESSION) && $_SESSION['userType'] == 0) {
         echo $user . $addApp . $updateApp . $viewApp;
     } else if (isset($_SESSION) && $_SESSION['userType'] == 1) {
         echo $doctor . $viewApp . $updateApp;
+    } else if (isset($_SESSION) && $_SESSION['userType'] == 2) {
+        echo $addProfile;
     }
     echo navTab("arrow-alt-circle-right", "Logout", 'logout');
     ?>

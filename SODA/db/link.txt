@@ -1,0 +1,13 @@
+http://soda.42web.io/
+
+lacking doctor and admin functions
+
+
+usersnames:
+doctor
+testpaient
+admin
+doc
+user
+
+passwords: 123456

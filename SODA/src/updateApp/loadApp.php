@@ -15,7 +15,7 @@ $rows = mysqli_fetch_assoc($result);
 foreach ($result as $row) {
     $app_id = $row['app_id'];
     $desc = $row['desc'];
-    $datetime = explode(" ", $rows['ap_date']);
+    $datetime = explode(" ", $row['ap_date']);
     echo "<div id='$app_id' class='border m-1 p-1 appList rounded editApp' style='width: 420px' onclick='editNow(this.id)'>";
     echo "<div class='subAppList ' >";
     echo $desc . "<br>";

@@ -80,7 +80,7 @@ a#getStarted {
     transition: 360ms;
 }
 
-.editApp {
+.editApp,.form-bg {
     background: rgba(13, 16, 21, 0.57);
 }
 

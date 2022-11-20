@@ -37,7 +37,7 @@
     {
         $accType = $_SESSION['accType'];
         if ($sentBy == $accType) {
-            $bgcolor = 'dark-main';
+            $bgcolor = 'bg-primary';
             echo "
             <div class='d-flex container-fluid flex-column justify-content-end align-items-end px-1'>
             ";
