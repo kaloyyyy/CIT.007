@@ -1,12 +1,12 @@
 <body class=" darktheme ">
-<div class="container ">
-    <div class="">
+<div class="container-fluid mx-xl-5 px-xl-5 px-lg-0 mx-lg-0">
+    <div class="px-xl-5">
         <div class="row justify-content-center">
             <div class="col-2 d-flex justify-content-end ">
                 <?php include 'sidebar.php';
                 ?>
             </div>
-            <div class=" col-7  post-border border-left border-right  p-0 m-0">
+            <div class=" col-6  post-border border-left border-right  p-0 m-0">
                 <?php
                 if (isset($_GET['page'])) {
                     $currentPage = $_GET['page'];
@@ -51,11 +51,12 @@
 
                 ?>
             </div>
+            <div class= 'col-2 m-2'>
             <?php
             function userTab($icon, $username, $target): void
             {
                 echo "
-                <div class= 'col-2 m-2'>
+                
                     <div class='position-fixed'>
                         <a class='d-flex rounded-pill align-content-center justify-content-center ' id='user' href='#' data-toggle='modal' data-target='$target' style=''>
                             <div class='d-flex align-content-center justify-content-center'>
@@ -64,7 +65,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                
                 ";
             }
 
@@ -85,7 +86,7 @@
             }
             userTab($icon, $username, $target);
             ?>
-
+            </div>
 
         </div>
     </div>

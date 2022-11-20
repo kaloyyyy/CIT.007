@@ -3,13 +3,16 @@
     font-size: 16px;
     --font-size: 16px;
 
-    --dark-bg-color: #161821;
+    --dark-bg-color: #191923;
     --dark-main-color: #55c6f0;
 
     --light-bg-color: #e8e9ec;
     --light-main-color: #007acc;;
     overflow-x: hidden;
 
+}
+h5{
+    margin: 0;
 }
 ::-webkit-scrollbar {
     width: 0.5rem;

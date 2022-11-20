@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
-<script src="https://kit.fontawesome.com/69c4ef077f.js" crossorigin="anonymous"></script>
+<script src="/komision/lib/fontawesome-free-6.2.0-web/js/all.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/komision/public/css/bootstrap.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
 <link rel="stylesheet" href="/komision/public/css/style.css"
