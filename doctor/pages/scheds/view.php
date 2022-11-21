@@ -35,11 +35,11 @@ $userType = $_SESSION['userType'];
             <?php
 
             if ($userType == 0) {
-                $query = "select app_id, description ,ap_date, d.sur_name dSname, d.first_name dFname from appointments join doctor d on d.d_id = appointments.d_id where p_id = $id order by ap_date";
+                $query = "select app_id, description ,ap_date, d.sur_name dSname, d.given_name dFname from appointments join doctor d on d.d_id = appointments.d_id where p_id = $id order by ap_date";
             } else if ($userType == 1) {
-                $query = "select app_id, description ,ap_date, p.sur_name pSname, p.first_name pFname from appointments join profile p on p.p_id = appointments.p_id where d_id = $id order by ap_date";
+                $query = "select app_id, description ,ap_date, p.sur_name pSname, p.given_name pFname from appointments join profile p on p.p_id = appointments.p_id where d_id = $id order by ap_date";
             } else {
-                $query = "select app_id, description ,ap_date, p.first_name pFname, p.sur_name pSname, d.sur_name dSname, d.first_name dFname from appointments join profile p on appointments.p_id = p.p_id join doctor d on d.d_id = appointments.d_id order by ap_date";
+                $query = "select app_id, description ,ap_date, p.given_name pFname, p.sur_name pSname, d.sur_name dSname, d.given_name dFname from appointments join profile p on appointments.p_id = p.p_id join doctor d on d.d_id = appointments.d_id order by ap_date";
             }
             $result = $mysqli->query($query);
             foreach ($result as $row) {

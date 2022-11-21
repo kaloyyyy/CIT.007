@@ -7,6 +7,9 @@ $date = $_POST['date'];
 $time = $_POST['time'];
 $desc = $_POST['desc'];
 $p_id = $_SESSION['id'];
+if($_SESSION['userType']==2){
+    $p_id = $_POST['p_id'];
+}
 if(!isset($_SESSION)){
     session_start();
 }

@@ -24,10 +24,22 @@ include __DIR__ . '/../layout/header.php';
                 $res = $mysqli->query($query);
                 foreach ($res as $row) {
                     $d_id = $row['d_id'];
-                    $fname = $row['first_name'];
+                    $fname = $row['given_name'];
                     $sname = $row['sur_name'];
-                    echo "<br><input type='radio' name='doctor' class='' value='$d_id'>$fname $sname";
+                    echo "<br><input type='radio' name='doctor' class='doctor' value='$d_id'>$fname $sname";
 
+                }
+                if($_SESSION['userType']==2){
+                    echo "<br><br><label>Select Patient</label>";
+                    $query = "select * from profile";
+                    $res = $mysqli->query($query);
+                    foreach ($res as $row) {
+                        $p_id = $row['p_id'];
+                        $fname = $row['given_name'];
+                        $sname = $row['sur_name'];
+                        echo "<br><input type='radio' name='patient' class='patient' value='$p_id'>$fname $sname";
+
+                    }
                 }
                 ?><br><br>
                 <label>Date and Time</label>
@@ -43,7 +55,7 @@ include __DIR__ . '/../layout/header.php';
                 <input type="button" class="btn btn-primary" value="Submit" onclick="addSched()">
             </div>
         </form>
-        <div id="addAppoint">
+        <div id="addAppoint" class="alert-success">
         </div>
     </div>
 
@@ -55,11 +67,13 @@ require_once __DIR__ . '/../layout/background.php';
 </body>
 <script>
     function addSched() {
-        let d_id = $("input[type='radio']:checked").val()
+        let d_id = $("input[name='doctor']:checked").val()
+        let p_id = $("input[name='patient']:checked").val()
         let date = $('#date').val();
         let time = $('#time').val();
         let desc = $('#description').val();
         $('#addAppoint').load('/pages/scheds/newSched.php', {
+            p_id: p_id,
             d_id: d_id,
             date: date,
             time: time,

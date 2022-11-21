@@ -106,7 +106,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="d-flex justify-content-center align-items-center h-100">
     <div class="wrapper ">
         <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
 
         <?php
         if (!empty($login_err)) {
@@ -132,6 +131,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
         </form>
+    </div>
+    <div class="wrapper">
+        <h2>Welcome to Now Serving MD!</h2>
+        <p>We are here to schedule your Doctor's Appointment</p>
     </div>
 </div>
 

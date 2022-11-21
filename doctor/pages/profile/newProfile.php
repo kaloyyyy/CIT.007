@@ -21,7 +21,7 @@ if (isset($row['userID'])) {
     $userQuery = "INSERT into users (userID, username, password, created_at, userType) VALUES (default, '$username', '$password', default, 0)";
     $userRes = $mysqli->query($userQuery);
     $lastId = $mysqli->insert_id;
-    $profileQuery = "INSERT into profile (p_id, first_name, sur_name, weight, height, sex) VALUES ('$lastId', '$fname', '$sname', $weight, $height, '$sex')";
+    $profileQuery = "INSERT into profile (p_id, given_name, sur_name, weight, height, gender) VALUES ('$lastId', '$fname', '$sname', $weight, $height, '$sex')";
     $profileRes = $mysqli->query($profileQuery);
     echo"<script>reset()</script>";
 

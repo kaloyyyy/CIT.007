@@ -5,7 +5,7 @@ require_once 'config.php';
 
 <html lang="en">
 <head>
-<title>Doctor Appointments</title>
+<title>Now serving MD</title>
 </head>
 <body>
 <div class="body h-100 w-100">
