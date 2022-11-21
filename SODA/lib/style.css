@@ -1,0 +1,118 @@
+:root {
+    font-family: 'Inter', sans-serif;
+    color: white;
+    --cyan-main: #7bdcb5;
+    --blue-main: #8ed1fc;
+    --dark-bg: #0d1015;
+}
+
+body {
+    background: var(--dark-bg);
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+
+a#getStarted:hover {
+    border-color: #8ed1fc !important;
+    transform: rotate(-10deg);
+    transition: 420ms;
+}
+
+a#getStarted {
+    background: none;
+    border-width: 4px !important;
+    color: #ffffff;
+    font-weight: bolder !important;
+    animation-name: noneDisplay;
+    animation-duration: 690ms;
+    opacity: 100;
+    animation-timing-function: ease-in;
+    transition: 369ms;
+}
+
+@keyframes noneDisplay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+#sodaWelcome {
+    color: #ffffff;
+    font-weight: bold !important;
+    height: 100%;
+}
+
+#welcomeBox {
+    animation-name: welcome;
+    animation-duration: 420ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes welcome {
+    0% {
+        color: rgba(0, 56, 93, 0.22);
+    }
+    100% {
+        color: #ffffff;
+    }
+}
+
+.nav-link {
+    color: var(--blue-main);
+    border-color: var(--blue-main) !important;
+    transition: 360ms;
+
+}
+
+.nav-link:hover {
+    color: var(--cyan-main);
+    border-color: var(--cyan-main) !important;
+    transition: 360ms;
+    background: rgba(255, 255, 255, 0.17);
+    transform: rotate(-4deg);
+}
+
+.docList {
+
+    transition: 360ms;
+}
+
+.editApp,.form-bg {
+    background: rgba(13, 16, 21, 0.57);
+}
+
+.editApp:hover {
+    color: var(--blue-main);
+    border-color: var(--blue-main) !important;
+    transition: 360ms;
+    background: rgba(255, 255, 255, 0.17);
+    transform: rotate(-1deg);
+}
+
+.docList:hover {
+    color: var(--blue-main);
+    border-color: var(--blue-main) !important;
+    transition: 360ms;
+    background: rgba(255, 255, 255, 0.17);
+    transform: rotate(-2deg);
+}
+
+.activeEdit {
+    background: #344856;
+    border-color: var(--blue-main) !important;
+}
+
+.docActive {
+    color: var(--cyan-main);
+    border-color: var(--cyan-main) !important;
+    transition: 360ms;
+    background: rgba(255, 255, 255, 0.17);
+}
+
+.wrapper {
+    width: 420px;
+    padding: 20px;
+}

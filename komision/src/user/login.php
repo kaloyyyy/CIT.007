@@ -32,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["password"]);
     }
-    // Check if modKey is empty
-    //$modKey = trim($_POST["modKey"]);
+
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
