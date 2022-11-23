@@ -24,7 +24,6 @@ if (!isset($_SESSION)) {
 
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                 $page = $_GET['page'] ?? 'home';
-
             } else {
                 $page = $_GET['page'] ?? 'landing';
             }
