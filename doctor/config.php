@@ -12,15 +12,15 @@ const DB_NAME = "epiz_32942932_soda";*/
 if(!isset($_SESSION)){
     session_start();
 }
-/*const DB_SERVER = 'sql100.epizy.com';
-const DB_USERNAME = "epiz_33038484";
-const DB_PASSWORD = "DuOXWy21SL2I0h";
-const DB_NAME = "epiz_33038484_nsmd";*/
+const DB_SERVER = 'sql204.epizy.com';
+const DB_USERNAME = "epiz_33053893";
+const DB_PASSWORD = "l4ZbwPlEiPKbQ9";
+const DB_NAME = "epiz_33053893_mymd";
 
-const DB_SERVER = 'localhost';
+/*const DB_SERVER = 'localhost';
 const DB_USERNAME = "root";
 const DB_PASSWORD = "";
-const DB_NAME = "doc";
+const DB_NAME = "doc";*/
 
 /* Attempt to connect to MySQL database */
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);

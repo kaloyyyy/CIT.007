@@ -1,34 +1,66 @@
 <?php
 chdir(dirname(__DIR__));
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-<head>
-    <?php include __DIR__ . '/config/meta.php';
-    ?>
-    <title>Komi-sion</title>
-</head>
-<?php
 require_once 'config/config.php';
 require_once 'config/meta.php';
 if (!isset($_SESSION)) {
     session_start();
 }
-$login = "src/user/login.php";
-$register ='src/user/register.php';
-$home = 'public/index.php';
-$logged ='src/user/logged-in.php';
-$posting = 'src/post-request/index.php';
-require $home;
-if (isset($_SESSION['id'])) {
-    require $logged;
-    require $posting;
-} else {
-    require $login;
-    require $register;
-}
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include __DIR__ . '/config/meta.php';
+    ?>
+    <title>Komi-sion</title>
+</head>
+<body class=" darktheme ">
+<div class="container-fluid mx-xl-5 px-xl-5 px-lg-0 mx-lg-0">
+    <div class="px-xl-5">
+        <div class="row d-flex justify-content-center">
+            <?php
+
+
+
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+                $page = $_GET['page'] ?? 'home';
+
+            } else {
+                $page = $_GET['page'] ?? 'landing';
+            }
+            if($page!='landing'){
+                require_once 'components/left-bar.php';
+                echo "<div class=' col-6  post-border border-left border-right  p-0 m-0'>";
+                require_once 'components/header.php';
+                switch ($page) {
+                    case 'welcome':
+
+                        break;
+                    case 'home':
+
+                        require_once 'src/pages/sample.php';
+
+                        break;
+                    case 'login':
+
+                        break;
+                }
+                echo "</div><div class= 'col-2 m-2'>";
+
+
+
+                echo "</div>";
+            }else{
+                require_once 'src/pages/welcome.php';
+                echo'landing';
+            }
+
+            ?>
+        </div>
+    </div>
+</div>
+</body>
+
 </html>
 
 

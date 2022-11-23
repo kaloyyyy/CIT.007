@@ -8,11 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
-<script src="/komision/lib/fontawesome-free-6.2.0-web/js/all.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/komision/public/css/bootstrap.css"
+<script src="/lib/fontawesome-free-6.2.0-web/js/all.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/public/css/bootstrap.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
-<link rel="stylesheet" href="/komision/public/css/style.css"
+<link rel="stylesheet" href="/public/css/style.css"
     <?php echo '?v=' . time(); ?> type="text/css" media="screen, projection"/>
-<script src="/komision/public/js/jquery-3.6.1.js"></script>
-<link rel="icon" type="image/x-icon" href="/komision/public/svg/komi.svg">
-<script src="/komision/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery-3.6.1.js"></script>
+<link rel="icon" type="image/x-icon" href="/public/svg/komi.svg">
+<script src="/public/js/bootstrap.js"></script>
