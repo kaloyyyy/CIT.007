@@ -15,7 +15,7 @@ if (!isset($_SESSION)) {
     <title>Komi-sion</title>
 </head>
 <body class=" darktheme ">
-<div class="container-fluid mx-xl-5 px-xl-5 px-lg-0 mx-lg-0">
+<div class="container-fluid">
     <div class="px-xl-5">
         <div class="row d-flex justify-content-center">
             <?php
@@ -47,7 +47,7 @@ if (!isset($_SESSION)) {
                 echo "</div><div class= 'col-2 m-2'>";
 
 
-
+                echo "right bar content";
                 echo "</div>";
             }else{
                 require_once 'src/pages/welcome.php';
