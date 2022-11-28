@@ -30,13 +30,13 @@ $username = htmlspecialchars($_SESSION["username"]);
     $updateApp = navTab("pen-to-square", "Update an Appointment", "updateApp");
     $viewApp = navTab("calendar-days", "View Appointments", "viewApp");
     $addProfile = (navTab('user-plus',"Add Patient Profile","addProfile"));
-
+    $viewProfile = (navTab('users',"View Patient Profile","viewProfile"));
     if (isset($_SESSION) && $_SESSION['userType'] == 0) {
         echo $user . $addApp . $updateApp . $viewApp;
     } else if (isset($_SESSION) && $_SESSION['userType'] == 1) {
         echo $doctor . $viewApp . $updateApp;
     } else if (isset($_SESSION) && $_SESSION['userType'] == 2) {
-        echo $addProfile;
+        echo $addProfile. $viewProfile;
     }
     echo navTab("arrow-alt-circle-right", "Logout", 'logout');
     ?>

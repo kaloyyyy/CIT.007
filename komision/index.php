@@ -41,17 +41,15 @@ if (!isset($_SESSION)) {
 
                         break;
                     case 'login':
-
+                        require_once 'src/user/login.php';
+                        require_once 'src/user/register.php';
                         break;
                 }
                 echo "</div><div class= 'col-2 m-2'>";
-
-
-                echo "right bar content";
+                include_once 'components/right-bar.php';
                 echo "</div>";
             }else{
-                require_once 'src/pages/welcome.php';
-                echo'landing';
+                header('location: /src/pages/welcome.php');
             }
 
             ?>

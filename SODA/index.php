@@ -37,6 +37,8 @@
             echo "<title>SODA | Home</title>";
             break;
         case 'login':
+            require_once __DIR__.'src/users/login.php';
+            break;
         case 'user':
             require_once __DIR__ . '/src/users/index.php';
             break;
@@ -54,6 +56,9 @@
             break;
         case 'addProfile':
             require_once __DIR__ . '/src/addProfile/index.php';
+            break;
+        case 'viewProfile':
+            require_once __DIR__.'/src/viewProfile/index.php';
             break;
         default:
             http_response_code(404);

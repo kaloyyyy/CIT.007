@@ -11,17 +11,41 @@ $id = $_SESSION['id'];
     <title>SODA | View Profile</title>
 </head>
 <body>
-<?php
-$queryProfile = "SELECT * FROM profile";
-$res = $mysqli->query($queryProfile);
-$rows = mysqli_fetch_assoc($res);
-foreach ($res as $row) {
-    $p_id= $row['p_id'];
-    echo "<div id='$p_id' class='border m-1 p-1 docList rounded'  style='width: 420px'>";
-    echo "<div class=' ' >";
-    echo $row['first_name'] . " " . $row['sur_name'] . "<br>";
-    echo "</div>";
-    echo "</div>";
-}
-?>
+<div class="d-flex justify-content-center align-items-center">
+    <div class="container">
+        <?php
+        $queryProfile = "SELECT * FROM profile";
+        $res = $mysqli->query($queryProfile);
+        $rows = mysqli_fetch_assoc($res);
+        echo "<table class='table table-hover table-dark'>
+  <thead>
+    <tr>
+      <th scope='col'>Full name</th>
+      <th scope='col'>weight</th>
+      <th scope='col'>height</th>
+      <th scope='col'>sex</th>
+    </tr>
+  </thead>
+  <tbody>";
+        foreach ($res as $row) {
+            echo "<tr>";
+            $fullname = $row['first_name'] . " " . $row['sur_name'];
+            $weight = $row['weight'];
+            $height = $row['height'];
+            echo "<tr>
+                  <th scope='row'>$fullname</th>
+                  <td>$weight</td>
+                  <td>$height</td>
+                  <td>@mdo</td>
+                </tr>";
+
+
+            echo "</tr>";
+
+
+        }
+        echo "</tbody></table>";
+        ?>
+    </div>
+</div>
 </body>
