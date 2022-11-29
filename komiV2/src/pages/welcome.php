@@ -11,6 +11,47 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+     <style>
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
+
+    /* medium and up screens */
+    @media (min-width: 768px) {
+
+        .carousel-inner .carousel-item-end.active,
+        .carousel-inner .carousel-item-next {
+          transform: translateX(25%);
+        }
+
+        .carousel-inner .carousel-item-start.active,
+        .carousel-inner .carousel-item-prev {
+          transform: translateX(-25%);
+        }
+    }
+
+    .carousel-inner .carousel-item-end,
+    .carousel-inner .carousel-item-start {
+      transform: translateX(0);
+    }
+    /* slider */
+    .cardo{
+      margin-right: 40px;
+     }
+
+     .card-img-overlay{
+
+      transition: 0.5s;
+     }
+
+     .card-img-overlay:hover{
+      background-color: rgba(255, 255, 255, 0.466);
+     }
+
+    </style>
 </head>
 
 <section id="hero" class="d-flex align-items-center">
@@ -23,9 +64,6 @@
                 <div class="d-flex justify-content-center justify-content-lg-start">
                     <a href="/index.php/?page=login" class="btn-get-started scrollto">Get Started</a>
                 </div>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                <img src="/src/pages/img/sideimg.png" class="" alt="">
             </div>
         </div>
     </div>
