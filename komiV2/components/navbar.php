@@ -56,7 +56,7 @@
                     </div>
                 </a>
                 <a class="nav-link  col-12 rounded-pill justify-content-center align-items-center p-auto komit"
-                   data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href=''>
+                   data-toggle="modal" data-target="#postmodal" data-whatever="" href=''>
                     <div style="text-align: center;">
                         <div class="nav-item align-items-center justify-content-center">
                             <i class="fa-regular fa-pen-to-square"></i><span
