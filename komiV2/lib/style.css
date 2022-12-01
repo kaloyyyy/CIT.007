@@ -12,6 +12,10 @@
     overflow-x: hidden;
 
 }
+.translucent{
+    background: rgba(22, 31, 42, 0.44);
+    backdrop-filter: blur(4px);
+}
 h5{
     margin: 0;
 }

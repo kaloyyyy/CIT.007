@@ -26,6 +26,7 @@
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             $page = $_GET['page'] ?? 'home';
             require_once __DIR__ . '/components/navbar.php';
+            $userType = $_SESSION['userType'];
         } else {
             $page = $_GET['page'] ?? 'landing';
         }
@@ -35,19 +36,18 @@
                 require_once __DIR__ . '/src/pages/welcome.php';
                 title('Welcome');
                 break;
-            case 'login':
-                require_once __DIR__ . '/src/users/login.php';
-                title('Login');
+            case 'Login':
+                header("location: /src/users/login.php");
                 break;
-            case 'home':
+            case 'Home':
                 require_once __DIR__ . '/src/users/index.php';
                 title('Home');
                 break;
-            case 'listings':
+            case 'Listings':
                 require_once __DIR__.'/src/listing/index.php';
                 title("Listings");
                 break;
-            case 'messages':
+            case 'Messages':
                 require_once __DIR__.'/src/message/index.php';
                 title("Messages");
                 break;
