@@ -12,12 +12,12 @@
             </div>
 
             <div class='nav flex-column'>
-                <a class='nav-link col-12 rounded-pill' href='/?page=home'>
+                <a class='nav-link col-12 rounded-pill' href='/?page=Home'>
                     <div class='nav-item'>
                         <i class='fa-solid fa-house svg'></i><span class='mx-3 d-none d-xl-inline-block'>Home</span>
                     </div>
                 </a>
-                <a class='nav-link col-12 rounded-pill' href='/?page=listings'>
+                <a class='nav-link col-12 rounded-pill' href='/?page=Listings'>
                     <div class='nav-item'>
                         <i class='fa-solid fa-magnifying-glass svg'></i><span class='mx-3 d-none d-xl-inline-block'>Listings</span>
                     </div>
@@ -25,21 +25,21 @@
                 <?php
                 if (isset($_SESSION['id'])) {
                     $side = " 
-            <a class='nav-link col-12 rounded-pill' href=''>
-                <div class='nav-item'>
-                    <i class='fa-regular fa-rectangle-list'></i><span class='mx-3 d-none d-xl-inline-block'>Categories</span>
-                </div>
-            </a>
-            <a class='nav-link col-12 rounded-pill ' href='/?page=messages'>
-                                <div class='nav-item'>
-                    <i class='fa-regular fa-comment-dots'></i><span class='mx-3 d-none d-xl-inline-block'>Messages</span>
-                </div>
-            </a>
-            <a class='nav-link col-12 rounded-pill' href=''>
-            <div class='nav-item'>
-                    <i class='fa-regular fa-user'></i><span class='mx-3 d-none d-xl-inline-block'>User</span>
-                </div>
-            </a>";
+                    <a class='nav-link col-12 rounded-pill' href=''>
+                        <div class='nav-item'>
+                            <i class='fa-regular fa-rectangle-list'></i><span class='mx-3 d-none d-xl-inline-block'>Categories</span>
+                        </div>
+                    </a>
+                    <a class='nav-link col-12 rounded-pill ' href='/?page=Messages'>
+                                        <div class='nav-item'>
+                            <i class='fa-regular fa-comment-dots'></i><span class='mx-3 d-none d-xl-inline-block'>Messages</span>
+                        </div>
+                    </a>
+                    <a class='nav-link col-12 rounded-pill' href=''>
+                    <div class='nav-item'>
+                            <i class='fa-regular fa-user'></i><span class='mx-3 d-none d-xl-inline-block'>User</span>
+                        </div>
+                    </a>";
                     echo $side;
                 } else {
                     echo "<a class='nav-link col-12 rounded-pill' href=''>
@@ -60,7 +60,7 @@
                     <div style="text-align: center;">
                         <div class="nav-item align-items-center justify-content-center">
                             <i class="fa-regular fa-pen-to-square"></i><span
-                                class="mx-3 d-none d-xl-inline-block">Post</span>
+                                    class="mx-3 d-none d-xl-inline-block">Post</span>
                         </div>
                     </div>
                 </a>
@@ -68,7 +68,8 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

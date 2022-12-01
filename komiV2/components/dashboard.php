@@ -1,7 +1,7 @@
 <div class="col-2 d-flex px-2 justify-content-start">
-    <div class="  komi-sidebar flex-column nav h-100 d-flex flex-column nav h-100 ">
+    <div class="  komi-sidebar flex-column nav h-100 d-flex flex-column nav h-100 " style="width: 80%;">
         <div class=' d-flex flex-column position-sticky' style="top:0;">
-            <div class="" style="width: inherit;">
+            <div class="" style="width: 100%;">
                 <?php
                 function userTab($icon, $username, $target): void
                 {
@@ -27,7 +27,7 @@
                     if (!file_exists($file)) {
                     }
                     $alt = "<i class='fa-solid fa-arrow-right-to-bracket'></i>";
-                    $icon = "<img src = $file alt='' class='rounded-pill'  style='width: 2.2em'>";
+                    $icon = "<img src = $file alt='' class='rounded-pill'  style='width: 2.2em; height: 2.2em;'>";
                     $target = '#logged-model';
                 } else {
                     $username = "Login or Signup";
@@ -38,15 +38,20 @@
                 ?>
             </div>
 
-            <div  class=""   style="word-wrap: break-word; width: inherit">
-                <div class="">
-                    insert content here aaaaa aa aaaaa aaaaa<br>
-                    insert content here
-
-                    insert content here aaaaa aa aaaaa aaaaa<br>
-                    insert content here
+            <div  class=" d-flex flex-column"   style="word-wrap: break-word; width: 100%">
+                <div class=" border rounded my-1 translucent p-1" style="width: 100%">
+                    <?php
+                    if($userType==0){
+                        echo"You are a Client";
+                    }else{
+                        echo"You are a Freelancer";
+                    }
+                    ?>
                 </div>
-
+                <div class="translucent border rounded p-1">
+                    My stats<br>
+                    total komisions: <span id="numberOfKomi"></span>
+                </div>
             </div>
         </div>
 
@@ -125,5 +130,5 @@
 
         });
     });
-
+    $('#numberOfKomi').load('src/listing/count.php')
 </script>
