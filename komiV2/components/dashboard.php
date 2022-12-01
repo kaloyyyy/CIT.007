@@ -8,10 +8,10 @@
                     echo "
                 
 
-                        <a class='d-flex rounded-pill align-content-center justify-content-center ' id='user' href='#' data-toggle='modal' data-target='$target' style='width: fit-content'>
-                            <div class='d-flex align-content-center justify-content-center'>
-                                <div class='rounded-pill text-center' style='width: 2.2em'>$icon</div>
-                                <span class='d-none ms-3 d-xl-inline-block p-1 text-center'>$username</span>
+                        <a class='d-flex rounded-pill align-content-center justify-content-center active' id='userTab' href='#' data-toggle='modal' data-target='$target' style='width: fit-content'>
+                            <div class='d-flex align-content-center justify-content-center align-items-center '>
+                                <div class='rounded-pill text-center' style='width: 2.3em'>$icon</div>
+                                <span class='d-none ms-3 d-xl-inline-block p-1 text-center align-items-center justify-content-center font-weight-bold'>$username</span>
                             </div>
                         </a>
 
@@ -24,10 +24,11 @@
                     $id = $_SESSION['id'];
                     $file = '/src/uploads/' . $id . '.jpg';
                     $file2 = '/src/uploads/' . $id . '.png';
-                    if (!file_exists($file)) {
+                    if (!(file_exists(__DIR__.'/../'.$file))) {
+                        $file = $file2;
                     }
                     $alt = "<i class='fa-solid fa-arrow-right-to-bracket'></i>";
-                    $icon = "<img src = $file alt='' class='rounded-pill'  style='width: 2.2em; height: 2.2em;'>";
+                    $icon = "<img src = $file alt='' class='rounded-pill'  style='width: 2.3em; height: 2.3em;'>";
                     $target = '#logged-model';
                 } else {
                     $username = "Login or Signup";

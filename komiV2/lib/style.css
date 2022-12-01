@@ -13,7 +13,7 @@
 
 }
 .translucent{
-    background: rgba(22, 31, 42, 0.44);
+    background: rgba(25, 25, 35, 0.23);
     backdrop-filter: blur(4px);
 }
 h5{
@@ -54,7 +54,10 @@ a:hover{
 a:active {
     color: white;
 }
-
+a:hover:visited{
+    text-decoration: none;
+    color: white;
+}
 .darktheme {
     background: var(--dark-bg-color);
     color: white;
@@ -72,6 +75,7 @@ i {
     width: fit-content;
     min-width: 50px;
     text-align: center;
+    transition: 250ms;
 }
 
 .nav-link:hover {
@@ -128,12 +132,14 @@ i {
     background: var(--dark-main-color);
 }
 
-#user {
+#userTab {
     background: rgba(255, 255, 255, 0.3);
     padding: 5px 10px;
-    color: var(--dark-main-color);
+    color: white;
 }
-
+.active {
+    background: rgba(67, 125, 148, 0.49)!important;
+}
 .modal-title {
     color: white;
 }
@@ -181,6 +187,4 @@ div.usernames{
 #message-list::-webkit-scrollbar-corner {
     background: transparent;
 }
-
-
 

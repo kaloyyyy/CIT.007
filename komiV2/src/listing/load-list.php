@@ -15,7 +15,7 @@ if($userType == 0){
 foreach ($postRequestResult as $postRequestRow) {
     $id = $postRequestRow['postID'];
     $price = $postRequestRow['price'];
-    echo "<div class=' border-top border-bottom post-border px-3 py-2 translucent' id='post$id'>";
+    echo "<div class=' border-top border-bottom post-border px-3 py-2 ' id='post$id'>";
     echo "<div class='usernames'>@" . $postRequestRow['username'] . "</div>";
     echo "Description: " . $postRequestRow['Description'];
     echo "<br>price: PHP " . $price;
