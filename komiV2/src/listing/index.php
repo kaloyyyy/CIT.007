@@ -1,8 +1,8 @@
-<div class="col-6  post-border border-left border-right  p-0 m-0">
+<div class="col-6   p-0 m-0 post-border border-left border-right">
     <?php
     require_once __DIR__ . '/../../components/header.php';
     ?>
-    <div id="postlist">
+    <div id="postlist" class="translucent ">
 
     </div>
 </div>
