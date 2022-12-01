@@ -24,15 +24,15 @@
 
 
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-            $page = $_GET['page'] ?? 'home';
+            $page = $_GET['page'] ?? 'Home';
             require_once __DIR__ . '/components/navbar.php';
             $userType = $_SESSION['userType'];
         } else {
-            $page = $_GET['page'] ?? 'landing';
+            $page = $_GET['page'] ?? 'Landing';
         }
 
         switch ($page) {
-            case 'landing':
+            case 'Landing':
                 require_once __DIR__ . '/src/pages/welcome.php';
                 title('Welcome');
                 break;
