@@ -1,3 +1,7 @@
+<?php
+$active = $_GET['page'] ?? "Home";
+
+?>
 <div class="col-2 d-flex px-2 justify-content-end">
     <div class="  komi-sidebar flex-column nav h-100   position-fixed">
         <div class=" mt-2">
@@ -12,12 +16,12 @@
             </div>
 
             <div class='nav flex-column'>
-                <a class='nav-link col-12 rounded-pill' href='/?page=Home'>
+                <a class='nav-link col-12 rounded-pill' href='/?page=Home' id="Home">
                     <div class='nav-item'>
                         <i class='fa-solid fa-house svg'></i><span class='mx-3 d-none d-xl-inline-block'>Home</span>
                     </div>
                 </a>
-                <a class='nav-link col-12 rounded-pill' href='/?page=Listings'>
+                <a class='nav-link col-12 rounded-pill' href='/?page=Listings' id="Listings">
                     <div class='nav-item'>
                         <i class='fa-solid fa-magnifying-glass svg'></i><span class='mx-3 d-none d-xl-inline-block'>Listings</span>
                     </div>
@@ -25,24 +29,24 @@
                 <?php
                 if (isset($_SESSION['id'])) {
                     $side = " 
-                    <a class='nav-link col-12 rounded-pill' href=''>
+                    <a class='nav-link col-12 rounded-pill' href='' id='Categories'>
                         <div class='nav-item'>
                             <i class='fa-regular fa-rectangle-list'></i><span class='mx-3 d-none d-xl-inline-block'>Categories</span>
                         </div>
                     </a>
-                    <a class='nav-link col-12 rounded-pill ' href='/?page=Messages'>
+                    <a class='nav-link col-12 rounded-pill ' href='/?page=Messages' id='Messages'>
                                         <div class='nav-item'>
                             <i class='fa-regular fa-comment-dots'></i><span class='mx-3 d-none d-xl-inline-block'>Messages</span>
                         </div>
                     </a>
-                    <a class='nav-link col-12 rounded-pill' href=''>
+                    <a class='nav-link col-12 rounded-pill' href='' id='User'>
                     <div class='nav-item'>
                             <i class='fa-regular fa-user'></i><span class='mx-3 d-none d-xl-inline-block'>User</span>
                         </div>
                     </a>";
                     echo $side;
                 } else {
-                    echo "<a class='nav-link col-12 rounded-pill' href=''>
+                    echo "<a class='nav-link col-12 rounded-pill' href='' id='Categories'>
                 <div class='nav-item'>
                     <i class='fa-regular fa-rectangle-list'></i><span class='mx-3 d-none d-xl-inline-block'>Categories</span>
                 </div>
@@ -50,7 +54,7 @@
                 }
                 ?>
 
-                <a class="nav-link col-12 rounded-pill" href="">
+                <a class="nav-link col-12 rounded-pill" href="" id="Settings">
                     <div class="nav-item">
                         <i class="fa-solid fa-ellipsis"></i><span class="mx-3 d-none d-xl-inline-block">Settings</span>
                     </div>
@@ -97,3 +101,8 @@
         </div>
     </div>
 </div>
+<script>
+let current = '<?php echo $active ?>';
+let page = $('#'+current);
+page.addClass('active');
+</script>
