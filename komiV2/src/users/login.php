@@ -107,8 +107,7 @@ require_once __DIR__ . '/../../components/waves.php';
 <body>
 <div class="d-flex justify-content-center align-items-center h-100 color-light">
     <div class="wrapper">
-        <h2>Komision</h2>
-        <p>System for online doctor appointment</p>
+        <img src="/src/pages/img/sideimg.png" class="rounded float-right" alt="s">
     </div>
     <div class="wrapper ">
         <h2>Login</h2>
@@ -135,9 +134,9 @@ require_once __DIR__ . '/../../components/waves.php';
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" class="btn btn-primary w-100" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php" class="rounded-pill bg-primary text-white px-2">Sign up
+            <p>Don't have an account? <a href="/src/users/register.php" class="text-light font-weight-bold ">Sign up
                     now</a></p>
         </form>
     </div>

@@ -157,11 +157,12 @@ require_once __DIR__ . '/../../components/waves.php';
     </style>
 </head>
 <body>
+
 <div class="d-flex justify-content-center align-items-center h-100">
+
     <div class="wrapper">
-        <h2>SODA</h2>
-        <p>System for online doctor appointment</p>
-        Schedule meetups with your doctor quick, easy and accessible!
+
+        <img src="/src/pages/img/upbg.png" class="rounded float-right" alt="s">
     </div>
     <div class="wrapper">
         <h2>Sign Up</h2>
@@ -189,10 +190,10 @@ require_once __DIR__ . '/../../components/waves.php';
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+                <input type="submit" class="btn btn-primary w-100" value="Submit">
+                <input type="reset" class="btn btn-secondary mt-2 w-100" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php" class="rounded-pill bg-primary text-white px-2">Login
+            <p>Already have an account? <a href="login.php" class="text-light font-weight-bold">Login
                     here</a>
             </p>
         </form>
