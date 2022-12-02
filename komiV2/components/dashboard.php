@@ -3,15 +3,17 @@
         <div class=' d-flex flex-column position-sticky' style="top:0;">
             <div class="" style="width: 100%;">
                 <?php
+                include_once __DIR__.'/icon.php';
                 function userTab($icon, $username, $target): void
                 {
                     echo "
-                
-
-                        <a class='d-flex rounded-pill align-content-center justify-content-center active' id='userTab' href='#' data-toggle='modal' data-target='$target' style='width: fit-content'>
+                        <a class='d-flex rounded-pill align-content-center justify-content-center active' 
+                        id='userTab' href='#' data-toggle='modal' data-target='$target' style='width: fit-content'>
                             <div class='d-flex align-content-center justify-content-center align-items-center '>
-                                <div class='rounded-pill text-center' style='width: 2.3em'>$icon</div>
-                                <span class='d-none ms-3 d-xl-inline-block p-1 text-center align-items-center justify-content-center font-weight-bold'>$username</span>
+                                <div class='rounded-pill text-center d-flex justify-content-center align-items-center' 
+                                style='width: 2.5em; height: 2.5em; object-fit: cover'>$icon</div>
+                                <span class='d-none ms-3 d-xl-inline-block p-1 text-center align-items-center justify-content-center font-weight-bold text-truncate' 
+                                style='min-height: 0;max-width: 10em'>$username</span>
                             </div>
                         </a>
 
@@ -22,13 +24,7 @@
                 if (isset($_SESSION['id'])) {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id'];
-                    $file = '/src/uploads/' . $id . '.jpg';
-                    $file2 = '/src/uploads/' . $id . '.png';
-                    if (!(file_exists(__DIR__.'/../'.$file))) {
-                        $file = $file2;
-                    }
-                    $alt = "<i class='fa-solid fa-arrow-right-to-bracket'></i>";
-                    $icon = "<img src = $file alt='' class='rounded-pill'  style='width: 2.3em; height: 2.3em;'>";
+                    $icon = getImg($id);
                     $target = '#logged-model';
                 } else {
                     $username = "Login or Signup";
@@ -39,13 +35,13 @@
                 ?>
             </div>
 
-            <div  class=" d-flex flex-column"   style="word-wrap: break-word; width: 100%">
+            <div class=" d-flex flex-column" style="word-wrap: break-word; width: 100%">
                 <div class=" border rounded my-1 translucent p-1" style="width: 100%">
                     <?php
-                    if($userType==0){
-                        echo"You are a Client";
-                    }else{
-                        echo"You are a Freelancer";
+                    if ($userType == 0) {
+                        echo "You are a Client";
+                    } else {
+                        echo "You are a Freelancer";
                     }
                     ?>
                 </div>
