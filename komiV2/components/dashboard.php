@@ -24,7 +24,7 @@
                 if (isset($_SESSION['id'])) {
                     $username = $_SESSION['username'];
                     $id = $_SESSION['id'];
-                    $icon = getImg($id);
+                    $icon = getImg($id, '2.5em');
                     $target = '#logged-model';
                 } else {
                     $username = "Login or Signup";
