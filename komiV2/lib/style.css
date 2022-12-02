@@ -67,6 +67,25 @@ i {
     height: 20px;
 }
 
+
+.chat-link {
+    color: white;
+
+
+    width: fit-content;
+
+    text-align: center;
+    transition: 250ms;
+}
+
+
+.chat-link:hover {
+
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--dark-main-color)!important;
+    fill:white;
+}
+
 .nav-link {
     color: white;
     font-size: 20px;
@@ -77,6 +96,8 @@ i {
     text-align: center;
     transition: 250ms;
 }
+
+
 
 .nav-link:hover {
     border: 1px white none;
