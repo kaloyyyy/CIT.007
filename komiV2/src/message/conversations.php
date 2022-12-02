@@ -1,5 +1,7 @@
 <div class="col-4 h-100 border-right post-border p-0">
     <?php
+
+    require_once __DIR__ . '/../../components/header.php';
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -18,10 +20,10 @@
     $conversationRes = $mysqli->query($conversationQuery);
     foreach ($conversationRes as $rows){
         $convoID = $rows['convoID'];
-        $lastChatQuery = "select message from chat where convID = $convoID";
+        $lastChatQuery = "select message from chat where convID = $convoID order by created_at desc ";
         $lastChatRes = $mysqli->query($lastChatQuery);
         $lastChatRow = mysqli_fetch_array($lastChatRes);
-        echo "<a class='btn btn-chat btn-sm text-left w-100' id='$convoID' href='/?page=Messages&convo=$convoID'><div class=' p-0 m-0'>";
+        echo "<a class='btn btn-chat  text-left w-100 chat-link' id='$convoID' href='/?page=Messages&convo=$convoID'><div class=' p-0 m-0'>";
         echo "<div class='' style='font-size: 1.1rem'>";
         echo $rows['username'];
         echo "</div>";
