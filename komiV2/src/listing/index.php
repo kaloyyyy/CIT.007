@@ -2,19 +2,24 @@
     <?php
     require_once __DIR__ . '/../../components/header.php';
     ?>
-    <div id="postlist" class="translucent ">
-
+    <div id="postList" class="translucent ">
+        <?php
+        require 'load-list.php';
+        ?>
     </div>
 </div>
 
 <script>
-    $('#postlist').load('/src/listing/load-list.php')
 
-    function acceptList(id,price) {
-        console.log(id);
-        $('#post'+id).load('src/listing/accept-list.php',{
-            id: id,
-            price: price,
+
+    function acceptList(id, price, userID, username) {
+        console.log(username);
+        $('#post' + id).load('src/listing/accept-list.php', {
+            userID  : userID,
+            id      : id,
+            price   : price,
+            username: username
+
         })
         $('#numberOfKomi').load('src/listing/count.php')
     }
