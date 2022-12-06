@@ -10,3 +10,4 @@ $currID = $_SESSION['id'];
 $query = "INSERT INTO komision.postrequest (postID, userID, Description, price, date_created, deadline) 
             VALUES (DEFAULT, $currID, '$desc', $price, DEFAULT, '$datetime');";
 $mysqli->query($query);
+

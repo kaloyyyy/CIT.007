@@ -38,14 +38,14 @@
                                                               style="width: 120px">
                         </div>
                     </div>
-                    <div class="my-2">
-                        <button type="button" onclick="submitReq()">
+                    <div class="my-2 ">
+                        <button type="button" class="btn komit text-white"  onclick="submitReq()">
                             Post it!
                         </button>
                     </div>
 
 
-                    <div class="send"></div
+                    <div class="send" id="send"></div
                 </div>
                 <!-- end -->
             </div>
@@ -71,12 +71,12 @@
         selectDate.val('');
         selectTime.val('');
         if (desc && price && date && time !== '') {
-            $(".send").load('/src/request/post-request.php', {
+            $("#send").load('/src/request/post-request.php', {
                 desc    : desc,
                 price   : price,
                 deadline: deadline,
             })
-
+            console.log("load");
             $('#postmodal').modal('toggle')
 
         }
