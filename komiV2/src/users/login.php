@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: /index.php");
+    header("location: /index.php?page=Listings");
     exit;
 }
 
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["username"] = $username;
                             $_SESSION['userType'] = $userType;
                             // Redirect user to welcome page
-                            header("location: /?page=home");
+                            header("location: /?page=Listings");
                         } else {
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";

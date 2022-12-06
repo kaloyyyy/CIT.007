@@ -62,7 +62,7 @@
                 <h1>Komision</h1>
                 <h2 >Find the Best Freelance Services for Your Interests</h2>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="/index.php/?page=Login" class="btn-get-started scrollto">Get Started</a>
+                    <a href="/src/users/login.php" class="btn-get-started scrollto">Get Started</a>
                 </div>
             </div>
         </div>
