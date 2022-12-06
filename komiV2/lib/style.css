@@ -12,23 +12,57 @@
     overflow-x: hidden;
 
 }
-.translucent{
+input, select, textarea{
+    color: #ffffff!important;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+    color-scheme: dark;
+}
+input[type="date"]::-webkit-calendar-picker-indicator{
+    color-scheme: dark;
+}
+textarea:focus, input:focus {
+    color: #ffffff;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(147, 189, 218);
+    opacity: 1; /* Firefox */
+}
+textarea:focus, input:focus{
+    outline: none;
+}
+input {
+    background: rgba(25, 25, 35, 0.23)!important;
+    border-color: rgba(79, 177, 213, 0.5) !important;
+}
+textarea{
+    border-color: rgba(79, 177, 213, 0.5) !important;
+    background: rgba(25, 25, 35, 0.23);
+}
+.translucent {
     background: rgba(25, 25, 35, 0.23);
     backdrop-filter: blur(4px);
 }
-h5{
+
+h5 {
     margin: 0;
 }
+
 ::-webkit-scrollbar {
     width: 0.5rem;
 }
-body{
+
+body {
     background: var(--dark-bg-color);
     color: var(--dark-text-color)
 }
-.color-light{
+.dark-bg{
+    background: rgba(25, 25, 35, 0.66) !important;
+}
+.color-light {
     color: var(--dark-text-color);
 }
+
 ::-webkit-scrollbar-track {
     background: transparent;
 }
@@ -37,27 +71,34 @@ body{
     background: var(--dark-main-color);
     border-radius: 8px;
 }
+
 ::-webkit-scrollbar-corner {
     background: #3D3D3D;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
+
 a:visited {
     color: white;
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
+
 a:active {
     color: white;
 }
-a:hover:visited{
+
+a:hover:visited {
     text-decoration: none;
     color: white;
 }
+
 .darktheme {
     background: var(--dark-bg-color);
     color: white;
@@ -79,8 +120,8 @@ i {
 .chat-link:hover {
 
     background: rgba(255, 255, 255, 0.3);
-    color: var(--dark-main-color)!important;
-    fill:white;
+    color: var(--dark-main-color) !important;
+    fill: white;
 }
 
 .nav-link {
@@ -95,15 +136,15 @@ i {
 }
 
 
-
 .nav-link:hover {
     border: 1px white none;
     background: rgba(255, 255, 255, 0.3);
     color: var(--dark-main-color);
-    fill:white;
+    fill: white;
 }
-.nav-link:focus{
-    color:white;
+
+.nav-link:focus {
+    color: white;
 }
 
 .komi-logo {
@@ -113,19 +154,23 @@ i {
     margin-left: auto;
     margin-right: auto;
 }
-.logo{
+
+.logo {
     width: fit-content;
     padding: 10px 0px;
 }
-.logo:hover{
+
+.logo:hover {
     border: 1px white none;
     background: rgba(255, 255, 255, 0.3);
     color: var(--dark-main-color);
-    fill:var(--dark-main-color);
+    fill: var(--dark-main-color);
 }
-.logo:hover svg{
-    fill:var(--dark-main-color);
+
+.logo:hover svg {
+    fill: var(--dark-main-color);
 }
+
 .komi-header {
     position: sticky;
     top: 0;
@@ -143,7 +188,12 @@ i {
     width: auto;
     background: var(--dark-main-color);
 }
-
+.send{
+    background: var(--dark-main-color);
+}
+.send:hover{
+    background: rgba(255, 255, 255, 0.86);
+}
 .komit:hover {
     filter: brightness(85%);
     color: white;
@@ -155,9 +205,11 @@ i {
     padding: 5px 10px;
     color: white;
 }
+
 .active {
-    background: rgba(67, 125, 148, 0.49)!important;
+    background: rgba(67, 125, 148, 0.49) !important;
 }
+
 .modal-title {
     color: white;
 }
@@ -180,16 +232,17 @@ li {
     color: white;
 }
 
-div.usernames{
-    color: var(--dark-main-color)!important;
+div.usernames {
+    color: var(--dark-main-color) !important;
 }
 
-#message-list{
+#message-list {
     overflow-y: scroll;
     height: 100vh;
     overflow-x: hidden;
 
 }
+
 #message-list::-webkit-scrollbar {
     width: 0.25rem;
 }
@@ -202,6 +255,7 @@ div.usernames{
     background: var(--dark-main-color);
     border-radius: 4px;
 }
+
 #message-list::-webkit-scrollbar-corner {
     background: transparent;
 }
