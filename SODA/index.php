@@ -28,7 +28,7 @@
 
     switch ($page) {
         case 'landing':
-            require_once __DIR__ . '/src/landing/welcome.php';
+            require_once __DIR  __ . '/src/landing/welcome.php';
             echo "<title>SODA | Welcome</title>";
             break;
         case 'home':

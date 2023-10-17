@@ -1,0 +1,20 @@
+
+
+$body-color: #FEF6FB;
+$body-bg: #090106;
+$background: #090106;
+$primary: #22d85c;
+$secondary: #083129;
+$tertiary: #48DD27;
+// Override Bootstrap variables with your color theme
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "background": $background,
+    "body-bg": $background,
+    "body-color": $body-color,
+    "tertiary":$tertiary
+);
+
+
+@import "~bootstrap/scss/bootstrap";
