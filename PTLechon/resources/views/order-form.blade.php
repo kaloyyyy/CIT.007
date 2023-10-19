@@ -27,124 +27,102 @@
         <div class="form-group border border-2 my-1 w-100">
 
         </div>
-        <div class="form-group d-flex align-items-center justify-content-evenly  p-2">
-            <label for="product">Selection: </label>
-            <select class="form-control " id="product" name="product" required>
-                <option value="0">Select an option</option>
-                @foreach($products as $product)
-                <option id="lechon-select" value="{{ $product }}">{{ $product->description }}</option>
-                @endforeach
-            </select>
-        </div>
 
-        <div id="div-lechon"
-             class="form-group w-100 row p-2 my-1 d-flex flex-column flex-grow-1 bg-opacity-10 text-opacity-25 text-body-bg rounded-2 bg-white justify-content-center align-items-center">
-            <div class="col-6">
-                <label for="addons">Price - Lechon</label>
-                <label for="price"></label><input type="text" class="form-control" id="price" name="price">
+        <div class=" form-group d-flex container justify-content-center align-items-center m-1">
+            <div class="col-4 d-flex justify-content-end">
+                Product
             </div>
-
-            <div class="col-6 d-flex justify-content-center">
-                <div class="d-flex flex-column">
-                    <div class="form-group">
-                        <label for="dinuguan_with_meat_count">Dinuguan with Meat:</label>
-                        <div class="input-group d-flex justify-content-center m-0">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-danger count-btn" data-type="minus"
-                                        data-field="dinuguan_with_meat_count">
-                                    -
-                                </button>
-                            </div>
-
-                            <label class="m-0 p-0 w-25 mx-1">
-                                <input type="text" name="dinuguan_with_meat_count" class="form-control input-number"
-                                       value="0"
-                                >
-                            </label>
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-primary count-btn" data-type="plus"
-                                        data-field="dinuguan_with_meat_count">
-                                    +
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dinuguan_only_count">Dinuguan only:</label>
-                        <div class="input-group d-flex justify-content-center m-0">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-danger count-btn" data-type="minus"
-                                        data-field="dinuguan_only_count">
-                                    -
-                                </button>
-                            </div>
-                            <label class=" w-25 mx-1 ">
-                                <input type="text" name="dinuguan_only_count" class="form-control input-number"
-                                       value="0"
-                                >
-                            </label>
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-primary count-btn" data-type="plus"
-                                        data-field="dinuguan_only_count">
-                                    +
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="paklay_count">Paklay:</label>
-                        <div class="input-group d-flex justify-content-center m-0">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-danger count-btn" data-type="minus"
-                                        data-field="paklay_count">
-                                    -
-                                </button>
-                            </div>
-                            <label class=" w-25 mx-1">
-                                <input type="text" name="paklay_count" class="form-control input-number" value="0">
-                            </label>
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-primary count-btn" data-type="plus"
-                                        data-field="paklay_count">
-                                    +
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-4 d-flex justify-content-center">
+                QTY
+            </div>
+            <div class="col-4 ">
+                Price
+            </div>
+        </div>
+        @foreach($products as $product)
+        <div class="form-group d-flex container justify-content-center align-items-center my-1">
+            <label class="col-4 d-flex justify-content-end align-items-center" for="{{ $product->description }}">{{
+                $product->description }}</label>
+            <div class="input-group w-75 justify-content-center align-items-center d-flex m-0">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-danger count-btn" data-type="minus"
+                            data-field="{{ $product->description }}">
+                        -
+                    </button>
                 </div>
 
-
-                <script>
-                    $(document).ready(function () {
-
-
-                        $('.count-btn').click(function (e) {
-                            e.preventDefault();
-
-                            var fieldName = $(this).data('field');
-                            var type = $(this).data('type');
-                            var input = $('input[name="' + fieldName + '"]');
-                            var currentVal = parseInt(input.val());
-
-                            if (!isNaN(currentVal)) {
-                                if (type === 'minus') {
-                                    if (currentVal > 0) {
-                                        input.val(currentVal - 1);
-                                    }
-                                } else if (type === 'plus') {
-                                    input.val(currentVal + 1);
-                                }
-                            } else {
-                                input.val(0);
-                            }
-                        });
-                    });
-                </script>
+                <label class="m-0 p-0 w-25 mx-1">
+                    <input type="text" name="{{ $product->description }}" class="form-control input-number-qty"
+                           value="0">
+                </label>
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary count-btn" data-type="plus"
+                            data-field="{{ $product->description }}">
+                        +
+                    </button>
+                </div>
             </div>
-
+            @if($product->description == 'Lechon')
+            <div class="col-4 d-flex align-items-center">
+                <label class="m-0 p-0 w-50">
+                    <input type="text" name="{{ $product->description }}" class="form-control input-price" value="0">
+                </label>
+            </div>
+            @else
+            <div class="col-4" value="{{$product->price}}">
+                <label class="m-0 p-0 w-50 d-none">
+                    <input type="text" name="{{ $product->description }}" class="form-control input-price"
+                           value="{{$product->price}}">
+                </label>
+                {{ $product->price }}
+            </div>
+            @endif
         </div>
+        @endforeach
+
+        <script>
+            // Add a click event listener to all buttons with the class "count-btn"
+            const buttons = document.querySelectorAll('.count-btn');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const type = this.getAttribute('data-type');
+                    const field = this.getAttribute('data-field');
+                    const input = document.querySelector(`input[name="${field}"]`);
+                    let value = parseInt(input.value);
+
+                    if (type === 'plus') {
+                        value += 1;
+                    } else if (type === 'minus' && value > 0) {
+                        value -= 1;
+                    }
+
+                    input.value = value;
+                    calculateTotalDue();
+                });
+            });
+
+
+            // Calculate the total due function
+            function calculateTotalDue() {
+                let total = 0;
+
+                // Iterate through each input and calculate the total
+                $('.input-number-qty').each(function (index) {
+                    const price = parseInt($('.input-price').eq(index).val());
+                    const quantity = parseInt($('.input-number-qty').eq(index).val());
+                    console.log($('.product-price').eq(index).text());
+                    total += (quantity * price);
+                    console.log(price);
+                    console.log(quantity);
+                    console.log(quantity * price);
+                });
+
+                // Update the total due element
+                $('#total-due').text(total.toFixed(2) + ' PHP');
+            }
+
+        </script>
 
 
         <div class="form-group border border-2 my-4 w-100">
@@ -153,6 +131,11 @@
 
         <div
             class="client-div d-flex w-100 flex-column bg-opacity-10 p-2 my-1 rounded-2 bg-primary align-items-center justify-content-center">
+            <div
+                class="bg-primary-subtle rounded-1 p-1 text-black border-body-bg border border-1 form-group d-flex w-50">
+                <span>Total due: <span id="total-due"> 0.00 PHP</span></span>
+
+            </div>
             <div class="form-group w-50">
                 <label for="amount_paid">Amount Paid:</label>
                 <input type="number" class="form-control" id="amount_paid" name="amount_paid" required>
@@ -166,6 +149,26 @@
                 <input type="number" class="form-control" id="delivery_fee" name="delivery_fee" required>
             </div>
         </div>
+        <script>
+            // Add an event listener to the "Amount Paid" input field
+            $('#amount_paid').on('input', function () {
+                // Calculate the balance
+                calculateBalance();
+            });
+
+            // Calculate the balance function
+            function calculateBalance() {
+                // Get the total due, amount paid, and delivery fee values
+                const totalDue = parseFloat($('#total-due').text());
+                const amountPaid = parseFloat($('#amount_paid').val());
+
+                // Calculate the balance
+                const balance = totalDue - amountPaid;
+
+                // Update the "Balance" input field
+                $('#balance').val(balance.toFixed(2));
+            }
+        </script>
 
 
         <div class="form-group ">
@@ -173,54 +176,49 @@
             <input type="datetime-local" class="form-control text-bg-primary bg-body-color" id="delivery_datetime"
                    name="delivery_datetime" required>
         </div>
-        <script>
-            // Initialize Bootstrap Datetimepicker
-            $(function () {
-                $('#delivery_datetime').datetimepicker();
-            });
-        </script>
+
         <button type="submit" class="btn btn-primary my-1">Submit</button>
     </form>
 
 </div>
 <script>
-    $(document).ready(function () {
-        const addonsSelect = $('.addons');
-        const priceSelect = $('#price');
-        const dinuguan = $('input[name^="dinuguan"]');
-        const paklay = $('input[name="paklay_count"]');
-        const countButton = $('.count-btn');
-        const lechon = $('#div-lechon');
-        // Disable the addons field by default
-        addonsSelect.prop('disabled', true);
-        priceSelect.prop('disabled', true);
-        countButton.prop('disabled', true);
+    /* $(document).ready(function () {
+         const addonsSelect = $('.addons');
+         const priceSelect = $('#price');
+         const dinuguan = $('input[name^="dinuguan"]');
+         const paklay = $('input[name="paklay_count"]');
+         const countButton = $('.count-btn');
+         const lechon = $('#div-lechon');
+         // Disable the addons field by default
+         addonsSelect.prop('disabled', true);
+         priceSelect.prop('disabled', true);
+         countButton.prop('disabled', true);
 
-        // Disable all input fields by default
-        dinuguan.prop('disabled', true);
-        paklay.prop('disabled', true);
+         // Disable all input fields by default
+         dinuguan.prop('disabled', true);
+         paklay.prop('disabled', true);
 
 
-        // Handle changes in the product select field
-        $('#product').change(function () {
-            const isEnabled = $(this).val() == '{"productId":8,"price":0,"description":"Lechon"}';
-            //console.log($(this).val());
-            console.log(isEnabled);
-            addonsSelect.prop('disabled', !isEnabled);
-            priceSelect.prop('disabled', !isEnabled);
-            paklay.prop('disabled', !isEnabled);
-            dinuguan.prop('disabled', !isEnabled);
-            countButton.prop('disabled', !isEnabled).addClass('btn');
-            lechon.removeClass('text-opacity-25 text-body-bg bg-white').addClass('bg-primary')
-            if (!isEnabled) {
-                lechon.addClass('text-opacity-25 text-body-bg bg-white').removeClass('bg-primary')
-                addonsSelect.prop('value', 0);
-                priceSelect.prop('value', 0);
-                paklay.prop('value', 0);
-                dinuguan.prop('value', 0);
-            }
-        });
-    });
+         // Handle changes in the product select field
+         $('#product').change(function () {
+             const isEnabled = $(this).val() == '{"productId":8,"price":0,"description":"Lechon"}';
+             //console.log($(this).val());
+             console.log(isEnabled);
+             addonsSelect.prop('disabled', !isEnabled);
+             priceSelect.prop('disabled', !isEnabled);
+             paklay.prop('disabled', !isEnabled);
+             dinuguan.prop('disabled', !isEnabled);
+             countButton.prop('disabled', !isEnabled).addClass('btn');
+             lechon.removeClass('text-opacity-25 text-body-bg bg-white').addClass('bg-primary')
+             if (!isEnabled) {
+                 lechon.addClass('text-opacity-25 text-body-bg bg-white').removeClass('bg-primary')
+                 addonsSelect.prop('value', 0);
+                 priceSelect.prop('value', 0);
+                 paklay.prop('value', 0);
+                 dinuguan.prop('value', 0);
+             }
+         });
+     });*/
 
 </script>
 

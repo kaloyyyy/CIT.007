@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Clients;
+
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 // Import the Product model
@@ -19,24 +20,37 @@ class OrderController
 
     public function store(Request $request)
     {
-        $product = $request->input('product');
 
 
         $clientData = $request->only(['client_name', 'contact_number', 'client_address']);
-        // Create a new instance of the Client model and set its attributes
-        $clients = new Clients();
-        $clients->name = $clientData['client_name'];
-        $clients->contact = $clientData['contact_number'];
-        $clients->address = $clientData['client_address'];
 
-        // Save the new client to the database
-        $clients->save();
-        $clientId = $clients->id;
 
+        $checkClientName = $clientData['client_name']; // Replace with the client name you want to check
+
+
+        $existingClient = Client::whereRaw("LOWER(name) = ?", [strtolower($checkClientName)])->first();
+        $clientId = 0;
+        if ($existingClient) {
+            // The client already exists in the database
+            // You can access the existing client's details using $existingClient
+            $existingClient->address = $clientData['client_address'];
+            $existingClient->contact = $clientData['contact_number'];
+            $clientId = $existingClient->clientId;
+        } else {
+            // The client does not exist in the database
+            $newClient = new Client();
+            $newClient->name = $checkClientName;
+            $newClient->address = $clientData['client_address'];
+            $newClient->contact = $clientData['contact_number'];
+
+            $newClient->save();
+            $clientId = $newClient;
+        }
+
+        dd($request->all());
         $orderData = $request->all();
 
         $orders = new Order();
-        $product = $orderData['product'];
         $productArr = json_decode($product, true);
 
 
