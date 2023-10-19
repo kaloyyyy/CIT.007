@@ -14,4 +14,5 @@ class Product extends Model
     ];
 
     // Add any additional methods, relationships, or configuration as needed
+    protected $primaryKey = 'productId';
 }

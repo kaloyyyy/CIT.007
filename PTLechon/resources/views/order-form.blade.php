@@ -46,18 +46,18 @@
             <div class="input-group w-75 justify-content-center align-items-center d-flex m-0">
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-danger count-btn" data-type="minus"
-                            data-field="{{ $product->description }}">
+                            data-field="{{ $product->productId }}">
                         -
                     </button>
                 </div>
 
                 <label class="m-0 p-0 w-25 mx-1">
-                    <input type="text" name="{{ $product->description }}" class="form-control input-number-qty"
+                    <input type="text" name="{{ $product->productId }}" class="form-control input-number-qty"
                            value="0">
                 </label>
                 <div class="input-group-btn">
                     <button type="button" class="btn btn-primary count-btn" data-type="plus"
-                            data-field="{{ $product->description }}">
+                            data-field="{{ $product->productId }}">
                         +
                     </button>
                 </div>
@@ -65,13 +65,14 @@
             @if($product->description == 'Lechon')
             <div class="col-4 d-flex align-items-center">
                 <label class="m-0 p-0 w-50">
-                    <input type="text" name="{{ $product->description }}" class="form-control input-price" value="0">
+                    <input type="text" name="{{$product->description}}_price" class="form-control input-price"
+                           value="0">
                 </label>
             </div>
             @else
             <div class="col-4" value="{{$product->price}}">
                 <label class="m-0 p-0 w-50 d-none">
-                    <input type="text" name="{{ $product->description }}" class="form-control input-price"
+                    <input type="text" name="{{$product->description}}_price" class="form-control input-price"
                            value="{{$product->price}}">
                 </label>
                 {{ $product->price }}
@@ -176,7 +177,12 @@
             <input type="datetime-local" class="form-control text-bg-primary bg-body-color" id="delivery_datetime"
                    name="delivery_datetime" required>
         </div>
-
+        <script>
+            // Initialize Bootstrap Datetimepicker
+            $(function () {
+                $('#delivery_datetime').datetimepicker();
+            });
+        </script>
         <button type="submit" class="btn btn-primary my-1">Submit</button>
     </form>
 
