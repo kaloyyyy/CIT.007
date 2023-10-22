@@ -24,6 +24,28 @@
         }
     }
 </style>
+<!-- resources/views/orders/delete-confirmation-modal.blade.php -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this order?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container" id="table-to-print">
     <h3 id="date-indicator">Date selected: All</h3>
     <table class="table table-striped table-bordered table-hover">
@@ -43,6 +65,9 @@
             </th>
             <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="text-white px-4">Price
+            </th>
+            <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="text-white px-4">Option
             </th>
         </tr>
         </thead>
@@ -68,10 +93,55 @@
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="{{$rowColor}} px-4">{{ $item->product->price }}
             </td>
+            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="{{$rowColor}} px-4">
+                <div class="btn-group">
+                    <button class="btn btn-primary edit-button">
+                        <i class="fas fa-check"></i> <!-- Check icon -->
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-times"></i> <!-- Cancel icon -->
+                    </button>
+                    <button class="btn btn-danger" data-item-id="{{ $item->itemId }}" data-toggle="modal" data-target="#deleteConfirmationModal">
+                        <i class="fas fa-trash"></i>  <!-- Trash icon -->
+                    </button>
+
+                </div>
+            </td>
         </tr>
         @endforeach
         @php $rowColor = $rowColor === $default ? 'bg-secondary text-white' : $default; @endphp
         @endforeach
+        <script>
+            // When "Delete" is clicked, show the confirmation dialog
+            $('#deleteConfirmationModal').on('show.bs.modal', function (e) {
+                var deleteButton = $(e.relatedTarget);
+                var itemId = deleteButton.data('item-id'); // Assuming you have a data attribute for item ID
+
+                // When the delete button in the modal is clicked, perform the actual deletion
+                $('#confirmDelete').on('click', function () {
+                    $.ajax({
+                        type: 'delete',
+                        url: '/items/' + itemId,
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        success: function (data) {
+                            // Update the UI as needed
+                            // Reload the page or update the table
+                            console.log(data);
+                            $('#deleteConfirmationModal').modal('hide');
+                            $('.modal .close').click();
+                            // Remove the corresponding row from the table
+                            deleteButton.closest('tr').remove();
+                        },
+                        error: function (data) {
+                            // Handle errors if needed
+                        }
+                    });
+                });
+            });
+        </script>
 
         </tbody>
     </table>
@@ -84,7 +154,7 @@
         console.log(dateSelectLabel.text());
         var date = new Date(selectedDate);
 
-        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        var options = {year: 'numeric', month: 'long', day: 'numeric'};
         var formattedDate = date.toLocaleDateString('en-US', options);
         dateSelectLabel.text(`Date selected: ${formattedDate}`);
         filterTable(selectedDate);
