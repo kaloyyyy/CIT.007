@@ -121,10 +121,11 @@
                 // When the delete button in the modal is clicked, perform the actual deletion
                 $('#confirmDelete').on('click', function () {
                     $.ajax({
-                        type: 'delete',
-                        url: '/items/' + itemId,
+                        type: 'get',
+                        url: '/items/',
                         data: {
-                            "_token": "{{ csrf_token() }}"
+                            "_token": "{{ csrf_token() }}",
+                            itemId: itemId
                         },
                         success: function (data) {
                             // Update the UI as needed
@@ -193,6 +194,21 @@
                 <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.quantity}</td>
                 <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.description}</td>
                 <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.price}</td>
+                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                    class="${rowColor} px-4">
+                    <div class="btn-group">
+                        <button class="btn btn-primary edit-button">
+                            <i class="fas fa-check"></i> <!-- Check icon -->
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-times"></i> <!-- Cancel icon -->
+                        </button>
+                        <button class="btn btn-danger" data-item-id="${item.itemId}" data-toggle="modal" data-target="#deleteConfirmationModal">
+                            <i class="fas fa-trash"></i>  <!-- Trash icon -->
+                        </button>
+
+                    </div>
+                </td>
             </tr>
         `;
                         tableBody.append(row);
