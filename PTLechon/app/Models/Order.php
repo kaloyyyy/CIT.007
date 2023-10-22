@@ -8,18 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    public const CREATED_AT = 'dateOrdered'; // Change the created_at column name
+   // public const CREATED_AT = 'dateOrdered'; // Change the created_at column name
     protected $table = 'orders';
-    public $timestamps = false;
-    public function product()
-    {
-        return $this->belongsTo(Product::class, 'productId', 'productId');
-    }
+    public $timestamps = true;
+
     public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(Client::class, 'clientId','clientId');
     }
 
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'orderId','orderId');
+    }
 
 
 }

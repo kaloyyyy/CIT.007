@@ -29,17 +29,17 @@ class OrderController
 
         $checkClientName = $clientData['client_name']; // Replace with the client name you want to check
 
-        $currentTimestamp = Carbon::now();
+        $currentTimestamp = now()->toDateTimeString();;
         $existingClient = Client::whereRaw("LOWER(name) = ?", [strtolower($checkClientName)])->first();
         $clientId = 0;
-        echo $currentTimestamp;
         if ($existingClient) {
             // The client already exists in the database
             // You can access the existing client's details using $existingClient
             $existingClient->address = $clientData['client_address'];
             $existingClient->contact = $clientData['contact_number'];
-            $existingClient->updated_at = $currentTimestamp;
+            //$existingClient->updated_at = $currentTimestamp;
             $existingClient->save();
+
             $clientId = $existingClient->clientId;
         } else {
             // The client does not exist in the database
@@ -47,25 +47,23 @@ class OrderController
             $newClient->name = $checkClientName;
             $newClient->address = $clientData['client_address'];
             $newClient->contact = $clientData['contact_number'];
-            $newClient->created_at = $currentTimestamp;
-            $newClient->updated_at = $currentTimestamp;
-
+            //$newClient->created_at = $currentTimestamp;
 
             $newClient->save();
-            $clientId = $newClient;
+            $clientId = $newClient->clientId;
+
         }
 
         //dd($request->all());
         $orderData = $request->all();
 
         $orders = new Order();
-
-        $orders->clientId = $clientId;
+        $timestamp = now()->format('Y-m-d H:i:s');
+        $orders->clientId = "$clientId";
         $orders->amountPaid = $orderData['amount_paid'];
         $orders->balance = $orderData['balance'];
         $orders->deliveryFee  = $orderData['delivery_fee'];
         $orders->deliveryDatetime  = $orderData['delivery_datetime'];
-
         $orders->save();
         $orderId = $orders->id;
         // Loop through the request data to associate selected products with the order
@@ -83,7 +81,9 @@ class OrderController
                 $item->save(); // Save the item to the 'items' table
             }
         }
-        dd($request->all());
+        return redirect()->route('newOrders.index');
+
     }
 
 }
+

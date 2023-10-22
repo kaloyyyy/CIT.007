@@ -160,8 +160,8 @@
             // Calculate the balance function
             function calculateBalance() {
                 // Get the total due, amount paid, and delivery fee values
-                const totalDue = parseFloat($('#total-due').text());
-                const amountPaid = parseFloat($('#amount_paid').val());
+                const totalDue = parseInt($('#total-due').text());
+                const amountPaid = parseInt($('#amount_paid').val());
 
                 // Calculate the balance
                 const balance = totalDue - amountPaid;
