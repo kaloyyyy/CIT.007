@@ -17,4 +17,5 @@ class ItemController extends Controller
         $id = $request->only('itemId');
         $result = DB::table('items')->where('itemId', $id)->delete();
     }
+    
 }

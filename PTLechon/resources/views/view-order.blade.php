@@ -2,7 +2,7 @@
 @extends('layouts.app') <!-- Assuming you have a layout file -->
 
 @section('content')
-<h1>Orders, Products, and Addons</h1>
+
 <div class="container w-auto my-1">
     <form id="filterForm" class="">
         <label for="filter-date" class="">Select Date:</label>
@@ -20,7 +20,8 @@
     @media print {
         /* Define the print-specific CSS */
         .table-print td {
-            padding: 10px; /* Adjust the padding value as needed */
+            padding: 0px;
+            margin: 0; /* Adjust the padding value as needed */
         }
     }
 </style>
@@ -48,9 +49,9 @@
 
 <div class="container" id="table-to-print">
     <h3 id="date-indicator">Date selected: All</h3>
-    <table class="table table-striped table-bordered table-hover">
-        <thead>
-        <tr style="margin: 0">
+    <table style="border-spacing: 0" class="table table-striped table-bordered table-hover">
+        <thead style="margin:0; padding: 0">
+        <tr style="margin: 0; padding: 0">
             <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="text-white px-1">Client Name
             </th>
@@ -67,7 +68,10 @@
                 class="text-white px-4">Price
             </th>
             <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="text-white px-4">Option
+                class="text-white px-4">Paid
+            </th>
+            <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="text-white px-4 options-col">Option
             </th>
         </tr>
         </thead>
@@ -76,13 +80,35 @@
         $default = $rowColor;
         @endphp
         @foreach($orders as $order)
-        @foreach($order->items as $item)
-        <tr class="">
-            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="{{$rowColor}} px-4">{{ $order->client->name }}
+        @foreach($order->items as $item)<!-- Modal for displaying client details -->
+        <div class="modal fade options-col" id="clientDetailsModal{{$order->client->clientId}}" tabindex="-1" role="dialog" aria-labelledby="clientDetailsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="clientDetailsModalLabel">Client Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Display fetched client details here -->
+                        Address: {{ $order->client->address }} <br>
+                        Contact: {{ $order->client->contact }}
+                        <div id="client-details-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <tr class="" style="padding: 0">
+            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="client-name {{ $rowColor}}" data-client-id="{{ $order->client->id }}">
+                <a href="#" class="client-details-link " data-toggle="modal" data-target="#clientDetailsModal{{$order->client->clientId}}">
+                    {{ $order->client->name }}
+                </a>
             </td>
+
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="{{$rowColor}} px-4">{{ $order->deliveryDatetime->format('h:i A') }}
+                class="{{$rowColor}} px-4">{{ $order->deliveryDatetime->format('M d  h:i A') }}
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="{{$rowColor}} px-4">{{ $item->quantity }}
@@ -94,25 +120,56 @@
                 class="{{$rowColor}} px-4">{{ $item->product->price }}
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="{{$rowColor}} px-4">
+                class="{{$rowColor}} px-4">{{ $order->amountPaid }} PHP
+            </td>
+            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="{{$rowColor}} px-4 options-col">
+
+                <!-- Edit Button -->
                 <div class="btn-group">
-                    <button class="btn btn-primary edit-button">
+                    <button class="btn btn-info edit-button" data-toggle="modal" data-target="#editModal">
+                        <i class="fas fa-pencil-alt"></i> <!-- Edit icon -->
+                    </button>
+                </div>
+
+                <!-- Secondary Buttons -->
+                <div class="btn-group">
+                    <button class="btn btn-primary secondary-button d-none">
                         <i class="fas fa-check"></i> <!-- Check icon -->
                     </button>
-                    <button class="btn btn-secondary">
+                    <button class="btn btn-secondary secondary-button d-none">
                         <i class="fas fa-times"></i> <!-- Cancel icon -->
                     </button>
-                    <button class="btn btn-danger" data-item-id="{{ $item->itemId }}" data-toggle="modal" data-target="#deleteConfirmationModal">
-                        <i class="fas fa-trash"></i>  <!-- Trash icon -->
+                    <button class="btn btn-danger secondary-button d-none" data-item-id="{{ $item->itemId }}" data-toggle="modal"
+                            data-target="#deleteConfirmationModal">
+                        <i class="fas fa-trash"></i> <!-- Trash icon -->
                     </button>
-
                 </div>
             </td>
+
+
         </tr>
         @endforeach
         @php $rowColor = $rowColor === $default ? 'bg-secondary text-white' : $default; @endphp
         @endforeach
         <script>
+
+
+            $(document).ready(function() {
+                $('.edit-button').click(function() {
+                    var btnGroup = $(this).closest('.options-col');
+                    btnGroup.find('.edit-button').addClass('d-none');
+                    btnGroup.find('.btn-primary, .btn-secondary, .btn-danger').removeClass('d-none');
+                });
+
+                $('.btn-primary').click(function() {
+                    var btnGroup = $(this).closest('.options-col');
+                    btnGroup.find('.edit-button').removeClass('d-none');
+                    btnGroup.find('.btn-primary, .btn-secondary, .btn-danger').addClass('d-none');
+                });
+            });
+
+
             // When "Delete" is clicked, show the confirmation dialog
             $('#deleteConfirmationModal').on('show.bs.modal', function (e) {
                 var deleteButton = $(e.relatedTarget);
@@ -152,7 +209,7 @@
     $("#filter-button").on("click", function () {
         const selectedDate = $("#filter-date").val();
         var dateSelectLabel = $("#date-indicator");
-        console.log(dateSelectLabel.text());
+
         var date = new Date(selectedDate);
 
         var options = {year: 'numeric', month: 'long', day: 'numeric'};
@@ -161,60 +218,106 @@
         filterTable(selectedDate);
     });
 
+    function updateTable (data) {
+        console.log("ret: "+data);
+        const tableBody = $("#table-body");
+        tableBody.empty(); // Clear the existing rows
+        var resultLength = Object.keys(data).length;
+        for (var i = 0; i < resultLength; i++) {
+            var order = data[i]
+            var items = order['items'];
+            var itemsLength = items.length;
+            for (let j = 0; j < itemsLength; j++) {
+                var item = items[j];
+                const rowColor = i % 2 !== 0 ? "bg-secondary text-white" : "bg-primary-subtle text-black";
+                var deliveryDatetime = new Date(order.deliveryDatetime);
+                var formattedDatetime = deliveryDatetime.toLocaleTimeString('en-US', {
+                    month: 'short',
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    hour12: true
+                }).replace(',', '');
+                const row = `
+                        <tr class="">
+                            <div class="modal fade options-col" id="clientDetailsModal" tabindex="-1" role="dialog" aria-labelledby="clientDetailsModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="clientDetailsModal${order.client.clientId}">Client Details</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Display fetched client details here -->
+                                            Address: {{ $order->client->address }} <br>
+                                            Contact: {{ $order->client->contact }}
+                                            <div id="client-details-content"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="client-name ${rowColor}" data-client-id="{{ $order->client->id }}">
+                                <a href="#" class="client-details-link" data-toggle="modal" data-target="#clientDetailsModal${order.client.clientId}">
+                                    ${order.client.name }
+                                </a>
+                            </td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${formattedDatetime}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.quantity}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.description}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.price}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${order.amountPaid}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4 options-col">
+
+                                <div class="btn-group">
+                                    <button class="btn btn-info edit-button" data-toggle="modal" data-target="#editModal">
+                                        <i class="fas fa-pencil-alt"></i> <!-- Edit icon -->
+                                    </button>
+                                </div>
+
+                                <!-- Secondary Buttons -->
+                                <div class="btn-group">
+                                    <button class="btn btn-primary secondary-button d-none">
+                                        <i class="fas fa-check"></i> <!-- Check icon -->
+                                    </button>
+                                    <button class="btn btn-secondary secondary-button d-none">
+                                        <i class="fas fa-times"></i> <!-- Cancel icon -->
+                                    </button>
+                                    <button class="btn btn-danger secondary-button d-none" data-item-id="${item.itemId }" data-toggle="modal"
+                                            data-target="#deleteConfirmationModal">
+                                        <i class="fas fa-trash"></i> <!-- Trash icon -->
+                                    </button>
+                                </div>
+                            </td>
+
+                        </tr>`;
+                tableBody.append(row);
+
+            }
+            $(document).ready(function() {
+                $('.edit-button').click(function() {
+                    var btnGroup = $(this).closest('.options-col');
+                    btnGroup.find('.edit-button').addClass('d-none');
+                    btnGroup.find('.btn-primary, .btn-secondary, .btn-danger').removeClass('d-none');
+                });
+
+                $('.btn-primary').click(function() {
+                    var btnGroup = $(this).closest('.options-col');
+                    btnGroup.find('.edit-button').removeClass('d-none');
+                    btnGroup.find('.btn-primary, .btn-secondary, .btn-danger').addClass('d-none');
+                });
+            });
+        }
+
+    }
     function filterTable(selectedDate) {
         $.ajax({
             url: "/filter-orders",
             type: "GET",
             data: {date: selectedDate}, // Send the date as a query parameter
             success: function (data) {
-                const tableBody = $("#table-body");
-                console.log(typeof tableBody)
-                tableBody.empty(); // Clear the existing rows
-                console.log(data);
-                var resultLength = Object.keys(data).length;
-                console.log(resultLength);
-                for (var i = 0; i < resultLength; i++) {
-                    var order = data[i]
-                    var items = order['items'];
-                    var itemsLength = items.length;
-                    console.log(items);
-                    for (let j = 0; j < itemsLength; j++) {
-                        var item = items[j];
-                        const rowColor = i % 2 !== 0 ? "bg-secondary text-white" : "bg-primary-subtle text-black";
-                        var deliveryDatetime = new Date(order.deliveryDatetime);
-                        var formattedDatetime = deliveryDatetime.toLocaleTimeString('en-US', {
-                            hour: 'numeric',
-                            minute: '2-digit',
-                            hour12: true
-                        });
-                        const row = `
-            <tr class="">
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${order.clientId}</td>
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${formattedDatetime}</td>
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.quantity}</td>
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.description}</td>
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.price}</td>
-                <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                    class="${rowColor} px-4">
-                    <div class="btn-group">
-                        <button class="btn btn-primary edit-button">
-                            <i class="fas fa-check"></i> <!-- Check icon -->
-                        </button>
-                        <button class="btn btn-secondary">
-                            <i class="fas fa-times"></i> <!-- Cancel icon -->
-                        </button>
-                        <button class="btn btn-danger" data-item-id="${item.itemId}" data-toggle="modal" data-target="#deleteConfirmationModal">
-                            <i class="fas fa-trash"></i>  <!-- Trash icon -->
-                        </button>
-
-                    </div>
-                </td>
-            </tr>
-        `;
-                        tableBody.append(row);
-                    }
-
-                }
+                updateTable(data)
             }
         });
     }
@@ -226,22 +329,38 @@
 <script>
     $(document).ready(function () {
         $('#print-button').click(function () {
-
             var tableToPrint = $('#table-to-print');
             var newWin = window.open('', 'Print-Window');
             newWin.document.open();
             newWin.document.write('<html lang="en"><body>');
-            newWin.document.write('<link rel="stylesheet" href="{{ asset("css/custom.css") }}" media="print">'
-            )
-            ;
-            newWin.document.write(tableToPrint[0].outerHTML);
-            newWin.document.write('</body></html>');
-            newWin.document.close();
-            newWin.print();
-            newWin.close();
+
+            // Function to generate and print content
+            function generateAndPrintContent() {
+                var clonedTable = tableToPrint.clone(); // Clone the original table
+                clonedTable.find('.options-col').remove(); // Remove elements with the class 'options-col'
+                newWin.document.write(clonedTable[0].outerHTML);
+                newWin.document.write('</body></html>');
+
+                // Print the content
+                newWin.print();
+
+                // Print the content again
+                newWin.document.close(); // Close the existing document
+                newWin.document.open(); // Open a new document
+                newWin.document.write('<html lang="en"><body>');
+                newWin.document.write(clonedTable[0].outerHTML);
+                newWin.document.write('</body></html>');
+                newWin.print();
+                newWin.close();
+            }
+
+
+            // Wait for a short delay to ensure content is loaded, then generate and print it twice
+            window.setTimeout(generateAndPrintContent, 100);
         });
     });
 </script>
+
 
 @endsection
 
