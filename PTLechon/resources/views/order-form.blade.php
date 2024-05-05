@@ -63,7 +63,7 @@
                 </div>
             </div>
             @if($product->description == 'Lechon')
-            <div class="col-4 d-flex align-items-center">
+            <div class="col-4 d-flex align-items-center" value="0">
                 <label class="m-0 p-0 w-50">
                     <input type="text" name="{{$product->description}}_price" class="form-control input-price"
                            value="0">
@@ -103,6 +103,21 @@
                 });
             });
 
+
+            $(document).ready(function () {
+                // Attach the input event handler to the input field
+                $('input[name="{{$product->description}}_price"]').on('input', function () {
+                    updateProductValue();
+                });
+
+                function updateProductValue() {
+                    // Get the value of the input using jQuery
+                    var inputValue = $('input[name="{{$product->description}}_price"]').val();
+
+                    // Update the value attribute of the div
+                    $('#productContainer').attr('value', inputValue);
+                }
+            });
 
             // Calculate the total due function
             function calculateTotalDue() {

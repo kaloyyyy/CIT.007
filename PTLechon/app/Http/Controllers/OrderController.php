@@ -56,7 +56,6 @@ class OrderController
 
         //dd($request->all());
         $orderData = $request->all();
-
         $orders = new Order();
         $timestamp = now()->format('Y-m-d H:i:s');
         $orders->clientId = "$clientId";
@@ -64,11 +63,13 @@ class OrderController
         $orders->balance = $orderData['balance'];
         $orders->deliveryFee  = $orderData['delivery_fee'];
         $orders->deliveryDatetime  = $orderData['delivery_datetime'];
+        $orders->lechonPrice = $orderData['Lechon_price'];
         $orders->save();
         $orderId = $orders->id;
         // Loop through the request data to associate selected products with the order
         foreach ($request->all() as $productId => $quantity) {
             if (is_numeric($productId) && $quantity > 0) {
+
                 $item = new Item();
                 $item->orderId = $orderId; // Set the order ID to the ID of the newly created order
                 $item->productId = $productId; // Set the product ID based on your data

@@ -12,7 +12,7 @@
         </div>
     </form>
     <button id="print-button" class="btn btn-primary my-3">Print Table</button>
-
+    <button id="exportButton" class="btn btn-primary my-3">Export to Excel</button>
 </div>
 
 
@@ -25,6 +25,7 @@
         }
     }
 </style>
+
 <!-- resources/views/orders/delete-confirmation-modal.blade.php -->
 <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel"
      aria-hidden="true">
@@ -46,6 +47,11 @@
         </div>
     </div>
 </div>
+<!-- Add these script tags to include the SheetJS library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+
+
+
 
 <div class="container" id="table-to-print">
     <h3 id="date-indicator">Date selected: All</h3>
@@ -71,12 +77,15 @@
                 class="text-white px-4">Paid
             </th>
             <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="text-white px-4">Delivery Fee
+            </th>
+            <th style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="text-white px-4 options-col">Option
             </th>
         </tr>
         </thead>
         <tbody id="table-body">
-        @php $rowColor = 'bg-primary-subtle text-black';
+        @php $rowColor = 'bg-primary-subtle text-black justify-content-center align-items-center';
         $default = $rowColor;
         @endphp
         @foreach($orders as $order)
@@ -101,14 +110,16 @@
         </div>
 
         <tr class="" style="padding: 0">
-            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="client-name {{ $rowColor}}" data-client-id="{{ $order->client->id }}">
+            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:auto; padding: 4px" class="client-name {{ $rowColor}}" data-client-id="{{ $order->client->id }}">
                 <a href="#" class="client-details-link " data-toggle="modal" data-target="#clientDetailsModal{{$order->client->clientId}}">
                     {{ $order->client->name }}
                 </a>
             </td>
 
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="{{$rowColor}} px-4">{{ $order->deliveryDatetime->format('M d  h:i A') }}
+                class="{{$rowColor}} px-2 ">
+                <span class="options-col">{{ $order->deliveryDatetime->format('M d') }}&nbsp</span>
+                <span> {{ $order->deliveryDatetime->format('h:i A')}}</span>
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="{{$rowColor}} px-4">{{ $item->quantity }}
@@ -117,10 +128,18 @@
                 class="{{$rowColor}} px-4">{{ $item->product->description }}
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
-                class="{{$rowColor}} px-4">{{ $item->product->price }}
+                class="{{$rowColor}} px-4">
+                @if( $item->product->description == "Lechon")
+                    {{$order->lechonPrice}}
+                @else
+                    {{ $item->product->price }}
+                @endif
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="{{$rowColor}} px-4">{{ $order->amountPaid }} PHP
+            </td>
+            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
+                class="{{$rowColor}} px-4">{{ $order->deliveryFee }} PHP
             </td>
             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px"
                 class="{{$rowColor}} px-4 options-col">
@@ -150,7 +169,7 @@
 
         </tr>
         @endforeach
-        @php $rowColor = $rowColor === $default ? 'bg-secondary text-white' : $default; @endphp
+        @php $rowColor = $rowColor === $default ? 'bg-secondary text-white justify-content-center align-items-center' : $default; @endphp
         @endforeach
         <script>
 
@@ -204,6 +223,27 @@
         </tbody>
     </table>
 </div>
+<script>
+    document.getElementById('exportButton').addEventListener('click', function () {
+        exportToExcel();
+    });
+
+    function exportToExcel() {
+        /* Get table element */
+        var table = document.getElementById('table-to-print');
+
+        /* Convert table to worksheet */
+        var ws = XLSX.utils.table_to_sheet(table);
+
+        /* Create workbook and add the worksheet */
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+        /* Save to file */
+        var fileName = 'exported_data.xlsx';
+        XLSX.writeFile(wb, fileName);
+    }
+</script>
 <script>
     // Filter button click event
     $("#filter-button").on("click", function () {
@@ -260,7 +300,7 @@
                             </div>
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="client-name ${rowColor}" data-client-id="{{ $order->client->id }}">
                                 <a href="#" class="client-details-link" data-toggle="modal" data-target="#clientDetailsModal${order.client.clientId}">
-                                    ${order.client.name }
+                                    ${order.client.name}
                                 </a>
                             </td>
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${formattedDatetime}</td>
@@ -268,6 +308,7 @@
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.description}</td>
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${item.product.price}</td>
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${order.amountPaid}</td>
+                            <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4">${order.deliveryFee}</td>
                             <td style="text-align: center; border: 1px rgb(128,128,128) solid; margin:0; padding: 4px" class="${rowColor} px-4 options-col">
 
                                 <div class="btn-group">
@@ -284,7 +325,7 @@
                                     <button class="btn btn-secondary secondary-button d-none">
                                         <i class="fas fa-times"></i> <!-- Cancel icon -->
                                     </button>
-                                    <button class="btn btn-danger secondary-button d-none" data-item-id="${item.itemId }" data-toggle="modal"
+                                    <button class="btn btn-danger secondary-button d-none" data-item-id="${item.itemId}" data-toggle="modal"
                                             data-target="#deleteConfirmationModal">
                                         <i class="fas fa-trash"></i> <!-- Trash icon -->
                                     </button>
